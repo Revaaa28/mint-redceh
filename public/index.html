@@ -162,6 +162,14 @@
   .hist li b{color:var(--ink)}
 
   footer{margin-top:40px;color:var(--faint);font-size:13px;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
+  .credits{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}
+  .builtby{font:700 12px var(--mono);letter-spacing:.18em;color:var(--dim)}
+  .builtby .elle{color:var(--gold)}
+  .credits .for{margin-top:6px;font-size:13px;color:var(--faint)}
+  .credit-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .credit-row a{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:7px 12px;font:600 12px var(--mono);color:var(--dim)}
+  .credit-row a:hover{color:var(--ink);border-color:var(--faint);text-decoration:none}
+  .credit-row a b{color:var(--ink);font-weight:700}
   .empty{color:var(--dim);padding:30px 0}
 
   @media (prefers-reduced-motion: reduce){
@@ -219,6 +227,19 @@
     Mint RedCeh is a read-only radar: we never mint for you, sell anything, or promise value.
     The <b>page claim</b> column is the project's own words; the <b>on-chain facts</b> column is read directly from the contract on BNB Chain (public RPC + Sourcify) and re-checked periodically.
     A bucket label is the radar's assessment of the evidence shown on the card — not a verdict. Always DYOR.
+
+    <div class="credits">
+      <div class="builtby">BUILT BY <span class="elle">ELLE</span></div>
+      <div class="for">An entry for the Total Recall hackathon by Tatum × Walrus. The radar's memory lives on Walrus mainnet; every check is written as a memory and can be asked back.</div>
+      <div class="credit-row">
+        <a href="https://walrus.xyz" target="_blank" rel="noopener"><b>Walrus Memory</b> · memory storage</a>
+        <a href="https://tatum.io" target="_blank" rel="noopener"><b>Tatum</b> · Sui data gateway</a>
+        <a href="https://sourcify.dev" target="_blank" rel="noopener"><b>Sourcify</b> · contract verification</a>
+        <a href="https://www.bnbchain.org" target="_blank" rel="noopener"><b>BNB Chain</b> · on-chain reads</a>
+        <a href="https://viem.sh" target="_blank" rel="noopener"><b>viem</b> · chain client</a>
+        <a href="https://vercel.com" target="_blank" rel="noopener"><b>Vercel</b> · hosting</a>
+      </div>
+    </div>
   </footer>
 </div>
 
