@@ -14,6 +14,7 @@ import { createStore } from "./memory.js";
 import { askRadar, historyForListing, parseListingMemory, writeBoardMemories } from "./radar-memory.js";
 
 const INDEX_HTML = new URL("../public/index.html", import.meta.url);
+const BLOG_HTML = new URL("../public/blog.html", import.meta.url);
 const FAVICON_SVG = new URL("../public/favicon.svg", import.meta.url);
 const OG_PNG = new URL("../public/og.png", import.meta.url);
 const BOARD_JSON = new URL("../data/board.json", import.meta.url);
@@ -69,6 +70,12 @@ export async function handle(req, res) {
   try {
     if (req.method === "GET" && url.pathname === "/") {
       const html = await readFile(INDEX_HTML, "utf8");
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(html);
+      return;
+    }
+    if (req.method === "GET" && url.pathname === "/blog") {
+      const html = await readFile(BLOG_HTML, "utf8");
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
       res.end(html);
       return;

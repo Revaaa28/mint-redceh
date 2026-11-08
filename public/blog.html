@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Story — Mint RedCeh</title>
+<meta name="description" content="How Mint RedCeh works: a free-mint radar for the Agentic ID ecosystem that checks page claims against on-chain facts, remembers every check in Walrus Memory, and stamps it with Sui checkpoints via Tatum.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#04070a;--panel:#0a0f16;--line:#1d2938;--ink:#eef3f8;--dim:#96a3b8;--faint:#5d6b82;--gold:#f5c044;--red:#ff5252;--mono:'JetBrains Mono',ui-monospace,monospace}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(900px 480px at 85% -10%, rgba(245,192,68,.07), transparent 60%),linear-gradient(rgba(238,243,248,.028) 1px, transparent 1px),linear-gradient(90deg, rgba(238,243,248,.028) 1px, transparent 1px);background-size:auto,44px 44px,44px 44px}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:26px 20px 70px;position:relative}
+  .top{display:flex;align-items:center;gap:11px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .top img{width:32px;height:32px}
+  .brand{font:700 12.5px var(--mono);letter-spacing:.16em}
+  .brand .m{color:var(--gold)} .brand .r{color:var(--red)} .brand .c{color:var(--ink)}
+  .top .back{margin-left:auto;font:600 11.5px var(--mono);letter-spacing:.1em;color:var(--dim)}
+  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,5.4vw,44px);line-height:1.08;letter-spacing:-.015em;margin:30px 0 10px}
+  .dek{color:var(--dim);font-size:16.5px;line-height:1.6;margin:0 0 6px}
+  .dek .gold{color:var(--gold)}
+  h2{font-family:'Bricolage Grotesque',sans-serif;font-size:23px;margin:36px 0 10px;letter-spacing:-.01em}
+  p,li{font-size:16.5px;line-height:1.72;color:#c7d2e0}
+  p b,li b{color:var(--ink)}
+  code{font-family:var(--mono);font-size:.86em;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--gold)}
+  ol,ul{padding-left:22px}
+  li{margin:7px 0}
+  hr{border:none;border-top:1px solid var(--line);margin:38px 0}
+  .sign{font:600 12px var(--mono);letter-spacing:.14em;color:var(--faint)}
+  .sign .elle{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img src="/logo.svg" alt="Mint RedCeh logo">
+    <div class="brand"><span class="m">MINT</span> <span class="r">RED</span><span class="c">CEH</span></div>
+    <a class="back" href="/">← BACK TO THE RADAR</a>
+  </div>
+
+  <h1>Mint RedCeh: a free-mint radar that checks the claim against the chain — and remembers every check</h1>
+  <p class="dek">Built by <span class="gold">ELLE</span> for the Total Recall hackathon (Tatum × Walrus). Live at <a href="https://mint-redceh.vercel.app">mint-redceh.vercel.app</a> · code on <a href="https://github.com/Revaaa28/mint-redceh" target="_blank" rel="noopener">GitHub</a>.</p>
+
+  <h2>The problem: "free" is the most abused word in the Agentic ID ecosystem</h2>
+  <p>Since Binance opened free Agent ID (.ai) claims, the BNB Chain has filled up with projects offering "free mints" to Agent ID holders. Some are genuinely free. Many are not: a mint advertised as free quietly skims a creator fee on every mint, locks a "refundable" deposit inside a contract, or keeps advertising a free quota that ran out long ago. The project's page will never tell you this. The contract will — if somebody reads it.</p>
+  <p>Mint RedCeh is that somebody. It is a read-only radar for free mints in the Binance Agentic ID ecosystem on BNB Chain. For every listing it shows two columns side by side: <b>Page claim</b> — what the project's own site says, quoted as a claim, never as a fact — and <b>On-chain facts</b> — name, symbol, supply, verification status and money flows, read directly from the contract.</p>
+  <p>Each listing gets one of three labels, always with its evidence attached: <b>Clear</b> (the free lane is proven by the contract itself), <b>Potential</b> (a real project with a gap in the evidence), or <b>Fee-Farm Indication</b> (the chain contradicts the "free" claim).</p>
+
+  <h2>How the radar verifies</h2>
+  <p>Every listing passes through the same gate:</p>
+  <ol>
+    <li><b>Read the claim.</b> The project's official page must publish its mint terms. No published terms, nothing to verify — the project does not board.</li>
+    <li><b>Read the chain.</b> Name, symbol and supply come from the contract itself via public BSC RPC; verification status comes from Sourcify. Site counters are never trusted.</li>
+    <li><b>Follow the money.</b> Mint price, per-mint creator fees, deposits dressed up as free mints, and — for refund-style systems — the contract's refund obligations versus its actual BNB balance, probed live at every check.</li>
+    <li><b>Remember everything.</b> Every check is written to Walrus Memory. Labels are re-judged at every capture, and a label change leaves a trail instead of overwriting history.</li>
+  </ol>
+
+  <h2>How it uses Walrus Memory</h2>
+  <p>Mint RedCeh's memory is not a log file — it is the product's second surface. Every verification of every listing is written as a memory to <b>Walrus Memory on mainnet</b> (namespace <code>mintredceh</code>): the listing, its contract, its label, the chain facts as read at that moment, and the evidence signals. Thirty-one memories were written on day one alone, and the count grows with every cycle.</p>
+  <p>That memory is queryable in two places on the site. <b>Ask the Radar</b> — a question box that answers <i>only</i> from memory: when a contract was first seen, what each check found, whether its label ever changed. If it is not in memory, the radar says it does not know. Every answer links to the underlying Walrus blob and its Sui checkpoint. And <b>check history on every card</b> — the full recorded timeline for that listing, blob by blob.</p>
+  <p>Because history is append-only memory rather than a database row that gets overwritten, "what did the radar believe last Tuesday, and why?" is always answerable — that is the difference between a listing site and a radar with a past.</p>
+
+  <h2>How it uses Tatum</h2>
+  <p>Each memory is stamped with the current <b>Sui checkpoint</b>, read at write time through <b>Tatum's Sui GraphQL gateway</b>. The checkpoint anchors every check in Sui's timeline: a memory does not just say <i>what</i> the radar found, it proves <i>when</i> in chain-time the finding was recorded, and the stamp travels inside the memory text itself. (BNB Chain contract reads go through public BSC RPC endpoints; the Sui-side data — the checkpoint that timestamps the radar's memory — comes from Tatum.)</p>
+
+  <h2>How it learned over time</h2>
+  <p>The radar launched on 8 November 2026 with eight hand-researched listings. Within its first day, its own checks had already changed what it could say:</p>
+  <ul>
+    <li><b>Floppy Agents</b> boards as <i>Potential</i>, not Clear: its launchpad page still advertises a free mint, but the chain reads <code>minted: 3333/3333</code> — the free window is closed. The radar shows both facts, side by side.</li>
+    <li><b>CodexNFT</b> claims "all 6,666 mints FREE", while its contract takes a 0.000075 BNB creator fee on every mint. Label: <i>Fee-Farm Indication</i>, with the arithmetic on the card.</li>
+    <li><b>Agentic Coin (AGC)</b> calls a refundable 0.002 BNB-per-share deposit a "free mint". The radar does not argue — it probes: refund obligations versus the mint contract's BNB balance at every capture (equal at every check so far, ~105.7 BNB). The day they diverge, the radar raises an alert.</li>
+    <li><b>The board grows itself.</b> A discovery lane sweeps the ecosystem's lead sources, runs new projects through the same gate, and boards the ones that pass — Paw Gang boarded this way on day one. A candidate whose official presence cannot be verified (a project called Pandora) is held off the board until it can be.</li>
+    <li><b>Listings move.</b> Every two hours the radar re-captures every listing and re-judges it: labels move between buckets as evidence changes, and a listing whose contract dies or whose project ends is removed. Each of those decisions is itself written to Walrus Memory, so the radar's judgement history is as inspectable as its data.</li>
+  </ul>
+  <p>That is what "learning" means here: not a model quietly drifting, but a public, append-only record of observations and decisions that anyone can replay.</p>
+
+  <h2>What it is not</h2>
+  <p>Mint RedCeh never mints for you, never moves funds, and never promises value. Its labels are one radar's reading of public evidence — not a definitive reference, not financial advice. The radar re-captures every listing every two hours, and a label can change from one capture to the next. Always do your own research.</p>
+
+  <hr>
+  <p class="sign">MINT IN GOLD · RED IN RED · CEH IN WHITE — BUILT BY <span class="elle">ELLE</span></p>
+</div>
+</body>
+</html>
