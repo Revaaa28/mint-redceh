@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:22.769Z",
+      "checkedAt": "2026-11-08T22:35:01.783Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:25.754Z",
+      "checkedAt": "2026-11-08T22:35:04.028Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:26.728Z",
+      "checkedAt": "2026-11-08T22:35:04.500Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:27.352Z",
+      "checkedAt": "2026-11-08T22:35:05.099Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:27.352Z",
+      "checkedAt": "2026-11-08T22:35:05.099Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:27.352Z",
+      "checkedAt": "2026-11-08T22:35:05.099Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:28.266Z",
+      "checkedAt": "2026-11-08T22:35:05.614Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:29.020Z",
+      "checkedAt": "2026-11-08T22:35:06.106Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "120,322,911,029",
+      "tokenSupply": "120,334,640,952",
       "probes": {
-        "Refund obligations (refundOwed)": "88.562 BNB",
-        "Mint contract BNB balance": "88.562 BNB"
+        "Refund obligations (refundOwed)": "88.552 BNB",
+        "Mint contract BNB balance": "88.552 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:30.602Z",
+      "checkedAt": "2026-11-08T22:35:07.039Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:31.502Z",
+      "checkedAt": "2026-11-08T22:35:07.703Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:32.345Z",
+      "checkedAt": "2026-11-08T22:35:08.204Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -444,7 +444,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:33.344Z",
+      "checkedAt": "2026-11-08T22:35:08.858Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -494,7 +494,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:34.743Z",
+      "checkedAt": "2026-11-08T22:35:09.434Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -534,12 +534,128 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T22:26:35.442Z",
+      "checkedAt": "2026-11-08T22:35:10.376Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
       "supplyNow": "441",
       "supplyMax": "2000",
+      "supplyMaxFn": "MAX_SUPPLY"
+    }
+  },
+  {
+    "id": "hi-score",
+    "name": "HI-SCORE ($1UP)",
+    "kind": "NFT · on-chain arcade cartridge",
+    "chainId": 56,
+    "contract": "0xA74081fd9bc9623A2d9321223C35b41016A7fd65",
+    "site": "https://insert1up.fun",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "Free mine by CPU proof-of-work for Agent ID wallets, 1 per wallet",
+      "mintPrice": "0 BNB — gas only, plus a PoW nonce (one free cartridge per 120 s globally; difficulty retargets toward 150–300 s per free mint)",
+      "supply": "10,000 total; 431 minted",
+      "extras": "Each cartridge is 1 NFT + 1,000 $1UP; paid lane 0.001 BNB; no admin mint"
+    },
+    "bucket": "berpotensi",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site + llms.txt publish the contract, the free PoW terms and the Agent ID gate up front; Sourcify exact match; owner cannot mint, pause, or withdraw"
+      },
+      {
+        "type": "warn",
+        "text": "Free mint needs a proof-of-work nonce — not a one-click mint; only one free cartridge per 120 s across the whole game"
+      },
+      {
+        "type": "warn",
+        "text": "Each mint also pays 1,000 $1UP — the official post names no trading venue for it"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-08T22:35:10.876Z",
+      "sourcify": "exact_match",
+      "onchainName": "HI-SCORE",
+      "onchainSymbol": "HISCORE",
+      "supplyNow": "433"
+    }
+  },
+  {
+    "id": "molt-agent",
+    "name": "MOLT AGENT",
+    "kind": "NFT · molt agent",
+    "chainId": 56,
+    "contract": "0x4B8150f1a258cD3CE2300fAf682432c52ca48Fc1",
+    "site": "https://moltagent.pages.dev",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First 25 mints free for Agent ID holders, 1 per wallet — free pool exhausted",
+      "mintPrice": "Free lane CLOSED (freeMinted 25/25, freeRemaining 0 on-chain); paid lane 0.0003 BNB per NFT",
+      "supply": "7,777 total (25 free / rest paid); 27 minted, free pool 0 left",
+      "extras": "Every mint pays 100,000,000 MOLTA; $MOLTA has no secondary market yet"
+    },
+    "bucket": "berpotensi",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official mint page publishes the contract, the 25-free terms and the Agent ID gate up front; Sourcify exact match; the page reads freeRemaining() live from the chain"
+      },
+      {
+        "type": "bad",
+        "text": "Free pool exhausted — freeMinted 25/25, freeRemaining 0 on-chain (verified on two RPCs 2026-11-09 ~06:35 WITA)"
+      },
+      {
+        "type": "warn",
+        "text": "Every mint pays 100M MOLTA, which has no secondary market yet — a bonus, not a price"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-08T22:35:11.453Z",
+      "sourcify": "exact_match",
+      "onchainName": "MOLT AGENT",
+      "onchainSymbol": "MOLTAGENT",
+      "supplyNow": null,
+      "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
+      "supplyMax": "7777",
+      "supplyMaxFn": "maxSupply"
+    }
+  },
+  {
+    "id": "agent-arena",
+    "name": "Agent Arena",
+    "kind": "NFT · numbered seat",
+    "chainId": 56,
+    "contract": "0xF11e9405b23CA0F53E6135162a85545D780a3737",
+    "site": "https://agentarena.id",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "Free seat mint for Agent ID wallets, 1 per wallet — SOLD OUT",
+      "mintPrice": "Free while seats lasted; no mints remain, sold out 5,000/5,000",
+      "supply": "5,000 total — SOLD OUT (5,000/5,000 minted, verified on three RPCs 2026-11-09 ~06:35 WITA)",
+      "extras": "Each seat claims 250,000 ARENA once; $ARENA not trading yet"
+    },
+    "bucket": "indikasi",
+    "signals": [
+      {
+        "type": "bad",
+        "text": "SOLD OUT — totalSupply reads 5,000/5,000 on-chain (verified on three RPCs; ownerOf(1), ownerOf(2500) and ownerOf(5000) all resolve), yet the site still says “Doors are open” and “Price: free”"
+      },
+      {
+        "type": "good",
+        "text": "Official site publishes the contract of record and X @agentarenaid up front; Sourcify exact match"
+      },
+      {
+        "type": "warn",
+        "text": "Claiming the 250,000 ARENA per seat costs exactly 231660249549054 wei BNB per claim; $ARENA is not trading yet"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-08T22:35:11.781Z",
+      "sourcify": "exact_match",
+      "onchainName": "Agent Arena",
+      "onchainSymbol": "SEAT",
+      "supplyNow": "5000",
+      "supplyMax": "5000",
       "supplyMaxFn": "MAX_SUPPLY"
     }
   }
