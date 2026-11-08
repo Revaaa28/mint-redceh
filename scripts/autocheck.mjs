@@ -52,9 +52,30 @@ try {
   const board = await buildBoard({ write: true, log: false });
   const now = factsOf(board);
   const changed = [];
+  let meaningful = false;
+  const band = (f) => {
+    if (!f || f.supplyNow == null || f.supplyMax == null) return null;
+    try {
+      const max = BigInt(f.supplyMax);
+      if (max === 0n) return null;
+      return Number((BigInt(f.supplyNow) * 10n) / max);
+    } catch { return null; }
+  };
+  const num = (v) => parseFloat(String(v ?? '').replace(/[^0-9.]/g, ''));
   if (prev) {
     for (const id of Object.keys(now)) {
       if (JSON.stringify(now[id]) !== JSON.stringify(prev[id])) changed.push(id);
+      // Meaningful = worth a memory: verification status flipped, a supply
+      // crossed a 10% band of its max, or AGC obligations/balance moved >0.5%.
+      if (now[id].sourcify !== prev[id]?.sourcify) meaningful = true;
+      const b0 = band(prev[id]); const b1 = band(now[id]);
+      if (b0 !== null && b1 !== null && b0 !== b1) meaningful = true;
+      if (id === 'agentic-coin' && now[id].probes && prev[id]?.probes) {
+        for (const k of ['Refund obligations (refundOwed)', 'Mint contract BNB balance']) {
+          const a = num(prev[id].probes[k]); const b = num(now[id].probes[k]);
+          if (Number.isFinite(a) && Number.isFinite(b) && a > 0 && Math.abs(b - a) / a > 0.005) meaningful = true;
+        }
+      }
     }
   }
   summary.changed = prev ? changed : Object.keys(now);
@@ -74,15 +95,15 @@ try {
     }
   }
 
-  // Memory write: on any fact change, or at least once per 24h.
+  // Memory write: on a MEANINGFUL change (or any alert), or at least daily.
+  // Small supply ticks refresh the board only — they never flood the memory.
+  summary.meaningful = meaningful || summary.alerts.length > 0;
   const dueDaily = Date.now() - (log.lastWriteAt || 0) > 24 * 3600 * 1000;
-  if ((prev && changed.length > 0) || dueDaily || !prev) {
-    if (prev) {
+  if ((prev && (summary.meaningful || dueDaily))) {
       const store = await createStore();
       const res = await writeBoardMemories(store, board);
       summary.wrote = res.written?.length ?? 0;
       log.lastWriteAt = Date.now();
-    }
   }
 
   // Public board refresh: commit + push only when facts actually changed.
