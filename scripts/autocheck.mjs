@@ -22,6 +22,7 @@ const factsOf = (board) => {
   for (const e of board) {
     const f = e.facts || {};
     out[e.id] = {
+      bucket: e.bucket ?? null,
       sourcify: f.sourcify ?? null,
       supplyNow: f.supplyNow ?? null,
       supplyMax: f.supplyMax ?? null,
@@ -74,8 +75,9 @@ try {
   if (prev) {
     for (const id of Object.keys(now)) {
       if (JSON.stringify(now[id]) !== JSON.stringify(prev[id])) changed.push(id);
-      // Meaningful = worth a memory: verification status flipped, a supply
-      // crossed a 10% band of its max, or AGC obligations/balance moved >0.5%.
+      // Meaningful = worth a memory: bucket moved, verification status
+      // flipped, a supply crossed a 10% band of its max, or AGC moved >0.5%.
+      if (now[id].bucket !== prev[id]?.bucket) meaningful = true;
       if (now[id].sourcify !== prev[id]?.sourcify) meaningful = true;
       const b0 = band(prev[id]); const b1 = band(now[id]);
       if (b0 !== null && b1 !== null && b0 !== b1) meaningful = true;
