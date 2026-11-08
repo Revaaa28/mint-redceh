@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:10.732Z",
+      "checkedAt": "2026-11-08T20:36:31.273Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:13.421Z",
+      "checkedAt": "2026-11-08T20:36:32.954Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:14.143Z",
+      "checkedAt": "2026-11-08T20:36:34.327Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:15.269Z",
+      "checkedAt": "2026-11-08T20:36:35.275Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:15.269Z",
+      "checkedAt": "2026-11-08T20:36:35.275Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:15.269Z",
+      "checkedAt": "2026-11-08T20:36:35.275Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:16.413Z",
+      "checkedAt": "2026-11-08T20:36:35.663Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:17.078Z",
+      "checkedAt": "2026-11-08T20:36:36.614Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "120,193,617,228",
+      "tokenSupply": "120,200,129,163",
       "probes": {
-        "Refund obligations (refundOwed)": "89.074 BNB",
-        "Mint contract BNB balance": "89.074 BNB"
+        "Refund obligations (refundOwed)": "89.04 BNB",
+        "Mint contract BNB balance": "89.04 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:18.454Z",
+      "checkedAt": "2026-11-08T20:36:37.500Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:19.379Z",
+      "checkedAt": "2026-11-08T20:36:38.031Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:20.195Z",
+      "checkedAt": "2026-11-08T20:36:38.399Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -436,7 +436,7 @@
       },
       {
         "type": "warn",
-        "text": "Free mint needs a proof-of-work nonce — 24 bits at 1,821 minted, difficulty rises with supply — not a plain one-click mint"
+        "text": "Free mint needs a proof-of-work nonce — 27 bits at 3,077 minted (verified 2026-11-09 ~04:35 WITA), difficulty rises with supply — not a plain one-click mint"
       },
       {
         "type": "warn",
@@ -444,7 +444,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:21.071Z",
+      "checkedAt": "2026-11-08T20:36:39.519Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -461,13 +461,17 @@
     "site": "https://pokechain.trade",
     "gated": "Binance Agent ID (.ai)",
     "claim": {
-      "headline": "First mint free for Agent ID wallets, then a paid ladder — up to 35 per wallet",
-      "mintPrice": "1st mint 0 BNB; #2–#20 cost 0.00035 BNB each; #21–#35 cost 0.00065 BNB each",
-      "supply": "15,555 total",
+      "headline": "First mint free for Agent ID wallets, then a paid ladder — up to 35 per wallet — SOLD OUT",
+      "mintPrice": "1st mint 0 BNB; #2–#20 cost 0.00035 BNB each; #21–#35 cost 0.00065 BNB each — no mints remain, sold out 15,555/15,555",
+      "supply": "15,555 total — SOLD OUT (15,555/15,555 minted, verified two RPCs 2026-11-09 ~04:35 WITA)",
       "extras": "Own marketplace (flat action fee, see signals); also indexed on Element Market"
     },
     "bucket": "indikasi",
     "signals": [
+      {
+        "type": "bad",
+        "text": "SOLD OUT — totalMinted reads 15,555/15,555 on-chain (verified on two RPCs 2026-11-09 ~04:35 WITA); no free or paid mint remains"
+      },
       {
         "type": "bad",
         "text": "The contract address is published nowhere on the official site or the market pages — it only appears inside the marketplace agent-docs tab, so a minter cannot verify the target from the official pages before signing"
@@ -490,13 +494,52 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T20:26:21.820Z",
+      "checkedAt": "2026-11-08T20:36:40.043Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
       "supplyMax": "15555",
+      "supplyMaxFn": "MAX_SUPPLY"
+    }
+  },
+  {
+    "id": "aether",
+    "name": "AETHER",
+    "kind": "NFT · generative art",
+    "chainId": 56,
+    "contract": "0x926504d174e99DB699141049b3Dd94dF501ff813",
+    "site": "https://aetheragent.site",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First 400 mints free for Agent ID holders, 1 per wallet — free pool exhausted",
+      "mintPrice": "Free lane CLOSED (441 minted vs the 400 free cap on-chain); paid ladder $0.10 / $0.20 / $0.30 in BNB per wallet",
+      "supply": "2,000 total; 441 minted",
+      "extras": "Burn 2 paintings to repaint 1 Masterpiece; 5% royalty"
+    },
+    "bucket": "berpotensi",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site publishes the contract, the 0-price first-400 terms and the Agent ID gate up front; its FAQ states plainly that once the free mints are used up every mint is paid"
+      },
+      {
+        "type": "bad",
+        "text": "Free pool exhausted — totalSupply 441 on-chain vs the 400 free cap (verified 2026-11-09 ~04:35 WITA, rpc-bsc.48.club)"
+      },
+      {
+        "type": "warn",
+        "text": "Contract not verified on Sourcify — no public source code"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-08T20:36:41.089Z",
+      "sourcify": "not verified",
+      "onchainName": "AETHER",
+      "onchainSymbol": "AETHER",
+      "supplyNow": "441",
+      "supplyMax": "2000",
       "supplyMaxFn": "MAX_SUPPLY"
     }
   }
