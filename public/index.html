@@ -161,6 +161,29 @@
   .hist li{font-size:13.5px;color:var(--dim);line-height:1.55;border-top:1px solid var(--line);padding-top:8px}
   .hist li b{color:var(--ink)}
 
+  .histwrap{margin-top:12px}
+  .histbtn{font:600 11px var(--mono);letter-spacing:.12em;color:var(--gold);background:none;border:1px solid var(--line);border-radius:7px;padding:6px 11px;cursor:pointer}
+  .histbtn:hover{border-color:var(--gold)}
+  .histpane{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+  .histpane .hsum{font:600 12px var(--mono);color:var(--dim);margin-bottom:8px}
+  .hrow{display:grid;grid-template-columns:118px 86px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid rgba(148,178,199,.08);font-size:12.5px;line-height:1.5}
+  .hrow .ht{font:600 11px var(--mono);color:var(--faint)}
+  .hrow .hb{font:700 10px var(--mono);letter-spacing:.08em}
+  .hrow .hb.real{color:var(--ink)} .hrow .hb.berpotensi{color:var(--amber)} .hrow .hb.indikasi{color:var(--red)}
+  .hrow .hf{color:var(--dim)}
+  .hrow .hf .blob{display:block;font:400 10.5px var(--mono);color:var(--faint);margin-top:2px}
+  .method{margin-top:44px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:16px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .step .snum{font:700 12px var(--mono);color:var(--gold);letter-spacing:.15em}
+  .step h3{margin:8px 0 6px;font-size:16px}
+  .step p{margin:0;font-size:13.5px;line-height:1.6;color:var(--dim)}
+  .buckets-expl{margin-top:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 16px}
+  .buckets-expl .brow{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(148,178,199,.08);font-size:14px;line-height:1.55;color:var(--dim)}
+  .buckets-expl .brow:last-child{border-bottom:none}
+  .buckets-expl .bdot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:6px}
+  .buckets-expl b{color:var(--ink)}
+  .cycle{margin-top:14px;font-size:13.5px;line-height:1.65;color:var(--faint)}
   footer{margin-top:40px;color:var(--faint);font-size:13px;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
   .credits{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}
   .builtby{font:700 12px var(--mono);letter-spacing:.18em;color:var(--dim)}
@@ -205,12 +228,28 @@
 
   <nav class="filters" id="filters">
     <button class="fbtn on" data-f="semua">All</button>
-    <button class="fbtn" data-f="real">Real</button>
+    <button class="fbtn" data-f="real">Clear</button>
     <button class="fbtn" data-f="berpotensi">Potential</button>
     <button class="fbtn" data-f="indikasi">Fee-Farm Indication</button>
   </nav>
 
   <main class="grid" id="grid"><p class="empty">Sweeping the scope…</p></main>
+
+  <section class="method">
+    <div class="sec-head"><h2>How the radar verifies</h2><div class="rule"></div><div class="n">THE GATE</div></div>
+    <div class="steps">
+      <div class="step"><div class="snum">STEP 01</div><h3>Read the claim</h3><p>We take the project's own page at its word — and quote it as a <b>claim</b>, never as a fact. If the page does not publish its mint terms, there is nothing to verify, and the project does not board.</p></div>
+      <div class="step"><div class="snum">STEP 02</div><h3>Read the chain</h3><p>Name, symbol and supply are read directly from the contract on BNB Chain via public RPC. Contract verification status comes from Sourcify. Site counters are never trusted — when they disagree with the chain, the chain wins and the disagreement is shown.</p></div>
+      <div class="step"><div class="snum">STEP 03</div><h3>Follow the money</h3><p>We read what a mint actually costs: mint price, creator fees skimmed per mint, deposits dressed up as "free", refund obligations versus the contract's real balance. That is where fee-farms give themselves away.</p></div>
+      <div class="step"><div class="snum">STEP 04</div><h3>Remember everything</h3><p>Every check is written to <b>Walrus Memory</b> on mainnet, stamped with a Sui checkpoint read through Tatum. Nothing is silently edited: a label change leaves a trail you can ask back in the box below.</p></div>
+    </div>
+    <div class="buckets-expl">
+      <div class="brow"><span class="bdot" style="background:var(--ink)"></span><span><b>Clear</b> — the free lane is proven by the contract itself and every read is clean: verified source, honest terms, numbers that match the chain.</span></div>
+      <div class="brow"><span class="bdot" style="background:var(--amber)"></span><span><b>Potential</b> — a real project with a gap: a read the contract will not give up, a counter only the project reports, or a free window whose state is ambiguous.</span></div>
+      <div class="brow"><span class="bdot" style="background:var(--red)"></span><span><b>Fee-Farm Indication</b> — the chain contradicts the "free" claim: hidden per-mint fees, capital locked behind a refund promise, or a free quota that already ran out while the page still advertises it.</span></div>
+    </div>
+    <p class="cycle">The radar re-captures every listing <b>every 2 hours</b> and re-judges it on the fresh evidence: listings move between buckets, new verified projects board, and listings whose contracts die or whose projects end are removed. Every decision is recorded in Walrus Memory with its evidence — the radar's labels are a living record, not a one-time verdict.</p>
+  </section>
 
   <section class="ask">
     <h2>Ask the <span class="gold">Radar</span></h2>
@@ -311,10 +350,33 @@ function card(e, i) {
     + '<div class="vs"><div class="pane claim"><h3>Page Claim</h3>' + claimPane(e.claim) + '</div>'
     + '<div class="pane fact"><h3>On-Chain Facts</h3>' + factPane(e) + '</div></div>'
     + '<ul class="signals">' + e.signals.map(s => '<li><span class="sd ' + s.type + '"></span><span>' + s.text + '</span></li>').join('') + '</ul>'
+    + '<div class="histwrap"><button class="histbtn" onclick="toggleHist(this,\'' + e.id + '\')">CHECK HISTORY</button><div class="histpane" hidden></div></div>'
     + '<div class="card-foot">' + addr
     + ' <a href="' + e.site + '" target="_blank" rel="noopener">Official site ↗</a>'
     + '<span class="checked">checked ' + fmtTime(e.facts && e.facts.checkedAt) + '</span></div>'
     + '</article>';
+}
+function toggleHist(btn, id) {
+  const pane = btn.nextElementSibling;
+  if (!pane.hidden) { pane.hidden = true; btn.textContent = 'CHECK HISTORY'; return; }
+  pane.hidden = false; btn.textContent = 'HIDE HISTORY';
+  if (pane.dataset.loaded) return;
+  pane.innerHTML = '<div class="hsum">Reading the radar memory…</div>';
+  fetch('/api/history?id=' + encodeURIComponent(id))
+    .then(r => r.json())
+    .then(d => {
+      if (!d.found) { pane.innerHTML = '<div class="hsum">No checks recorded yet.</div>'; pane.dataset.loaded = '1'; return; }
+      const path = d.bucketHistory.map(b => BUCKET_LABEL[b] || b).join(' → ');
+      let html = '<div class="hsum">FIRST SEEN ' + fmtTime(d.firstSeen) + ' · ' + d.timesChecked + ' CHECKS · LABEL PATH: ' + path.toUpperCase() + '</div>';
+      html += d.checks.slice().reverse().map(c =>
+        '<div class="hrow"><span class="ht">' + fmtTime(c.at) + '</span>'
+        + '<span class="hb ' + c.bucket + '">' + (BUCKET_LABEL[c.bucket] || c.bucket).toUpperCase() + '</span>'
+        + '<span class="hf">' + c.facts + '<span class="blob">walrus blob ' + String(c.blobId).slice(0, 18) + '… · sui checkpoint ' + c.checkpoint + '</span></span></div>'
+      ).join('');
+      pane.innerHTML = html;
+      pane.dataset.loaded = '1';
+    })
+    .catch(() => { pane.innerHTML = '<div class="hsum">History failed to load — try again.</div>'; });
 }
 function render() {
   const shown = listings.filter(e => filter === 'semua' || e.bucket === filter);

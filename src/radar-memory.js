@@ -72,6 +72,35 @@ export async function writeBoardMemories(store, board) {
   return { checkpoint, written };
 }
 
+// Full check history for ONE listing, by exact seed id — backs the
+// per-card "check history" panel on the site.
+export async function historyForListing(store, id) {
+  const all = await store.listAll();
+  const checks = all
+    .map((e) => parseListingMemory(e.text, e.blobId, e.createdAt))
+    .filter((p) => p && p.id === id)
+    .sort((a, b) => (a.checkedAt < b.checkedAt ? -1 : 1));
+  if (!checks.length) return { found: false, id };
+  const first = checks[0];
+  return {
+    found: true,
+    id,
+    name: first.name,
+    contract: first.contract,
+    firstSeen: first.checkedAt,
+    timesChecked: checks.length,
+    currentBucket: checks[checks.length - 1].bucket,
+    bucketHistory: [...new Set(checks.map((c) => c.bucket))],
+    checks: checks.map((c) => ({
+      at: c.checkedAt,
+      bucket: c.bucket,
+      facts: c.facts,
+      blobId: c.blobId,
+      checkpoint: c.checkpoint,
+    })),
+  };
+}
+
 // Answer a question from memory only. Matches by listing name, id, or
 // contract address fragment; returns the full check history per listing.
 export async function askRadar(store, q) {

@@ -11,7 +11,7 @@
 import { readFile } from "node:fs/promises";
 import { buildBoard } from "./verify.js";
 import { createStore } from "./memory.js";
-import { askRadar, parseListingMemory, writeBoardMemories } from "./radar-memory.js";
+import { askRadar, historyForListing, parseListingMemory, writeBoardMemories } from "./radar-memory.js";
 
 const INDEX_HTML = new URL("../public/index.html", import.meta.url);
 const FAVICON_SVG = new URL("../public/favicon.svg", import.meta.url);
@@ -120,6 +120,16 @@ export async function handle(req, res) {
         .filter(Boolean)
         .reverse(); // newest first
       sendJson(res, 200, { mode: store.mode, namespace: store.namespace, count: memories.length, memories });
+      return;
+    }
+    if (req.method === "GET" && url.pathname === "/api/history") {
+      const id = url.searchParams.get("id");
+      if (!id) {
+        sendJson(res, 400, { error: "missing ?id= parameter" });
+        return;
+      }
+      const store = await getStore();
+      sendJson(res, 200, await historyForListing(store, id));
       return;
     }
     if (req.method === "GET" && url.pathname === "/api/ask") {
