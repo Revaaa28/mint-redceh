@@ -1,27 +1,27 @@
 // Mint RedCeh — curated seed listings (Agent ID ecosystem, BSC).
-// `claim` = what the project's own page says. `bucket` + `signals` = elle's
-// comparator verdict WITH its evidence. Live chain facts are filled in by
-// verify.js — claims are never displayed as facts.
+// `claim` = what the project's own page says. `bucket` + `signals` = the
+// radar's comparator verdict WITH its evidence. Live chain facts are filled
+// in by verify.js — claims are never displayed as facts.
 export const SEEDS = [
   {
     id: 'agent-cards',
     name: 'Agent Cards',
-    kind: 'NFT · kartu game',
+    kind: 'NFT · game card',
     chainId: 56,
     contract: '0x19f125dA1985033f102CA7746Cbd1F6f512CFACd',
     site: 'https://playagentcards.com',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: 'Mint kartu dasar gratis untuk pemegang Agent ID',
-      mintPrice: '0 BNB — gas saja',
-      supply: 'Genesis 10.000 pertama, sesudahnya Series 2 — tetap gratis',
-      extras: 'Berbayar dan terpisah: fight pack, season pass, Mythic, evolusi',
+      headline: 'Free base-card mint for Agent ID holders',
+      mintPrice: '0 BNB — gas only',
+      supply: 'First 10,000 Genesis, then Series 2 — still free',
+      extras: 'Paid and kept separate: fight packs, season pass, Mythic, evolution',
     },
     bucket: 'real',
     signals: [
-      { type: 'good', text: 'Bukti firsthand: revelle mint kartu #3120 pada 2026-11-03 — 0 BNB, gas saja' },
-      { type: 'good', text: 'Item berbayar dipisah jelas dari mint dasar, harga dibaca dari kontrak' },
-      { type: 'good', text: 'Season pool 80% penjualan kembali ke pemain, terbaca on-chain' },
+      { type: 'good', text: 'Firsthand proof: revelle minted card #3120 on 2026-11-03 — 0 BNB, gas only' },
+      { type: 'good', text: 'Paid items are clearly separated from the base mint, prices read from the contract' },
+      { type: 'good', text: 'Season pool returns 80% of sales to players, readable on-chain' },
     ],
   },
   {
@@ -33,15 +33,15 @@ export const SEEDS = [
     site: 'https://agentzet.vercel.app',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: '4.000 mint pertama gratis, 1 per wallet',
-      mintPrice: 'Fase gratis SELESAI — sisa mint ke-2 seharga 0,001 BNB untuk pemegang mint pertama',
-      supply: '4.444 total',
-      extras: 'Marketplace sendiri, royalti kreator 5% (diumumkan terbuka)',
+      headline: 'First 4,000 mints free, 1 per wallet',
+      mintPrice: 'Free phase ENDED — remaining 2nd mint costs 0.001 BNB, for first-mint holders',
+      supply: '4,444 total',
+      extras: 'Own marketplace, 5% creator royalty (openly disclosed)',
     },
     bucket: 'real',
     signals: [
-      { type: 'good', text: 'Counter situs dibaca langsung dari kontrak — cocok dengan bacaan rantai kami' },
-      { type: 'good', text: 'Status fase gratis dinyatakan apa adanya: selesai, bukan disembunyikan' },
+      { type: 'good', text: 'The site counter is read live from the contract — it matches our own chain read' },
+      { type: 'good', text: 'The free phase status is stated honestly: over, not hidden' },
     ],
   },
   {
@@ -53,16 +53,16 @@ export const SEEDS = [
     site: 'https://www.pixelboyz.shop',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: 'Alokasi gratis 6.000 untuk pemegang Agent ID, 2 per wallet',
-      mintPrice: '0 BNB untuk alokasi gratis; fase berbayar 0,001 BNB',
-      supply: '10.000 total (6.000 gratis / 4.000 berbayar)',
+      headline: 'Free allocation of 6,000 for Agent ID holders, 2 per wallet',
+      mintPrice: '0 BNB for the free allocation; paid phase 0.001 BNB',
+      supply: '10,000 total (6,000 free / 4,000 paid)',
       extras: '—',
     },
     bucket: 'berpotensi',
     signals: [
-      { type: 'good', text: 'Struktur alokasi gratis diumumkan terbuka sebelum mint' },
-      { type: 'warn', text: 'Counter situs menunjukkan 0 termint padahal ada laporan mint berhasil — angka situs belum terbukti cocok dengan rantai' },
-      { type: 'warn', text: 'Getter supply kontrak non-standar; bacaan supply diverifikasi manual oleh radar' },
+      { type: 'good', text: 'Free allocation structure announced openly before the mint' },
+      { type: 'warn', text: 'The site counter shows 0 minted while successful mints were reported — site numbers not yet proven to match the chain' },
+      { type: 'warn', text: 'Non-standard supply getter on the contract; supply read verified manually by the radar' },
     ],
   },
   {
@@ -74,36 +74,36 @@ export const SEEDS = [
     site: 'https://cretivox.site',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: '200 mint pertama gratis, 1 per wallet',
-      mintPrice: '0 BNB untuk #1–#200; #201–#500 seharga $0,40 dalam BNB (oracle Chainlink)',
+      headline: 'First 200 mints free, 1 per wallet',
+      mintPrice: '0 BNB for #1–#200; #201–#500 cost $0.40 in BNB (Chainlink oracle)',
       supply: '500 total',
       extras: '—',
     },
     bucket: 'berpotensi',
     signals: [
-      { type: 'good', text: 'Model bertingkat diumumkan jujur di muka: mana gratis, mana berbayar, harga pakai oracle' },
-      { type: 'warn', text: 'Alamat kontrak belum ditampilkan radar — menunggu tautan BscScan resmi dari situs proyek' },
+      { type: 'good', text: 'Tiered model disclosed honestly up front: what is free, what is paid, oracle-priced' },
+      { type: 'warn', text: 'Contract address not shown by the radar yet — waiting on the official BscScan link from the project site' },
     ],
   },
   {
     id: 'enigma-agent',
     name: 'EnigmaAgent',
-    kind: 'NFT · puzzle proof-of-work',
+    kind: 'NFT · proof-of-work puzzle',
     chainId: 56,
     contract: null, // known prefix 0x213A879D11a85b54… — complete before display
     site: 'https://enigmaagent-site.pages.dev',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: 'Mint gratis dengan memecahkan puzzle proof-of-work di dalam kontrak',
-      mintPrice: '0 BNB — gas saja, maks 1 per wallet; jawaban terikat wallet, tidak bisa dicuri',
-      supply: '3.338 mint publik + 50 reserve',
-      extras: 'Marketplace sendiri; token ENIG untuk pemegang ≥3 tablet',
+      headline: 'Free mint by solving a proof-of-work puzzle inside the contract',
+      mintPrice: '0 BNB — gas only, max 1 per wallet; the answer is bound to your wallet, it cannot be stolen',
+      supply: '3,338 public mints + 50 reserve',
+      extras: 'Own marketplace; ENIG token for holders of ≥3 tablets',
     },
     bucket: 'berpotensi',
     signals: [
-      { type: 'good', text: 'Mekanisme anti-bot nyata: PoW diverifikasi kontrak, nonce terikat alamat minter' },
-      { type: 'good', text: 'Pasar sekunder hidup setelah mint (ambang buka di 300 mint ditegakkan kontrak)' },
-      { type: 'warn', text: 'Alamat kontrak lengkap belum ditampilkan radar — menunggu konfirmasi sumber resmi' },
+      { type: 'good', text: 'Real anti-bot mechanism: PoW verified by the contract, nonce bound to the minter address' },
+      { type: 'good', text: 'Live secondary market after mint (unlock threshold at 300 mints enforced by the contract)' },
+      { type: 'warn', text: 'Full contract address not shown by the radar yet — waiting on confirmation from an official source' },
     ],
   },
   {
@@ -115,15 +115,15 @@ export const SEEDS = [
     site: 'https://codexnft.online',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: '“Semua 6.666 mint GRATIS — harga mint 0 BNB”',
-      mintPrice: '0 BNB harga mint — TAPI tiap mint membayar creator fee 0,000075 BNB (≈ $0,05) langsung ke wallet kreator',
-      supply: '6.666 total',
+      headline: '“All 6,666 mints FREE — mint price 0 BNB”',
+      mintPrice: '0 BNB mint price — BUT every mint pays a creator fee of 0.000075 BNB (≈ $0.05) straight to the creator wallet',
+      supply: '6,666 total',
       extras: '—',
     },
     bucket: 'indikasi',
     signals: [
-      { type: 'bad', text: 'Klaim “gratis” menutupi fee per mint ke wallet kreator — 6.666 mint × fee = pendapatan owner dari kata “gratis”' },
-      { type: 'bad', text: 'Situs mengakui verifikasi eligibilitas masih mode DEMO; access signer kontrak belum diset (0x0)' },
+      { type: 'bad', text: 'The “free” claim hides a per-mint fee to the creator wallet — 6,666 mints × fee = owner revenue from the word “free”' },
+      { type: 'bad', text: 'The site admits eligibility verification is still in DEMO mode; the contract access signer is unset (0x0)' },
     ],
   },
   {
@@ -135,15 +135,15 @@ export const SEEDS = [
     site: 'https://nidavellirbsc.vercel.app',
     gated: 'Binance Agent ID (.ai)',
     claim: {
-      headline: '“Mint pertamamu gratis” — hanya untuk token ID ≤ 1.000',
-      mintPrice: 'Harga satuan 0,001 BNB; kuota gratis hanya ID ≤ 1.000 dan mint pertama per wallet',
-      supply: 'Sudah lewat 1.000 di rantai (lihat fakta) — jalur gratis untuk minter baru praktis tertutup',
-      extras: 'Maks 5 per wallet (1 gratis + 4 berbayar, selama kuota ID masih ada)',
+      headline: '“Your first mint is free” — only for token IDs ≤ 1,000',
+      mintPrice: 'Unit price 0.001 BNB; the free quota covers only IDs ≤ 1,000 and the first mint per wallet',
+      supply: 'Already past 1,000 on-chain (see facts) — the free lane is effectively closed for new minters',
+      extras: 'Max 5 per wallet (1 free + 4 paid, while the ID quota lasts)',
     },
     bucket: 'indikasi',
     signals: [
-      { type: 'bad', text: 'Halaman masih mempromosikan mint gratis sementara supply rantai sudah melewati batas ID gratisnya sendiri' },
-      { type: 'warn', text: 'Kontrak tidak terverifikasi di Sourcify' },
+      { type: 'bad', text: 'The page still promotes a free mint while the on-chain supply has already passed its own free-ID limit' },
+      { type: 'warn', text: 'Contract not verified on Sourcify' },
     ],
   },
   {
@@ -157,18 +157,18 @@ export const SEEDS = [
     gated: 'Binance Agent ID (.ai)',
     claim: {
       headline: '“Free mint” Mode A',
-      mintPrice: 'Bukan 0 di muka: setor 0,002 BNB per share (5 share = 0,01 BNB), refund penuh + AGC setelah 24 jam',
-      supply: 'Per share-height, model halving',
-      extras: 'Mode B berbayar; pair PancakeSwap pajak 2% jual/beli',
+      mintPrice: 'Not 0 up front: deposit 0.002 BNB per share (5 shares = 0.01 BNB), full refund + AGC after 24 hours',
+      supply: 'Per share-height, halving model',
+      extras: 'Paid Mode B; PancakeSwap pair with 2% buy/sell tax',
     },
     bucket: 'indikasi',
     signals: [
-      { type: 'bad', text: 'Label “free” menyembunyikan modal yang dikunci 24 jam di kontrak — refund bergantung kontrak tetap solven' },
-      { type: 'warn', text: 'Probe solvabilitas radar: kewajiban refund dan saldo BNB kontrak dibaca live tiap cek (lihat fakta) — tertutup penuh hanya jika keduanya sama' },
+      { type: 'bad', text: 'The “free” label hides capital locked in the contract for 24 hours — the refund depends on the contract staying solvent' },
+      { type: 'warn', text: 'Radar solvency probe: refund obligations and the contract BNB balance are read live at every check (see facts) — fully covered only if the two are equal' },
     ],
     probes: [
-      { label: 'Kewajiban refund (refundOwed)', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: 'refundOwed', format: 'bnb' },
-      { label: 'Saldo BNB kontrak mint', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: null, format: 'balance' },
+      { label: 'Refund obligations (refundOwed)', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: 'refundOwed', format: 'bnb' },
+      { label: 'Mint contract BNB balance', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: null, format: 'balance' },
     ],
   },
 ];

@@ -1,48 +1,48 @@
-# Mint RedCeh — Radar Free Mint Agentic ID
+# Mint RedCeh — Free Mint Radar for Agentic ID
 
-Radar free mint untuk ekosistem **Binance Agentic ID (.ai)** di BNB Chain.
-Setiap proyek boleh mengklaim "gratis" di halamannya — Mint RedCeh membenturkan
-klaim itu dengan **fakta rantai** yang dibaca langsung dari kontraknya, lalu
-mengelompokkan listing ke tiga ember berbukti: **Real**, **Berpotensi**, dan
-**Indikasi Fee-Farm**.
+A free-mint radar for the **Binance Agentic ID (.ai)** ecosystem on BNB Chain.
+Every project can claim "free" on its own page — Mint RedCeh checks that claim
+against **on-chain facts** read directly from the contract, and sorts each
+listing into one of three evidence-backed buckets: **Real**, **Potential**, and
+**Fee-Farm Indication**.
 
-## Cara kerja
+## How it works
 
-1. **Penemuan** — kandidat free mint yang lagi tren di ekosistem Agent ID
-   (situs resmi proyek, pengumuman resmi). Tidak ada sumber yang dipercaya
-   mentah-mentah.
-2. **Verifikasi on-chain** (`src/verify.js`) — untuk tiap kontrak, radar membaca
-   sendiri dari BNB Chain: nama/simbol, suplai termint vs maks, status
-   verifikasi Sourcify, plus probe khusus per proyek (mis. solvabilitas refund
-   Agentic Coin: `refundOwed()` vs saldo BNB kontrak). Hasilnya `data/board.json`.
-3. **Pembanding** (`src/seeds.js`) — klaim halaman vs fakta rantai, berdampingan,
-   dengan sinyal berbukti di tiap kartu (fee tersembunyi per mint, kuota gratis
-   yang sudah lewat di rantai, verifikasi yang masih demo, dsb).
-4. **Memory** (`src/radar-memory.js`) — setiap putaran cek ditulis ke
-   **Walrus Memory** (mainnet, namespace `mintredceh`, dicap checkpoint Sui via
-   **Tatum** GraphQL). Kotak **Tanya Radar** menjawab hanya dari memory itu:
-   kapan kontrak pertama terlihat, hasil tiap cek, apakah labelnya pernah
-   berubah — lengkap dengan blob id sebagai bukti. Tidak ada di memory = radar
-   bilang tidak tahu.
+1. **Discovery** — candidate free mints trending in the Agent ID ecosystem
+   (official project sites and announcements). No source is trusted raw.
+2. **On-chain verification** (`src/verify.js`) — for every contract, the radar
+   reads the facts itself from BNB Chain: name/symbol, minted vs max supply,
+   Sourcify verification status, plus per-project probes (e.g. Agentic Coin's
+   refund solvency: `refundOwed()` vs the contract's BNB balance). Output:
+   `data/board.json`.
+3. **The comparator** (`src/seeds.js`) — page claim vs chain facts, side by
+   side, with evidence signals on every card (a hidden per-mint fee, a free
+   quota the chain shows is already exhausted, demo-grade eligibility checks,
+   and so on).
+4. **Memory** (`src/radar-memory.js`) — every check round is written to
+   **Walrus Memory** (mainnet, namespace `mintredceh`), stamped with the live
+   Sui checkpoint fetched through **Tatum**'s GraphQL gateway. The **Ask the
+   Radar** box answers only from that memory: when a contract was first seen,
+   what every check found, whether its label ever changed — with Walrus blob
+   ids as evidence. Not in memory = the radar says it does not know.
 
-## Menjalankan
+## Running it
 
 ```bash
 npm install
-node src/verify.js               # segarkan data/board.json dari rantai
+node src/verify.js               # refresh data/board.json from the chain
 node --env-file=.env server.js   # http://localhost:8787
 ```
 
-Endpoint: `/` papan · `/api/board` · `/api/status` · `/api/memories` ·
-`/api/ask?q=<nama|alamat>` · `POST /api/refresh` (verifikasi ulang) ·
-`POST /api/remember` (verifikasi + tulis memory baru). Tanpa kredensial
-MemWal di `.env`, memory berjalan dalam mode lokal kering.
+Endpoints: `/` the board · `/api/board` · `/api/status` · `/api/memories` ·
+`/api/ask?q=<name|address>` · `POST /api/refresh` (re-verify) ·
+`POST /api/remember` (re-verify + write new memories). Without MemWal
+credentials in `.env`, memory runs in a local dry mode.
 
-## Prinsip
+## Principles
 
-- Baca-saja: radar tidak pernah memint, tidak memindahkan dana, tidak
-  menjanjikan nilai.
-- Angka fakta selalu dari rantai, bukan dari halaman proyek.
-- Label ember adalah penilaian dari bukti yang ditampilkan — bukan vonis.
+- Read-only: the radar never mints, never moves funds, never promises value.
+- Fact numbers always come from the chain, never from the project's page.
+- A bucket label is an assessment of the evidence shown — not a verdict.
 
-Dibangun oleh elle untuk Rev.
+Built by elle for Rev.

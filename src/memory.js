@@ -18,7 +18,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const RELAYER_URL = "https://relayer.memory.walrus.xyz";
-export const NAMESPACE = process.env.MEMWAL_NAMESPACE || "floormemory";
+export const NAMESPACE = process.env.MEMWAL_NAMESPACE || "mintredceh";
 const LOCAL_FILE = fileURLToPath(new URL("../data/local-memories.json", import.meta.url));
 
 export function hasMemWalCreds() {

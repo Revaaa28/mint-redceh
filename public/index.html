@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mint RedCeh — Radar Free Mint Agentic ID</title>
-<meta name="description" content="Radar free mint ekosistem Binance Agentic ID di BNB Chain. Klaim halaman proyek, dibenturkan dengan fakta rantai. Mana yang real, mana berpotensi, mana indikasi fee-farm.">
+<title>Mint RedCeh — Free Mint Radar for Agentic ID</title>
+<meta name="description" content="A free-mint radar for the Binance Agentic ID ecosystem on BNB Chain. Project page claims, checked against on-chain facts. Which are real, which show potential, which show fee-farm signals.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Mint RedCeh — Radar Free Mint Agentic ID">
-<meta property="og:description" content="Klaim halaman vs fakta rantai. Setiap listing dicek langsung dari kontraknya.">
+<meta property="og:title" content="Mint RedCeh — Free Mint Radar for Agentic ID">
+<meta property="og:description" content="Page claim vs on-chain facts. Every listing is read straight from its contract.">
 <meta property="og:image" content="/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,39 +108,39 @@
 <div class="wrap">
   <header class="hero">
     <div class="wordmark"><span class="mint">Mint</span> <span class="coin">RedCeh</span></div>
-    <p class="tagline">Radar free mint ekosistem <b>Binance Agentic ID</b> di BNB Chain. Setiap proyek boleh ngaku gratis — di sini klaimnya <b>dibenturkan dengan fakta rantai</b>: mana yang real, mana berpotensi, mana indikasi fee-farm.</p>
+    <p class="tagline">A free-mint radar for the <b>Binance Agentic ID</b> ecosystem on BNB Chain. Every project can claim it is free — here the claim is <b>checked against on-chain facts</b>: which are real, which show potential, and which show fee-farm signals.</p>
     <div class="stats" id="stats"></div>
   </header>
 
   <nav class="filters" id="filters">
-    <button class="fbtn on" data-f="semua">Semua</button>
+    <button class="fbtn on" data-f="semua">All</button>
     <button class="fbtn" data-f="real">Real</button>
-    <button class="fbtn" data-f="berpotensi">Berpotensi</button>
-    <button class="fbtn" data-f="indikasi">Indikasi Fee-Farm</button>
+    <button class="fbtn" data-f="berpotensi">Potential</button>
+    <button class="fbtn" data-f="indikasi">Fee-Farm Indication</button>
   </nav>
 
-  <main class="grid" id="grid"><p class="empty">Memuat papan…</p></main>
+  <main class="grid" id="grid"><p class="empty">Loading the board…</p></main>
 
   <section class="ask">
-    <h2>Tanya Radar</h2>
-    <p>Kotak tanya ini menjawab <b>hanya dari memory Walrus</b> radar — riwayat tiap kontrak yang pernah dicek: kapan pertama terlihat, hasil ceknya, dan apakah labelnya pernah berubah. Kalau tidak ada di memory, radar bilang tidak tahu.</p>
+    <h2>Ask the Radar</h2>
+    <p>This ask box answers <b>only from the radar's Walrus Memory</b> — the recorded history of every contract it has ever checked: when it was first seen, what each check found, and whether its label ever changed. If it is not in memory, the radar says it does not know.</p>
     <form id="askForm">
-      <input id="askInput" type="text" autocomplete="off" placeholder="nama proyek atau potongan alamat kontrak… mis. AGC, Codex, Agent Cards">
-      <button type="submit">Tanya</button>
+      <input id="askInput" type="text" autocomplete="off" placeholder="project name or part of a contract address… e.g. AGC, Codex, Agent Cards">
+      <button type="submit">Ask</button>
     </form>
     <div class="chips" id="askChips"></div>
     <div id="askOut"></div>
   </section>
 
   <footer>
-    Mint RedCeh adalah radar baca-saja: kami tidak memint untukmu, tidak menjual apa pun, dan tidak menjanjikan nilai.
-    Kolom <b>klaim halaman</b> adalah kata proyeknya sendiri; kolom <b>fakta rantai</b> dibaca langsung dari kontrak di BNB Chain (RPC publik + Sourcify) dan dicek ulang berkala.
-    Label ember adalah penilaian radar dari bukti yang ditampilkan di kartu — bukan vonis. Selalu DYOR.
+    Mint RedCeh is a read-only radar: we never mint for you, sell anything, or promise value.
+    The <b>page claim</b> column is the project's own words; the <b>on-chain facts</b> column is read directly from the contract on BNB Chain (public RPC + Sourcify) and re-checked periodically.
+    A bucket label is the radar's assessment of the evidence shown on the card — not a verdict. Always DYOR.
   </footer>
 </div>
 
 <script>
-const BUCKET_LABEL = { real: 'Real', berpotensi: 'Berpotensi', indikasi: 'Indikasi Fee-Farm' };
+const BUCKET_LABEL = { real: 'Real', berpotensi: 'Potential', indikasi: 'Fee-Farm Indication' };
 const grid = document.getElementById('grid');
 const statsEl = document.getElementById('stats');
 let listings = [];
@@ -149,36 +149,36 @@ let filter = 'semua';
 function fmtNum(s) {
   if (s === null || s === undefined) return null;
   const n = Number(s);
-  return Number.isFinite(n) ? n.toLocaleString('id-ID') : String(s);
+  return Number.isFinite(n) ? n.toLocaleString('en-US') : String(s);
 }
 function fmtTime(iso) {
   if (!iso) return '';
-  try { return new Date(iso).toLocaleString('id-ID', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' }); }
+  try { return new Date(iso).toLocaleString('en-US', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' }); }
   catch { return ''; }
 }
 function sourcifyLine(v) {
-  if (v === 'exact_match') return '<span class="ok">Terverifikasi persis (Sourcify)</span>';
-  if (v === 'match') return '<span class="ok">Terverifikasi (Sourcify — match)</span>';
-  return '<span class="bad">Tidak terverifikasi di Sourcify</span>';
+  if (v === 'exact_match') return '<span class="ok">Verified exactly (Sourcify)</span>';
+  if (v === 'match') return '<span class="ok">Verified (Sourcify match)</span>';
+  return '<span class="bad">Not verified on Sourcify</span>';
 }
 function supplyLine(f) {
   if (f.pending) return '<span class="warn">' + f.pending + '</span>';
-  if (f.tokenSupply) return 'Total suplai token: <b>' + f.tokenSupply + '</b>';
+  if (f.tokenSupply) return 'Total token supply: <b>' + f.tokenSupply + '</b>';
   const now = fmtNum(f.supplyNow), max = fmtNum(f.supplyMax);
   if (now && max) {
     const pct = Math.min(100, Math.round(Number(f.supplyNow) / Number(f.supplyMax) * 1000) / 10);
-    return 'Termint: <b>' + now + ' / ' + max + '</b> (' + pct + '%)<div class="bar"><i style="width:' + pct + '%"></i></div>';
+    return 'Minted: <b>' + now + ' / ' + max + '</b> (' + pct + '%)<div class="bar"><i style="width:' + pct + '%"></i></div>';
   }
-  if (now) return 'Termint: <b>' + now + '</b>';
+  if (now) return 'Minted: <b>' + now + '</b>';
   if (f.supplyNote) return '<span class="warn">' + f.supplyNote + '</span>';
-  return '<span class="warn">Belum terbaca</span>';
+  return '<span class="warn">Not read yet</span>';
 }
 function factPane(e) {
   const f = e.facts || {};
   let rows = '';
   if (!f.pending) {
     rows += '<div class="factline">' + sourcifyLine(f.sourcify) + '</div>';
-    if (f.onchainName) rows += '<div class="factline">Nama rantai: <b>' + f.onchainName + '</b>' + (f.onchainSymbol ? ' (' + f.onchainSymbol + ')' : '') + '</div>';
+    if (f.onchainName) rows += '<div class="factline">On-chain name: <b>' + f.onchainName + '</b>' + (f.onchainSymbol ? ' (' + f.onchainSymbol + ')' : '') + '</div>';
   }
   rows += '<div class="factline">' + supplyLine(f) + '</div>';
   if (f.probes) {
@@ -189,31 +189,31 @@ function factPane(e) {
 function claimPane(c) {
   return '<dl>'
     + '<div><dt>Headline</dt><dd>' + c.headline + '</dd></div>'
-    + '<div><dt>Harga mint</dt><dd>' + c.mintPrice + '</dd></div>'
-    + '<div><dt>Suplai</dt><dd>' + c.supply + '</dd></div>'
-    + (c.extras && c.extras !== '—' ? '<div><dt>Lainnya</dt><dd>' + c.extras + '</dd></div>' : '')
+    + '<div><dt>Mint price</dt><dd>' + c.mintPrice + '</dd></div>'
+    + '<div><dt>Supply</dt><dd>' + c.supply + '</dd></div>'
+    + (c.extras && c.extras !== '—' ? '<div><dt>Extras</dt><dd>' + c.extras + '</dd></div>' : '')
     + '</dl>';
 }
 function card(e) {
   const addr = e.contract
-    ? '<span class="addr" title="Klik untuk menyalin" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'' + e.contract + '\')">' + e.contract.slice(0, 10) + '…' + e.contract.slice(-6) + '</span>'
+    ? '<span class="addr" title="Click to copy" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'' + e.contract + '\')">' + e.contract.slice(0, 10) + '…' + e.contract.slice(-6) + '</span>'
       + ' <a href="https://bscscan.com/address/' + e.contract + '" target="_blank" rel="noopener">BscScan ↗</a>'
-    : '<span class="addr">kontrak belum ditampilkan</span>';
+    : '<span class="addr">contract not shown yet</span>';
   return '<article class="card" data-bucket="' + e.bucket + '">'
     + '<div class="card-top"><div><h2>' + e.name + '</h2><div class="kind">' + e.kind + '</div></div>'
     + '<span class="badge ' + e.bucket + '">' + BUCKET_LABEL[e.bucket] + '</span></div>'
-    + '<div class="gate">Khusus pemegang <b>Binance Agent ID (.ai)</b> · BNB Chain</div>'
-    + '<div class="vs"><div class="pane claim"><h3>Klaim Halaman</h3>' + claimPane(e.claim) + '</div>'
-    + '<div class="pane fact"><h3>Fakta Rantai</h3>' + factPane(e) + '</div></div>'
+    + '<div class="gate">For <b>Binance Agent ID (.ai)</b> holders · BNB Chain</div>'
+    + '<div class="vs"><div class="pane claim"><h3>Page Claim</h3>' + claimPane(e.claim) + '</div>'
+    + '<div class="pane fact"><h3>On-Chain Facts</h3>' + factPane(e) + '</div></div>'
     + '<ul class="signals">' + e.signals.map(s => '<li><span class="sd ' + s.type + '"></span><span>' + s.text + '</span></li>').join('') + '</ul>'
     + '<div class="card-foot">' + addr
-    + ' <a href="' + e.site + '" target="_blank" rel="noopener">Situs resmi ↗</a>'
-    + '<span class="checked">dicek ' + fmtTime(e.facts && e.facts.checkedAt) + '</span></div>'
+    + ' <a href="' + e.site + '" target="_blank" rel="noopener">Official site ↗</a>'
+    + '<span class="checked">checked ' + fmtTime(e.facts && e.facts.checkedAt) + '</span></div>'
     + '</article>';
 }
 function render() {
   const shown = listings.filter(e => filter === 'semua' || e.bucket === filter);
-  grid.innerHTML = shown.length ? shown.map(card).join('') : '<p class="empty">Tidak ada listing di ember ini.</p>';
+  grid.innerHTML = shown.length ? shown.map(card).join('') : '<p class="empty">No listings in this bucket.</p>';
   const counts = { real: 0, berpotensi: 0, indikasi: 0 };
   let last = null;
   for (const e of listings) {
@@ -222,11 +222,11 @@ function render() {
     if (t && (!last || t > last)) last = t;
   }
   statsEl.innerHTML =
-    '<span class="chip"><b>' + listings.length + '</b>&nbsp;listing dicek dari rantai</span>'
+    '<span class="chip"><b>' + listings.length + '</b>&nbsp;listings checked on-chain</span>'
     + '<span class="chip"><span class="dot real"></span><b>' + counts.real + '</b>&nbsp;real</span>'
-    + '<span class="chip"><span class="dot berpotensi"></span><b>' + counts.berpotensi + '</b>&nbsp;berpotensi</span>'
-    + '<span class="chip"><span class="dot indikasi"></span><b>' + counts.indikasi + '</b>&nbsp;indikasi fee-farm</span>'
-    + (last ? '<span class="chip">cek terakhir&nbsp;<b>' + fmtTime(last) + '</b></span>' : '');
+    + '<span class="chip"><span class="dot berpotensi"></span><b>' + counts.berpotensi + '</b>&nbsp;potential</span>'
+    + '<span class="chip"><span class="dot indikasi"></span><b>' + counts.indikasi + '</b>&nbsp;fee-farm indication</span>'
+    + (last ? '<span class="chip">last check&nbsp;<b>' + fmtTime(last) + '</b></span>' : '');
 }
 document.getElementById('filters').addEventListener('click', (ev) => {
   const b = ev.target.closest('.fbtn');
@@ -236,9 +236,9 @@ document.getElementById('filters').addEventListener('click', (ev) => {
   render();
 });
 fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; render(); renderChips(); })
-  .catch(() => { grid.innerHTML = '<p class="empty">Papan gagal dimuat.</p>'; });
+  .catch(() => { grid.innerHTML = '<p class="empty">The board failed to load.</p>'; });
 
-// --- Tanya Radar (answers from Walrus Memory only) ---
+// --- Ask the Radar (answers from Walrus Memory only) ---
 const askOut = document.getElementById('askOut');
 function renderChips() {
   document.getElementById('askChips').innerHTML =
@@ -257,23 +257,23 @@ document.getElementById('askForm').addEventListener('submit', (ev) => {
 function ask(q) {
   q = (q || '').trim();
   if (!q) return;
-  askOut.innerHTML = '<p class="empty">Mencari di memory radar…</p>';
+  askOut.innerHTML = '<p class="empty">Searching the radar memory…</p>';
   fetch('/api/ask?q=' + encodeURIComponent(q)).then(r => r.json()).then(d => {
     if (!d.found || !d.results || !d.results.length) {
-      askOut.innerHTML = '<div class="hist"><h4>Tidak ada di memory</h4><div class="meta">Radar belum pernah mengecek itu — dan radar hanya menjawab dari yang pernah dia ingat.</div></div>';
+      askOut.innerHTML = '<div class="hist"><h4>Not in memory</h4><div class="meta">The radar has never checked that — and it only answers from what it remembers.</div></div>';
       return;
     }
     askOut.innerHTML = d.results.map(r =>
       '<div class="hist"><h4>' + r.name + ' — <span class="badge ' + r.currentBucket + '">' + BUCKET_LABEL[r.currentBucket] + '</span></h4>'
-      + '<div class="meta">Pertama terlihat: <b>' + fmtTime(r.firstSeen) + '</b> · dicek <b>' + r.timesChecked + '×</b>'
-      + (r.bucketHistory.length > 1 ? ' · label pernah berubah: ' + r.bucketHistory.join(' → ') : '')
+      + '<div class="meta">First seen: <b>' + fmtTime(r.firstSeen) + '</b> · checked <b>' + r.timesChecked + '×</b>'
+      + (r.bucketHistory.length > 1 ? ' · label changed before: ' + r.bucketHistory.join(' → ') : '')
       + (r.contract ? '<br><span class="mono">' + r.contract + '</span>' : '')
       + '</div><ul>'
       + r.checks.slice().reverse().map(c =>
           '<li><b>' + fmtTime(c.at) + '</b> · ' + BUCKET_LABEL[c.bucket] + '<br>' + c.facts
-          + '<br><a href="https://walruscan.com/mainnet/blob/' + c.blobId + '" target="_blank" rel="noopener">memory di Walrus ↗</a> · Sui checkpoint ' + c.checkpoint + '</li>').join('')
+          + '<br><a href="https://walruscan.com/mainnet/blob/' + c.blobId + '" target="_blank" rel="noopener">memory on Walrus ↗</a> · Sui checkpoint ' + c.checkpoint + '</li>').join('')
       + '</ul></div>').join('');
-  }).catch(() => { askOut.innerHTML = '<p class="empty">Kotak tanya gagal menjawab.</p>'; });
+  }).catch(() => { askOut.innerHTML = '<p class="empty">The ask box failed to answer.</p>'; });
 }
 </script>
 </body>

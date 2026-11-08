@@ -52,7 +52,7 @@ function humanTokens(raw /* bigint, 18dp */) {
 async function checkSeed(seed) {
   const facts = { checkedAt: new Date().toISOString() };
   if (!seed.contract) {
-    facts.pending = 'alamat kontrak belum dikonfirmasi dari sumber resmi';
+    facts.pending = 'contract address not yet confirmed from an official source';
     return { ...seed, facts };
   }
   const [name, symbol, supply, match] = await Promise.all([
@@ -61,12 +61,12 @@ async function checkSeed(seed) {
     tryRead(seed.contract, READ_ABI[2]),
     sourcify(seed.contract),
   ]);
-  facts.sourcify = match ?? 'tidak terverifikasi';
+  facts.sourcify = match ?? 'not verified';
   facts.onchainName = name;
   facts.onchainSymbol = symbol;
   facts.supplyNow = supply === null ? null : supply.toString();
   if (supply === null) {
-    facts.supplyNote = 'totalSupply() tidak menjawab — getter non-standar, diverifikasi manual';
+    facts.supplyNote = 'totalSupply() did not answer — non-standard getter, verified manually';
   }
   for (const fn of MAX_CANDIDATES) {
     const v = await tryRead(seed.contract, parseAbiItem(`function ${fn}() view returns (uint256)`));
@@ -84,7 +84,7 @@ async function checkSeed(seed) {
         facts.probes[p.label] = `${formatEther(bal)} BNB`;
       } else {
         const v = await tryRead(p.address, parseAbiItem(`function ${p.fn}() view returns (uint256)`));
-        facts.probes[p.label] = v === null ? 'tidak terbaca' : `${formatEther(v)} BNB`;
+        facts.probes[p.label] = v === null ? 'unreadable' : `${formatEther(v)} BNB`;
       }
     }
   }
