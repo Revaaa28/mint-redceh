@@ -3,3 +3,4 @@ node_modules/
 *.log
 data/board.prev.json
 data/autocheck-log.json
+data/autocheck.lock

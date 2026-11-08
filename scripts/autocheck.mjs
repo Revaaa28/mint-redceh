@@ -6,7 +6,7 @@
 //   { ok, changed:[ids], wrote:n, pushed:bool, alerts:[...] }
 // Alerts (report-worthy): AGC refund obligations no longer fully backed by
 // the mint contract's BNB balance; any listing's supply reaching its max.
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, stat, unlink } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { buildBoard } from '../src/verify.js';
 import { createStore } from '../src/memory.js';
@@ -45,6 +45,15 @@ async function readJson(url, fallback) {
 }
 
 const summary = { ok: false, changed: [], wrote: 0, pushed: false, alerts: [] };
+const LOCK = new URL('autocheck.lock', DATA);
+try {
+  const st = await stat(LOCK).catch(() => null);
+  if (st && Date.now() - st.mtimeMs < 15 * 60 * 1000) {
+    console.log(JSON.stringify({ ok: false, error: 'another autocheck run holds the lock' }));
+    process.exit(0);
+  }
+} catch { /* lock check is best-effort */ }
+await writeFile(LOCK, String(process.pid)).catch(() => {});
 try {
   const prev = await readJson(PREV, null);
   const log = await readJson(LOG, { lastWriteAt: 0, errorStreak: 0 });
@@ -106,20 +115,28 @@ try {
       log.lastWriteAt = Date.now();
   }
 
+  // Persist bookkeeping BEFORE git, so a git hiccup can never lose the
+  // memory-write timestamp or the facts baseline.
+  await writeFile(PREV, JSON.stringify(now, null, 2));
+  log.errorStreak = 0;
+  log.lastRunAt = Date.now();
+  await writeFile(LOG, JSON.stringify(log, null, 2));
+
   // Public board refresh: commit + push only when facts actually changed.
+  // Tolerant of races: if the board file is already committed (e.g. swept
+  // into a concurrent commit), that counts as refreshed.
   if (prev && changed.length > 0) {
     git(['add', 'data/board.json']);
-    git(['commit', '-q', '-m', `autocheck ${new Date().toISOString()}: ${changed.join(', ')}`]);
-    git(['push', '-q']);
+    const dirty = git(['status', '--porcelain', '--', 'data/board.json']);
+    if (dirty) {
+      git(['commit', '-q', '-m', `autocheck ${new Date().toISOString()}: ${changed.join(', ')}`]);
+      git(['push', '-q']);
+    }
     summary.pushed = true;
   } else if (prev) {
     git(['checkout', '--', 'data/board.json']); // discard checkedAt-only churn
   }
 
-  await writeFile(PREV, JSON.stringify(now, null, 2));
-  log.errorStreak = 0;
-  log.lastRunAt = Date.now();
-  await writeFile(LOG, JSON.stringify(log, null, 2));
   summary.ok = true;
 } catch (err) {
   summary.error = String(err && err.message ? err.message : err).slice(0, 300);
@@ -130,4 +147,5 @@ try {
     await writeFile(LOG, JSON.stringify(log, null, 2));
   } catch { /* bookkeeping is best-effort */ }
 }
+await unlink(LOCK).catch(() => {});
 console.log(JSON.stringify(summary));
