@@ -255,4 +255,27 @@ export const SEEDS = [
       { type: 'warn', text: 'A second GLOOP deployment exists; only the agent.json-listed contract is the official one — and the site counter lagged the chain (showed 0 while 1,000+ had minted)' },
     ],
   },
+  {
+    id: 'pokechain',
+    name: 'Pokechain',
+    kind: 'NFT · Pokémon card',
+    chainId: 56,
+    contract: '0x4EF929aF00cB93993c3D01834C4DA79200d31e32',
+    site: 'https://pokechain.trade',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID wallets, then a paid ladder — up to 35 per wallet',
+      mintPrice: '1st mint 0 BNB; #2–#20 cost 0.00035 BNB each; #21–#35 cost 0.00065 BNB each',
+      supply: '15,555 total',
+      extras: 'Own marketplace (flat action fee, see signals); also indexed on Element Market',
+    },
+    bucket: 'indikasi',
+    signals: [
+      { type: 'bad', text: 'The contract address is published nowhere on the official site or the market pages — it only appears inside the marketplace agent-docs tab, so a minter cannot verify the target from the official pages before signing' },
+      { type: 'bad', text: 'The own marketplace charges a flat 0.00025 BNB (≈ $0.17) fee on EVERY action — list, delist, make offer — on top of a 5% royalty on sales' },
+      { type: 'warn', text: 'Contract not verified on Sourcify — no public source code' },
+      { type: 'warn', text: 'Unofficial fan project built on Pokémon cards — the site itself states it is not affiliated with Nintendo or Pokémon (IP / takedown risk)' },
+      { type: 'good', text: 'Firsthand proof: the radar minted #4729 on 2026-11-08 — the first mint really is 0 BNB, gas only' },
+    ],
+  },
 ];

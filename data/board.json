@@ -29,11 +29,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:23.908Z",
+      "checkedAt": "2026-11-08T16:07:45.776Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
-      "supplyNow": "8039"
+      "supplyNow": "8057"
     }
   },
   {
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:25.827Z",
+      "checkedAt": "2026-11-08T16:07:48.927Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:26.440Z",
+      "checkedAt": "2026-11-08T16:07:49.919Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:27.040Z",
+      "checkedAt": "2026-11-08T16:07:50.625Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:27.040Z",
+      "checkedAt": "2026-11-08T16:07:50.625Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:27.040Z",
+      "checkedAt": "2026-11-08T16:07:50.625Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:27.634Z",
+      "checkedAt": "2026-11-08T16:07:51.351Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:28.220Z",
+      "checkedAt": "2026-11-08T16:07:52.329Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "119,305,353,611",
+      "tokenSupply": "119,654,634,773",
       "probes": {
-        "Refund obligations (refundOwed)": "96.446 BNB",
-        "Mint contract BNB balance": "96.446 BNB"
+        "Refund obligations (refundOwed)": "93.522 BNB",
+        "Mint contract BNB balance": "93.522 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:29.448Z",
+      "checkedAt": "2026-11-08T16:07:54.209Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:30.255Z",
+      "checkedAt": "2026-11-08T16:07:55.741Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:30.829Z",
+      "checkedAt": "2026-11-08T16:07:56.393Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -444,12 +444,60 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T14:36:31.900Z",
+      "checkedAt": "2026-11-08T16:07:57.342Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually"
+    }
+  },
+  {
+    "id": "pokechain",
+    "name": "Pokechain",
+    "kind": "NFT · Pokémon card",
+    "chainId": 56,
+    "contract": "0x4EF929aF00cB93993c3D01834C4DA79200d31e32",
+    "site": "https://pokechain.trade",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First mint free for Agent ID wallets, then a paid ladder — up to 35 per wallet",
+      "mintPrice": "1st mint 0 BNB; #2–#20 cost 0.00035 BNB each; #21–#35 cost 0.00065 BNB each",
+      "supply": "15,555 total",
+      "extras": "Own marketplace (flat action fee, see signals); also indexed on Element Market"
+    },
+    "bucket": "indikasi",
+    "signals": [
+      {
+        "type": "bad",
+        "text": "The contract address is published nowhere on the official site or the market pages — it only appears inside the marketplace agent-docs tab, so a minter cannot verify the target from the official pages before signing"
+      },
+      {
+        "type": "bad",
+        "text": "The own marketplace charges a flat 0.00025 BNB (≈ $0.17) fee on EVERY action — list, delist, make offer — on top of a 5% royalty on sales"
+      },
+      {
+        "type": "warn",
+        "text": "Contract not verified on Sourcify — no public source code"
+      },
+      {
+        "type": "warn",
+        "text": "Unofficial fan project built on Pokémon cards — the site itself states it is not affiliated with Nintendo or Pokémon (IP / takedown risk)"
+      },
+      {
+        "type": "good",
+        "text": "Firsthand proof: the radar minted #4729 on 2026-11-08 — the first mint really is 0 BNB, gas only"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-08T16:07:58.493Z",
+      "sourcify": "not verified",
+      "onchainName": "Pokechain",
+      "onchainSymbol": "POKECHAIN",
+      "supplyNow": null,
+      "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
+      "supplyMax": "15555",
+      "supplyMaxFn": "MAX_SUPPLY"
     }
   }
 ]
