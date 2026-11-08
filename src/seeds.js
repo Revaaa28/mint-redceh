@@ -202,15 +202,15 @@ export const SEEDS = [
     gated: 'Binance Agent ID (.ai)',
     claim: {
       headline: 'Free for .ai Agent ID holders, 1 per wallet',
-      mintPrice: '0 BNB — gas only',
-      supply: '3,333 fully on-chain SVG floppies',
+      mintPrice: '0 BNB — gas only, while the free window lasted; supply is now at the 3,333 max, so no free mint remains',
+      supply: '3,333 fully on-chain SVG floppies — 3,333/3,333 minted, free window closed',
       extras: 'Listed on the FloppyMarket launchpad; community launches there are self-serve',
     },
-    bucket: 'berpotensi',
+    bucket: 'indikasi',
     signals: [
+      { type: 'bad', text: 'Free window is closed — on-chain supply hit the full 3,333 max, yet the launchpad page still advertises "Free mint" and "Mint live" (verified live 2026-11-08)' },
       { type: 'good', text: 'Contract verified on Sourcify (exact match)' },
-      { type: 'good', text: 'Mint terms published up front on the launchpad: free, 1 per wallet, Agent ID required' },
-      { type: 'warn', text: 'On-chain supply already equals the full 3,333 collection — the free window appears closed while the launchpad page still advertises the free mint' },
+      { type: 'good', text: 'Mint terms were published up front on the launchpad: free, 1 per wallet, Agent ID required' },
     ],
   },
 ];
