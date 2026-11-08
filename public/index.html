@@ -31,7 +31,35 @@
     background-size:auto,auto,44px 44px,44px 44px}
   a{color:var(--gold);text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:1120px;margin:0 auto;padding:22px 18px 64px;position:relative;z-index:1}
+  .wrap{flex:1;min-width:0;max-width:1060px;padding:22px 18px 64px;position:relative;z-index:1}
+
+  /* ---------- layout + sidebar ---------- */
+  .layout{display:flex;align-items:flex-start;max-width:1330px;margin:0 auto;position:relative;z-index:1}
+  .side{position:sticky;top:0;height:100vh;width:230px;flex:none;padding:20px 14px;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--line);background:rgba(6,9,13,.75);backdrop-filter:blur(8px);z-index:3;overflow-y:auto}
+  .sbrand{display:flex;align-items:center;gap:10px;padding:2px 6px 10px}
+  .sbrand img{width:32px;height:32px}
+  .side .brand{font:700 12.5px var(--mono);letter-spacing:.16em}
+  .side .live{font:600 10.5px var(--mono);letter-spacing:.14em;color:var(--dim);display:flex;align-items:center;gap:8px;padding:0 6px 12px}
+  .snav{display:flex;flex-direction:column;gap:4px}
+  .sbtn{display:flex;align-items:center;gap:9px;width:100%;text-align:left;cursor:pointer;background:none;border:1px solid transparent;border-radius:9px;padding:10px 11px;font:600 11.5px var(--mono);letter-spacing:.07em;color:var(--dim)}
+  .sbtn:hover{color:var(--ink);border-color:var(--line)}
+  .sbtn.on{color:var(--ink);background:var(--panel);border-color:var(--line)}
+  .sbtn .dot{flex:none;width:8px;height:8px;border-radius:50%}
+  .sbtn .cnt{margin-left:auto;color:var(--faint);font-size:11px}
+  .slabel{font:700 9.5px var(--mono);letter-spacing:.22em;color:var(--faint);padding:13px 8px 5px}
+  .side .sfoot{margin-top:auto;padding:12px 6px 0;border-top:1px solid var(--line);font-size:11.5px;line-height:1.55;color:var(--faint)}
+  .scope-strip{display:none;justify-content:center;padding:8px 0 0}
+  .scope-strip.show{display:flex}
+  .scope-strip .scope{width:150px}
+  .scope-strip .scope-label{display:none}
+  @media(max-width:880px){
+    .layout{flex-direction:column}
+    .side{position:static;width:100%;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;border-right:none;border-bottom:1px solid var(--line);padding:12px;overflow:visible}
+    .snav{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:6px;max-width:100%}
+    .sbtn{width:auto;white-space:nowrap}
+    .slabel,.side .sfoot{display:none}
+    .side .live{padding-bottom:0}
+  }
 
   /* ---------- top bar ---------- */
   .topbar{display:flex;align-items:center;gap:12px;padding:6px 0 18px;border-bottom:1px solid var(--line)}
@@ -202,13 +230,24 @@
 </style>
 </head>
 <body>
+<div class="layout">
+<aside class="side">
+  <div class="sbrand"><img src="/logo.svg" alt="Mint RedCeh logo"><div class="brand"><span class="m">MINT</span> <span class="r">RED</span><span class="c">CEH</span></div></div>
+  <div class="live"><span class="pulse"></span> SCOPE LIVE · BSC</div>
+  <nav class="snav" id="snav">
+    <button class="sbtn on" data-nav="home">ASK THE RADAR</button>
+    <div class="slabel">ON SCOPE</div>
+    <button class="sbtn" data-nav="board" data-f="semua">ALL<span class="cnt" id="cntAll"></span></button>
+    <button class="sbtn" data-nav="board" data-f="real"><span class="dot real"></span>CLEAR<span class="cnt" id="cntReal"></span></button>
+    <button class="sbtn" data-nav="board" data-f="berpotensi"><span class="dot berpotensi"></span>POTENTIAL<span class="cnt" id="cntPot"></span></button>
+    <button class="sbtn" data-nav="board" data-f="indikasi"><span class="dot indikasi"></span>FEE-FARM INDICATION<span class="cnt" id="cntFarm"></span></button>
+    <div class="slabel">ABOUT</div>
+    <button class="sbtn" data-nav="method">HOW IT VERIFIES</button>
+  </nav>
+  <div class="sfoot">Labels are re-judged at every 2-hour capture. Not a definitive reference — DYOR.</div>
+</aside>
 <div class="wrap">
-  <div class="topbar">
-    <img src="/logo.svg" alt="Mint RedCeh logo">
-    <div class="brand"><span class="m">MINT</span> <span class="r">RED</span><span class="c">CEH</span></div>
-    <div class="live"><span class="pulse"></span> SCOPE LIVE · BSC</div>
-  </div>
-
+  <div id="view-home">
   <header class="hero">
     <div>
       <div class="kicker">Free-mint radar · Agentic ID ecosystem</div>
@@ -224,18 +263,7 @@
     </div>
   </header>
 
-  <div class="sec-head"><h2>Contacts on scope</h2><div class="rule"></div><div class="n" id="secCount"></div></div>
-
-  <nav class="filters" id="filters">
-    <button class="fbtn on" data-f="semua">All</button>
-    <button class="fbtn" data-f="real">Clear</button>
-    <button class="fbtn" data-f="berpotensi">Potential</button>
-    <button class="fbtn" data-f="indikasi">Fee-Farm Indication</button>
-  </nav>
-
-  <main class="grid" id="grid"><p class="empty">Sweeping the scope…</p></main>
-
-  <section class="method">
+  <section class="method" id="method">
     <div class="sec-head"><h2>How the radar verifies</h2><div class="rule"></div><div class="n">THE GATE</div></div>
     <div class="steps">
       <div class="step"><div class="snum">STEP 01</div><h3>Read the claim</h3><p>We take the project's own page at its word — and quote it as a <b>claim</b>, never as a fact. If the page does not publish its mint terms, there is nothing to verify, and the project does not board.</p></div>
@@ -261,6 +289,13 @@
     <div class="chips" id="askChips"></div>
     <div id="askOut"></div>
   </section>
+  </div><!-- /view-home -->
+
+  <div id="view-board" hidden>
+    <div class="scope-strip" id="scopeStrip"></div>
+    <div class="sec-head"><h2 id="boardTitle">Contacts on scope</h2><div class="rule"></div><div class="n" id="secCount"></div></div>
+    <main class="grid" id="grid"><p class="empty">Sweeping the scope…</p></main>
+  </div>
 
   <footer>
     Mint RedCeh is a read-only radar: we never mint for you, sell anything, or promise value.
@@ -281,14 +316,41 @@
     </div>
   </footer>
 </div>
+</div><!-- /layout -->
 
 <script>
 const BUCKET_LABEL = { real: 'Clear', berpotensi: 'Potential', indikasi: 'Fee-Farm Indication' };
 const grid = document.getElementById('grid');
 const statsEl = document.getElementById('stats');
 const scopeEl = document.getElementById('scope');
+const homeEl = document.getElementById('view-home');
+const boardEl = document.getElementById('view-board');
+const stripEl = document.getElementById('scopeStrip');
+const heroScopeWrap = document.querySelector('.hero .scope-wrap');
 let listings = [];
 let filter = 'semua';
+let view = 'home';
+
+function go(name, f) {
+  if (name === 'board') { filter = f || 'semua'; view = 'board'; } else { view = 'home'; }
+  homeEl.hidden = view !== 'home';
+  boardEl.hidden = view !== 'board';
+  if (view === 'board') { stripEl.appendChild(scopeEl); stripEl.classList.add('show'); render(); }
+  else { heroScopeWrap.appendChild(scopeEl); stripEl.classList.remove('show'); }
+  document.querySelectorAll('#snav .sbtn').forEach(b => {
+    let on = false;
+    if (b.dataset.nav === view) on = true;
+    if (view === 'board' && b.dataset.nav === 'board') on = b.dataset.f === filter;
+    if (name === 'method' && b.dataset.nav === 'method') on = true;
+    b.classList.toggle('on', on);
+  });
+  if (name === 'method') setTimeout(() => document.getElementById('method').scrollIntoView({ behavior: 'smooth' }), 30);
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.getElementById('snav').addEventListener('click', (ev) => {
+  const b = ev.target.closest('.sbtn');
+  if (b) go(b.dataset.nav, b.dataset.f);
+});
 
 function fmtNum(s) {
   if (s === null || s === undefined) return null;
@@ -395,6 +457,11 @@ function render() {
     + '<span class="chip"><span class="dot berpotensi"></span><b>' + counts.berpotensi + '</b>&nbsp;POTENTIAL</span>'
     + '<span class="chip"><span class="dot indikasi"></span><b>' + counts.indikasi + '</b>&nbsp;FEE-FARM</span>'
     + (last ? '<span class="chip">LAST SWEEP&nbsp;<b>' + fmtTime(last).toUpperCase() + '</b></span>' : '');
+  document.getElementById('boardTitle').textContent = filter === 'semua' ? 'Contacts on scope' : BUCKET_LABEL[filter];
+  document.getElementById('cntAll').textContent = listings.length;
+  document.getElementById('cntReal').textContent = counts.real;
+  document.getElementById('cntPot').textContent = counts.berpotensi;
+  document.getElementById('cntFarm').textContent = counts.indikasi;
 }
 function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
 function renderBlips() {
@@ -410,21 +477,17 @@ function renderBlips() {
     b.title = e.name + ' — ' + BUCKET_LABEL[e.bucket];
     b.setAttribute('aria-label', b.title);
     b.addEventListener('click', () => {
-      const el = document.getElementById('card-' + e.id);
-      if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+      go('board', 'semua');
+      setTimeout(() => {
+        const el = document.getElementById('card-' + e.id);
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+      }, 80);
     });
     scopeEl.appendChild(b);
   }
 }
-document.getElementById('filters').addEventListener('click', (ev) => {
-  const b = ev.target.closest('.fbtn');
-  if (!b) return;
-  filter = b.dataset.f;
-  document.querySelectorAll('.fbtn').forEach(x => x.classList.toggle('on', x === b));
-  render();
-});
 fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; render(); renderChips(); renderBlips(); })
   .catch(() => { grid.innerHTML = '<p class="empty">The board failed to load.</p>'; });
 
