@@ -1,0 +1,112 @@
+// Mint RedCeh — periodic auto-check runner.
+// One run: re-verify every listing on-chain, compare facts against the last
+// run, write a fresh Walrus Memory round when something changed (or at least
+// once a day), refresh the public board via git push (Vercel auto-deploys),
+// and print ONE JSON summary line for the scheduler:
+//   { ok, changed:[ids], wrote:n, pushed:bool, alerts:[...] }
+// Alerts (report-worthy): AGC refund obligations no longer fully backed by
+// the mint contract's BNB balance; any listing's supply reaching its max.
+import { readFile, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { buildBoard } from '../src/verify.js';
+import { createStore } from '../src/memory.js';
+import { writeBoardMemories } from '../src/radar-memory.js';
+
+const DATA = new URL('../data/', import.meta.url);
+const PREV = new URL('board.prev.json', DATA);
+const LOG = new URL('autocheck-log.json', DATA);
+const BOARD = new URL('board.json', DATA);
+
+const factsOf = (board) => {
+  const out = {};
+  for (const e of board) {
+    const f = e.facts || {};
+    out[e.id] = {
+      sourcify: f.sourcify ?? null,
+      supplyNow: f.supplyNow ?? null,
+      supplyMax: f.supplyMax ?? null,
+      tokenSupply: f.tokenSupply ?? null,
+      pending: f.pending ?? null,
+      probes: f.probes ?? null,
+    };
+  }
+  return out;
+};
+
+function git(args) {
+  return execFileSync('git', ['-c', 'user.name=elle', '-c', 'user.email=elle@revelle.ai', ...args], {
+    cwd: new URL('..', DATA).pathname,
+    encoding: 'utf8',
+  }).trim();
+}
+
+async function readJson(url, fallback) {
+  try { return JSON.parse(await readFile(url, 'utf8')); } catch { return fallback; }
+}
+
+const summary = { ok: false, changed: [], wrote: 0, pushed: false, alerts: [] };
+try {
+  const prev = await readJson(PREV, null);
+  const log = await readJson(LOG, { lastWriteAt: 0, errorStreak: 0 });
+
+  const board = await buildBoard({ write: true, log: false });
+  const now = factsOf(board);
+  const changed = [];
+  if (prev) {
+    for (const id of Object.keys(now)) {
+      if (JSON.stringify(now[id]) !== JSON.stringify(prev[id])) changed.push(id);
+    }
+  }
+  summary.changed = prev ? changed : Object.keys(now);
+
+  // Alerts from live facts.
+  for (const e of board) {
+    const f = e.facts || {};
+    if (f.supplyNow && f.supplyMax && BigInt(f.supplyNow) >= BigInt(f.supplyMax)) {
+      summary.alerts.push(`${e.name}: supply reached its max (${f.supplyNow}/${f.supplyMax})`);
+    }
+    if (e.id === 'agentic-coin' && f.probes) {
+      const owed = parseFloat(String(f.probes['Refund obligations (refundOwed)'] || '').replace(/[^0-9.]/g, ''));
+      const bal = parseFloat(String(f.probes['Mint contract BNB balance'] || '').replace(/[^0-9.]/g, ''));
+      if (Number.isFinite(owed) && Number.isFinite(bal) && bal < owed - 0.001) {
+        summary.alerts.push(`Agentic Coin (AGC): refund obligations ${owed} BNB exceed the mint contract balance ${bal} BNB — refunds no longer fully backed`);
+      }
+    }
+  }
+
+  // Memory write: on any fact change, or at least once per 24h.
+  const dueDaily = Date.now() - (log.lastWriteAt || 0) > 24 * 3600 * 1000;
+  if ((prev && changed.length > 0) || dueDaily || !prev) {
+    if (prev) {
+      const store = await createStore();
+      const res = await writeBoardMemories(store, board);
+      summary.wrote = res.written?.length ?? 0;
+      log.lastWriteAt = Date.now();
+    }
+  }
+
+  // Public board refresh: commit + push only when facts actually changed.
+  if (prev && changed.length > 0) {
+    git(['add', 'data/board.json']);
+    git(['commit', '-q', '-m', `autocheck ${new Date().toISOString()}: ${changed.join(', ')}`]);
+    git(['push', '-q']);
+    summary.pushed = true;
+  } else if (prev) {
+    git(['checkout', '--', 'data/board.json']); // discard checkedAt-only churn
+  }
+
+  await writeFile(PREV, JSON.stringify(now, null, 2));
+  log.errorStreak = 0;
+  log.lastRunAt = Date.now();
+  await writeFile(LOG, JSON.stringify(log, null, 2));
+  summary.ok = true;
+} catch (err) {
+  summary.error = String(err && err.message ? err.message : err).slice(0, 300);
+  try {
+    const log = await readJson(LOG, { lastWriteAt: 0, errorStreak: 0 });
+    log.errorStreak = (log.errorStreak || 0) + 1;
+    summary.errorStreak = log.errorStreak;
+    await writeFile(LOG, JSON.stringify(log, null, 2));
+  } catch { /* bookkeeping is best-effort */ }
+}
+console.log(JSON.stringify(summary));

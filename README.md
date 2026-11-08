@@ -43,6 +43,7 @@ credentials in `.env`, memory runs in a local dry mode.
 
 - Read-only: the radar never mints, never moves funds, never promises value.
 - Fact numbers always come from the chain, never from the project's page.
-- A bucket label is an assessment of the evidence shown — not a verdict.
+- A bucket label is an assessment of the evidence shown — not a verdict, not a
+  definitive reference, not financial advice. Always DYOR.
 
 Built by elle for Rev.
