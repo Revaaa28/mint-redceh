@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Mint RedCeh original mark: sonar rings in white, gold sweep, one red contact. Drawn from scratch. -->
+  <circle cx="32" cy="32" r="28.5" fill="none" stroke="#eef3f8" stroke-width="3"/>
+  <circle cx="32" cy="32" r="19" fill="none" stroke="#eef3f8" stroke-width="1.6" opacity="0.55"/>
+  <circle cx="32" cy="32" r="9.5" fill="none" stroke="#eef3f8" stroke-width="1.4" opacity="0.35"/>
+  <path d="M32 32 L32 3.5 A28.5 28.5 0 0 1 55.4 16.2 Z" fill="#f5c044" opacity="0.32"/>
+  <line x1="32" y1="32" x2="55.4" y2="16.2" stroke="#f5c044" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="45" cy="21" r="7.5" fill="#ff5252" opacity="0.20"/>
+  <circle cx="45" cy="21" r="3.4" fill="#ff5252"/>
+  <circle cx="32" cy="32" r="2.6" fill="#eef3f8"/>
+</svg>

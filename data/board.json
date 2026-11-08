@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:11.736Z",
+      "checkedAt": "2026-11-08T10:08:05.868Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:13.910Z",
+      "checkedAt": "2026-11-08T10:08:08.455Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:14.958Z",
+      "checkedAt": "2026-11-08T10:08:08.851Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:15.633Z",
+      "checkedAt": "2026-11-08T10:08:09.245Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:15.633Z",
+      "checkedAt": "2026-11-08T10:08:09.245Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:15.633Z",
+      "checkedAt": "2026-11-08T10:08:09.245Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:16.247Z",
+      "checkedAt": "2026-11-08T10:08:09.645Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T10:06:17.069Z",
+      "checkedAt": "2026-11-08T10:08:10.397Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "117,996,488,597",
+      "tokenSupply": "117,998,065,300",
       "probes": {
-        "Refund obligations (refundOwed)": "105.716 BNB",
-        "Mint contract BNB balance": "105.716 BNB"
+        "Refund obligations (refundOwed)": "105.648 BNB",
+        "Mint contract BNB balance": "105.648 BNB"
       }
     }
   }

@@ -11,62 +11,120 @@
 <meta property="og:image" content="/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0d12; --panel:#11151d; --panel2:#151a24; --line:#232b3a;
-    --ink:#e8edf5; --dim:#93a0b4; --faint:#5d6b82;
-    --mint:#2fe6a8; --gold:#f5c044; --red:#ff6b6b; --amber:#ffb454;
+    --bg:#04070a; --panel:#0a0f16; --panel2:#0c131c; --line:#1d2938;
+    --ink:#eef3f8; --dim:#96a3b8; --faint:#5d6b82;
+    --gold:#f5c044; --red:#ff5252; --mint:#2fe6a8; --amber:#ffb454;
     --mono:'JetBrains Mono',ui-monospace,monospace;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--mint);text-decoration:none}
+  body{background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 480px at 85% -10%, rgba(245,192,68,.07), transparent 60%),
+      radial-gradient(700px 500px at -10% 30%, rgba(47,230,168,.05), transparent 60%),
+      linear-gradient(rgba(238,243,248,.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238,243,248,.028) 1px, transparent 1px);
+    background-size:auto,auto,44px 44px,44px 44px}
+  a{color:var(--gold);text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 64px}
+  .wrap{max-width:1120px;margin:0 auto;padding:22px 18px 64px;position:relative;z-index:1}
 
-  header.hero{padding:26px 0 8px}
-  .wordmark{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,6vw,58px);letter-spacing:-.02em;line-height:1}
-  .wordmark .mint{color:var(--mint)} .wordmark .coin{color:var(--gold)}
-  .tagline{margin:12px 0 0;color:var(--dim);font-size:clamp(15px,2.4vw,18px);max-width:640px;line-height:1.55}
+  /* ---------- top bar ---------- */
+  .topbar{display:flex;align-items:center;gap:12px;padding:6px 0 18px;border-bottom:1px solid var(--line)}
+  .topbar img{width:36px;height:36px}
+  .topbar .brand{font:700 13px var(--mono);letter-spacing:.18em}
+  .brand .m{color:var(--gold)} .brand .r{color:var(--red)} .brand .c{color:var(--ink)}
+  .topbar .live{margin-left:auto;font:600 11px var(--mono);letter-spacing:.14em;color:var(--dim);display:flex;align-items:center;gap:8px}
+  .pulse{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,192,68,.5)}70%{box-shadow:0 0 0 9px rgba(245,192,68,0)}100%{box-shadow:0 0 0 0 rgba(245,192,68,0)}}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:30px 0 6px}
+  @media(min-width:900px){.hero{grid-template-columns:1.25fr .75fr}}
+  .kicker{font:700 11px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+  .wordmark{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(46px,7.5vw,76px);letter-spacing:-.02em;line-height:.98;margin:12px 0 0}
+  .wordmark .m{color:var(--gold)} .wordmark .r{color:var(--red)} .wordmark .c{color:var(--ink)}
+  .tagline{margin:16px 0 0;color:var(--dim);font-size:clamp(15px,2.4vw,18px);max-width:560px;line-height:1.6}
   .tagline b{color:var(--ink)}
-  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
-  .chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 13px;font-size:13px;color:var(--dim)}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 4px}
+  .chip{border:1px solid var(--line);background:rgba(10,15,22,.85);border-radius:8px;padding:8px 12px;font:600 12px var(--mono);letter-spacing:.04em;color:var(--dim)}
   .chip b{color:var(--ink);font-weight:700}
-  .chip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
-  .dot.real{background:var(--mint)} .dot.berpotensi{background:var(--amber)} .dot.indikasi{background:var(--red)}
+  .chip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+  .dot.real{background:var(--ink)} .dot.berpotensi{background:var(--amber)} .dot.indikasi{background:var(--red)}
 
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
-  .fbtn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--dim);border-radius:999px;padding:8px 16px;font:600 14px 'Outfit',sans-serif;transition:all .15s}
+  /* ---------- radar scope ---------- */
+  .scope-wrap{display:flex;justify-content:center}
+  .scope{position:relative;width:min(320px,78vw);aspect-ratio:1;border-radius:50%;flex:none;
+    background:
+      radial-gradient(circle, transparent 0 24%, rgba(238,243,248,.14) 24.5% 25%, transparent 25.5% 49%, rgba(238,243,248,.14) 49.5% 50%, transparent 50.5% 74%, rgba(238,243,248,.14) 74.5% 75%, transparent 75.5%),
+      radial-gradient(circle at 50% 50%, rgba(47,230,168,.06), rgba(4,7,10,.2) 70%);
+    border:1px solid rgba(238,243,248,.28);
+    box-shadow:0 0 0 10px rgba(238,243,248,.02), 0 0 70px rgba(245,192,68,.08), inset 0 0 60px rgba(0,0,0,.55)}
+  .scope::before,.scope::after{content:"";position:absolute;background:rgba(238,243,248,.13)}
+  .scope::before{left:50%;top:0;width:1px;height:100%}
+  .scope::after{top:50%;left:0;height:1px;width:100%}
+  .sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg, rgba(245,192,68,.55), rgba(245,192,68,.12) 40deg, transparent 70deg);animation:spin 7s linear infinite;mix-blend-mode:screen}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .blip{position:absolute;width:11px;height:11px;margin:-5.5px;border-radius:50%;border:0;cursor:pointer;padding:0;z-index:2}
+  .blip.real{background:var(--ink)} .blip.berpotensi{background:var(--amber)} .blip.indikasi{background:var(--red)}
+  .blip::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid currentColor;opacity:.7;animation:ping 2.6s ease-out infinite}
+  .blip.real{color:var(--ink)} .blip.berpotensi{color:var(--amber)} .blip.indikasi{color:var(--red)}
+  @keyframes ping{0%{transform:scale(.45);opacity:.8}80%,100%{transform:scale(1.5);opacity:0}}
+  .scope-label{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);font:600 9.5px var(--mono);letter-spacing:.24em;color:var(--faint);white-space:nowrap}
+
+  /* ---------- section + filters ---------- */
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:38px 0 4px}
+  .sec-head h2{font:700 12px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin:0}
+  .sec-head .rule{flex:1;height:1px;background:var(--line)}
+  .sec-head .n{font:600 11px var(--mono);color:var(--faint)}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+  .fbtn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--dim);border-radius:8px;padding:9px 16px;font:600 12.5px var(--mono);letter-spacing:.06em;transition:all .15s;text-transform:uppercase}
   .fbtn:hover{color:var(--ink);border-color:var(--faint)}
-  .fbtn.on{color:#0a0d12;background:var(--mint);border-color:var(--mint)}
+  .fbtn.on{color:#0a0d12;background:var(--gold);border-color:var(--gold)}
+  .fbtn.on[data-f="real"]{background:var(--ink);border-color:var(--ink)}
   .fbtn.on[data-f="berpotensi"]{background:var(--amber);border-color:var(--amber)}
   .fbtn.on[data-f="indikasi"]{background:var(--red);border-color:var(--red)}
 
+  /* ---------- cards ---------- */
   .grid{display:grid;grid-template-columns:1fr;gap:16px}
   @media(min-width:880px){.grid{grid-template-columns:1fr 1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+  .card{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;overflow:hidden;animation:rise .5s ease both;transition:transform .18s, box-shadow .18s, border-color .18s}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--faint)}
+  .card.real::before{background:var(--ink)} .card.berpotensi::before{background:var(--amber)} .card.indikasi::before{background:var(--red)}
+  .card:hover{transform:translateY(-3px);border-color:var(--faint)}
+  .card.real:hover{box-shadow:0 14px 40px -18px rgba(238,243,248,.35)}
+  .card.berpotensi:hover{box-shadow:0 14px 40px -18px rgba(255,180,84,.35)}
+  .card.indikasi:hover{box-shadow:0 14px 40px -18px rgba(255,82,82,.35)}
+  .card.flash{animation:flash 1.4s ease}
+  @keyframes flash{0%,60%{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,192,68,.35)}100%{}}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-  .card h2{font-family:'Bricolage Grotesque',sans-serif;font-size:23px;font-weight:700;margin:0;letter-spacing:-.01em}
+  .tgt{font:700 10.5px var(--mono);letter-spacing:.16em;color:var(--faint)}
+  .card h2{font-family:'Bricolage Grotesque',sans-serif;font-size:23px;font-weight:700;margin:3px 0 0;letter-spacing:-.01em}
   .kind{color:var(--faint);font-size:13px;margin-top:2px}
-  .badge{flex:none;font:700 12px 'Outfit',sans-serif;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:6px 11px}
-  .badge.real{color:#06281c;background:var(--mint)}
+  .badge{flex:none;font:700 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;border-radius:6px;padding:6px 10px}
+  .badge.real{color:#0a0d12;background:var(--ink)}
   .badge.berpotensi{color:#3a2403;background:var(--amber)}
-  .badge.indikasi{color:#3d0a0a;background:var(--red)}
+  .badge.indikasi{color:#fff;background:var(--red)}
   .gate{font-size:13px;color:var(--dim)}
   .gate b{color:var(--gold);font-weight:600}
 
   .vs{display:grid;grid-template-columns:1fr;gap:10px}
   @media(min-width:560px){.vs{grid-template-columns:1fr 1fr}}
-  .pane{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--panel2)}
-  .pane h3{margin:0 0 9px;font:700 11px 'Outfit',sans-serif;letter-spacing:.12em;text-transform:uppercase}
-  .pane.claim h3{color:var(--faint)} .pane.fact h3{color:var(--mint)}
+  .pane{border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:rgba(4,7,10,.45)}
+  .pane h3{margin:0 0 9px;font:700 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+  .pane.claim h3{color:var(--faint)} .pane.fact h3{color:var(--gold)}
+  .pane.fact{border-color:rgba(245,192,68,.25)}
   .pane dl{margin:0;display:grid;gap:8px}
   .pane dt{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
   .pane dd{margin:1px 0 0;font-size:14px;line-height:1.45}
-  .bar{height:7px;background:#0a0d12;border-radius:99px;overflow:hidden;margin-top:7px}
-  .bar i{display:block;height:100%;background:var(--mint);border-radius:99px}
+  .bar{height:7px;background:#04070a;border-radius:99px;overflow:hidden;margin-top:7px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ink),var(--gold));border-radius:99px;animation:grow 1s ease both}
+  @keyframes grow{from{width:0}}
   .factline{font-size:14px;line-height:1.45}
   .factline + .factline{margin-top:8px}
   .ok{color:var(--mint)} .bad{color:var(--red)} .warn{color:var(--amber)}
@@ -75,25 +133,28 @@
   .signals{list-style:none;margin:0;padding:0;display:grid;gap:7px}
   .signals li{display:flex;gap:9px;font-size:14px;line-height:1.5;color:var(--dim)}
   .signals .sd{flex:none;width:9px;height:9px;border-radius:50%;margin-top:6px}
-  .sd.good{background:var(--mint)} .sd.warn{background:var(--amber)} .sd.bad{background:var(--red)}
+  .sd.good{background:var(--ink)} .sd.warn{background:var(--amber)} .sd.bad{background:var(--red)}
 
   .card-foot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
   .addr{font-family:var(--mono);font-size:12px;color:var(--dim);cursor:pointer}
   .addr:hover{color:var(--ink)}
-  .checked{margin-left:auto;font-size:12px;color:var(--faint)}
+  .checked{margin-left:auto;font:600 11px var(--mono);color:var(--faint)}
 
-  .ask{margin-top:34px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  /* ---------- ask ---------- */
+  .ask{margin-top:38px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+  .ask::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
   .ask h2{font-family:'Bricolage Grotesque',sans-serif;margin:0 0 8px;font-size:22px}
+  .ask h2 .gold{color:var(--gold)}
   .ask p{margin:0;color:var(--dim);line-height:1.6;font-size:15px}
   .ask form{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-  .ask input{flex:1;min-width:240px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:12px 14px;font:500 15px 'Outfit',sans-serif}
-  .ask input:focus{outline:none;border-color:var(--mint)}
-  .ask button{cursor:pointer;background:var(--mint);color:#06281c;border:0;border-radius:12px;padding:12px 22px;font:700 15px 'Outfit',sans-serif}
+  .ask input{flex:1;min-width:240px;background:rgba(4,7,10,.6);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:12px 14px;font:500 15px 'Outfit',sans-serif}
+  .ask input:focus{outline:none;border-color:var(--gold)}
+  .ask button{cursor:pointer;background:var(--gold);color:#231a02;border:0;border-radius:10px;padding:12px 22px;font:700 15px 'Outfit',sans-serif}
   .ask .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
   .ask .chips button{cursor:pointer;background:transparent;border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:6px 12px;font:500 13px 'Outfit',sans-serif}
   .ask .chips button:hover{color:var(--ink);border-color:var(--faint)}
   #askOut{margin-top:16px;display:grid;gap:12px}
-  .hist{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel2)}
+  .hist{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:rgba(4,7,10,.45)}
   .hist h4{margin:0 0 6px;font-size:16px}
   .hist .meta{color:var(--dim);font-size:13.5px;line-height:1.55}
   .hist ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
@@ -102,15 +163,37 @@
 
   footer{margin-top:40px;color:var(--faint);font-size:13px;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
   .empty{color:var(--dim);padding:30px 0}
+
+  @media (prefers-reduced-motion: reduce){
+    .sweep,.blip::after,.pulse,.card,.bar i{animation:none !important}
+    .card{transition:none}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="topbar">
+    <img src="/logo.svg" alt="Mint RedCeh logo">
+    <div class="brand"><span class="m">MINT</span> <span class="r">RED</span><span class="c">CEH</span></div>
+    <div class="live"><span class="pulse"></span> SCOPE LIVE · BSC</div>
+  </div>
+
   <header class="hero">
-    <div class="wordmark"><span class="mint">Mint</span> <span class="coin">RedCeh</span></div>
-    <p class="tagline">A free-mint radar for the <b>Binance Agentic ID</b> ecosystem on BNB Chain. Every project can claim it is free — here the claim is <b>checked against on-chain facts</b>: which are real, which show potential, and which show fee-farm signals.</p>
-    <div class="stats" id="stats"></div>
+    <div>
+      <div class="kicker">Free-mint radar · Agentic ID ecosystem</div>
+      <h1 class="wordmark"><span class="m">Mint</span> <span class="r">Red</span><span class="c">Ceh</span></h1>
+      <p class="tagline">Every project can claim it is free — this radar <b>checks the claim against on-chain facts</b> read straight from the contract: which free mints are real, which show potential, and which show fee-farm signals.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="scope-wrap">
+      <div class="scope" id="scope" aria-hidden="true">
+        <div class="sweep"></div>
+        <div class="scope-label">SWEEPING · BSC MAINNET</div>
+      </div>
+    </div>
   </header>
+
+  <div class="sec-head"><h2>Contacts on scope</h2><div class="rule"></div><div class="n" id="secCount"></div></div>
 
   <nav class="filters" id="filters">
     <button class="fbtn on" data-f="semua">All</button>
@@ -119,10 +202,10 @@
     <button class="fbtn" data-f="indikasi">Fee-Farm Indication</button>
   </nav>
 
-  <main class="grid" id="grid"><p class="empty">Loading the board…</p></main>
+  <main class="grid" id="grid"><p class="empty">Sweeping the scope…</p></main>
 
   <section class="ask">
-    <h2>Ask the Radar</h2>
+    <h2>Ask the <span class="gold">Radar</span></h2>
     <p>This ask box answers <b>only from the radar's Walrus Memory</b> — the recorded history of every contract it has ever checked: when it was first seen, what each check found, and whether its label ever changed. If it is not in memory, the radar says it does not know.</p>
     <form id="askForm">
       <input id="askInput" type="text" autocomplete="off" placeholder="project name or part of a contract address… e.g. AGC, Codex, Agent Cards">
@@ -140,9 +223,10 @@
 </div>
 
 <script>
-const BUCKET_LABEL = { real: 'Real', berpotensi: 'Potential', indikasi: 'Fee-Farm Indication' };
+const BUCKET_LABEL = { real: 'Clear', berpotensi: 'Potential', indikasi: 'Fee-Farm Indication' };
 const grid = document.getElementById('grid');
 const statsEl = document.getElementById('stats');
+const scopeEl = document.getElementById('scope');
 let listings = [];
 let filter = 'semua';
 
@@ -194,13 +278,13 @@ function claimPane(c) {
     + (c.extras && c.extras !== '—' ? '<div><dt>Extras</dt><dd>' + c.extras + '</dd></div>' : '')
     + '</dl>';
 }
-function card(e) {
+function card(e, i) {
   const addr = e.contract
     ? '<span class="addr" title="Click to copy" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'' + e.contract + '\')">' + e.contract.slice(0, 10) + '…' + e.contract.slice(-6) + '</span>'
       + ' <a href="https://bscscan.com/address/' + e.contract + '" target="_blank" rel="noopener">BscScan ↗</a>'
     : '<span class="addr">contract not shown yet</span>';
-  return '<article class="card" data-bucket="' + e.bucket + '">'
-    + '<div class="card-top"><div><h2>' + e.name + '</h2><div class="kind">' + e.kind + '</div></div>'
+  return '<article class="card ' + e.bucket + '" id="card-' + e.id + '" data-bucket="' + e.bucket + '" style="animation-delay:' + (i * 70) + 'ms">'
+    + '<div class="card-top"><div><div class="tgt">TGT-' + String(i + 1).padStart(2, '0') + ' · ' + e.kind.toUpperCase() + '</div><h2>' + e.name + '</h2></div>'
     + '<span class="badge ' + e.bucket + '">' + BUCKET_LABEL[e.bucket] + '</span></div>'
     + '<div class="gate">For <b>Binance Agent ID (.ai)</b> holders · BNB Chain</div>'
     + '<div class="vs"><div class="pane claim"><h3>Page Claim</h3>' + claimPane(e.claim) + '</div>'
@@ -213,7 +297,8 @@ function card(e) {
 }
 function render() {
   const shown = listings.filter(e => filter === 'semua' || e.bucket === filter);
-  grid.innerHTML = shown.length ? shown.map(card).join('') : '<p class="empty">No listings in this bucket.</p>';
+  grid.innerHTML = shown.length ? shown.map((e, i) => card(e, listings.indexOf(e))).join('') : '<p class="empty">No contacts in this bucket.</p>';
+  document.getElementById('secCount').textContent = shown.length + ' / ' + listings.length + ' CONTACTS';
   const counts = { real: 0, berpotensi: 0, indikasi: 0 };
   let last = null;
   for (const e of listings) {
@@ -222,11 +307,33 @@ function render() {
     if (t && (!last || t > last)) last = t;
   }
   statsEl.innerHTML =
-    '<span class="chip"><b>' + listings.length + '</b>&nbsp;listings checked on-chain</span>'
-    + '<span class="chip"><span class="dot real"></span><b>' + counts.real + '</b>&nbsp;real</span>'
-    + '<span class="chip"><span class="dot berpotensi"></span><b>' + counts.berpotensi + '</b>&nbsp;potential</span>'
-    + '<span class="chip"><span class="dot indikasi"></span><b>' + counts.indikasi + '</b>&nbsp;fee-farm indication</span>'
-    + (last ? '<span class="chip">last check&nbsp;<b>' + fmtTime(last) + '</b></span>' : '');
+    '<span class="chip"><b>' + listings.length + '</b>&nbsp;CONTACTS CHECKED ON-CHAIN</span>'
+    + '<span class="chip"><span class="dot real"></span><b>' + counts.real + '</b>&nbsp;CLEAR</span>'
+    + '<span class="chip"><span class="dot berpotensi"></span><b>' + counts.berpotensi + '</b>&nbsp;POTENTIAL</span>'
+    + '<span class="chip"><span class="dot indikasi"></span><b>' + counts.indikasi + '</b>&nbsp;FEE-FARM</span>'
+    + (last ? '<span class="chip">LAST SWEEP&nbsp;<b>' + fmtTime(last).toUpperCase() + '</b></span>' : '');
+}
+function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+function renderBlips() {
+  scopeEl.querySelectorAll('.blip').forEach(b => b.remove());
+  for (const e of listings) {
+    const h = hashStr(e.id);
+    const ang = (h % 360) * Math.PI / 180;
+    const rad = 16 + (h >> 3) % 30; // % of scope radius*2 → keep inside the disc
+    const x = 50 + rad * Math.cos(ang), y = 50 + rad * Math.sin(ang);
+    const b = document.createElement('button');
+    b.className = 'blip ' + e.bucket;
+    b.style.left = x + '%'; b.style.top = y + '%';
+    b.title = e.name + ' — ' + BUCKET_LABEL[e.bucket];
+    b.setAttribute('aria-label', b.title);
+    b.addEventListener('click', () => {
+      const el = document.getElementById('card-' + e.id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    });
+    scopeEl.appendChild(b);
+  }
 }
 document.getElementById('filters').addEventListener('click', (ev) => {
   const b = ev.target.closest('.fbtn');
@@ -235,7 +342,7 @@ document.getElementById('filters').addEventListener('click', (ev) => {
   document.querySelectorAll('.fbtn').forEach(x => x.classList.toggle('on', x === b));
   render();
 });
-fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; render(); renderChips(); })
+fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; render(); renderChips(); renderBlips(); })
   .catch(() => { grid.innerHTML = '<p class="empty">The board failed to load.</p>'; });
 
 // --- Ask the Radar (answers from Walrus Memory only) ---
