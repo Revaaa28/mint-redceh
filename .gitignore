@@ -4,3 +4,4 @@ node_modules/
 data/board.prev.json
 data/autocheck-log.json
 data/autocheck.lock
+data/discovery-state.json
