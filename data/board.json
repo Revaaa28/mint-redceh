@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:15.380Z",
+      "checkedAt": "2026-11-08T12:32:58.308Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:17.940Z",
+      "checkedAt": "2026-11-08T12:33:01.117Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:19.242Z",
+      "checkedAt": "2026-11-08T12:33:01.796Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:20.764Z",
+      "checkedAt": "2026-11-08T12:33:02.478Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:20.764Z",
+      "checkedAt": "2026-11-08T12:33:02.478Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:20.764Z",
+      "checkedAt": "2026-11-08T12:33:02.478Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:21.942Z",
+      "checkedAt": "2026-11-08T12:33:03.620Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:22.593Z",
+      "checkedAt": "2026-11-08T12:33:04.155Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "118,646,262,859",
+      "tokenSupply": "118,672,832,032",
       "probes": {
-        "Refund obligations (refundOwed)": "100.512 BNB",
-        "Mint contract BNB balance": "100.512 BNB"
+        "Refund obligations (refundOwed)": "100.21 BNB",
+        "Mint contract BNB balance": "100.212 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:23.576Z",
+      "checkedAt": "2026-11-08T12:33:05.138Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -347,27 +347,27 @@
     "gated": "Binance Agent ID (.ai)",
     "claim": {
       "headline": "Free for .ai Agent ID holders, 1 per wallet",
-      "mintPrice": "0 BNB — gas only",
-      "supply": "3,333 fully on-chain SVG floppies",
+      "mintPrice": "0 BNB — gas only, while the free window lasted; supply is now at the 3,333 max, so no free mint remains",
+      "supply": "3,333 fully on-chain SVG floppies — 3,333/3,333 minted, free window closed",
       "extras": "Listed on the FloppyMarket launchpad; community launches there are self-serve"
     },
-    "bucket": "berpotensi",
+    "bucket": "indikasi",
     "signals": [
+      {
+        "type": "bad",
+        "text": "Free window is closed — on-chain supply hit the full 3,333 max, yet the launchpad page still advertises \"Free mint\" and \"Mint live\" (verified live 2026-11-08)"
+      },
       {
         "type": "good",
         "text": "Contract verified on Sourcify (exact match)"
       },
       {
         "type": "good",
-        "text": "Mint terms published up front on the launchpad: free, 1 per wallet, Agent ID required"
-      },
-      {
-        "type": "warn",
-        "text": "On-chain supply already equals the full 3,333 collection — the free window appears closed while the launchpad page still advertises the free mint"
+        "text": "Mint terms were published up front on the launchpad: free, 1 per wallet, Agent ID required"
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-08T12:26:24.697Z",
+      "checkedAt": "2026-11-08T12:33:05.696Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
