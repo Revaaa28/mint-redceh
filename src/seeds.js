@@ -407,7 +407,7 @@ export const SEEDS = [
       { type: 'good', text: 'Contract verified on Sourcify (exact match); mint(1) value 0 sims clean' },
       { type: 'warn', text: 'No Agent ID gate — open to any wallet, broader than the Agentic ID theme' },
       { type: 'warn', text: 'Template-family deployment: 9th 7,803-byte lane under one owner (0x1103…), 20 lanes total' },
-      { type: 'warn', text: 'Site counter shows 0% launched while the chain already reads 585 minted — site numbers lag the chain' },
+      { type: 'warn', text: 'Site counter shows 0% launched while the chain already reads 590 minted — site numbers lag the chain' },
     ],
   },
   {
@@ -450,7 +450,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,423/2,777, only 354 free left (verified 2026-11-09 ~22:40 WITA, rpc-bsc.48.club, block 132,599,355)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,443/2,777, only 334 free left (verified 2026-11-10 ~00:40 WITA, rpc-bsc.48.club, block 132,617,553)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
