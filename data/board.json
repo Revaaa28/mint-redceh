@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:23.373Z",
+      "checkedAt": "2026-11-09T16:38:56.332Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:25.844Z",
+      "checkedAt": "2026-11-09T16:38:58.919Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:26.608Z",
+      "checkedAt": "2026-11-09T16:38:59.574Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:27.233Z",
+      "checkedAt": "2026-11-09T16:39:00.169Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:27.233Z",
+      "checkedAt": "2026-11-09T16:39:00.169Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:27.233Z",
+      "checkedAt": "2026-11-09T16:39:00.169Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:27.988Z",
+      "checkedAt": "2026-11-09T16:39:00.775Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:28.938Z",
+      "checkedAt": "2026-11-09T16:39:01.436Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "125,096,262,954",
+      "tokenSupply": "125,179,963,629",
       "probes": {
-        "Refund obligations (refundOwed)": "65.95 BNB",
-        "Mint contract BNB balance": "65.95 BNB"
+        "Refund obligations (refundOwed)": "65.838 BNB",
+        "Mint contract BNB balance": "65.838 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:30.529Z",
+      "checkedAt": "2026-11-09T16:39:02.717Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:31.499Z",
+      "checkedAt": "2026-11-09T16:39:03.455Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:32.567Z",
+      "checkedAt": "2026-11-09T16:39:04.494Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:34.040Z",
+      "checkedAt": "2026-11-09T16:39:05.310Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:35.758Z",
+      "checkedAt": "2026-11-09T16:39:06.045Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:37.029Z",
+      "checkedAt": "2026-11-09T16:39:06.786Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -577,11 +577,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:38.675Z",
+      "checkedAt": "2026-11-09T16:39:08.096Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
-      "supplyNow": "752"
+      "supplyNow": "756"
     }
   },
   {
@@ -614,7 +614,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:40.070Z",
+      "checkedAt": "2026-11-09T16:39:09.070Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -654,7 +654,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:40.956Z",
+      "checkedAt": "2026-11-09T16:39:09.656Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -698,7 +698,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:42.690Z",
+      "checkedAt": "2026-11-09T16:39:10.398Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -743,11 +743,11 @@
       },
       {
         "type": "warn",
-        "text": "Site counter shows 0% launched while the chain already reads 585 minted — site numbers lag the chain"
+        "text": "Site counter shows 0% launched while the chain already reads 590 minted — site numbers lag the chain"
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:43.491Z",
+      "checkedAt": "2026-11-09T16:39:11.280Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
@@ -790,7 +790,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:44.325Z",
+      "checkedAt": "2026-11-09T16:39:12.000Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -826,7 +826,7 @@
       },
       {
         "type": "warn",
-        "text": "Free pool nearly gone — freeMinted 2,423/2,777, only 354 free left (verified 2026-11-09 ~22:40 WITA, rpc-bsc.48.club, block 132,599,355)"
+        "text": "Free pool nearly gone — freeMinted 2,443/2,777, only 334 free left (verified 2026-11-10 ~00:40 WITA, rpc-bsc.48.club, block 132,617,553)"
       },
       {
         "type": "warn",
@@ -834,11 +834,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-09T16:26:45.517Z",
+      "checkedAt": "2026-11-09T16:39:12.574Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
-      "supplyNow": "2451",
+      "supplyNow": "2452",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY"
     }
