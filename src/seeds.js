@@ -476,4 +476,27 @@ export const SEEDS = [
       { type: 'warn', text: 'Paid-mint price is not shown on the site; the agent reads it from the contract before signing' },
     ],
   },
+  {
+    id: 'lucky777',
+    name: 'LUCKY777',
+    kind: 'Token · fair-mint shares + slot',
+    chainId: 56,
+    contract: '0x3849159784aa47Fe76117103904204D9f5D153E7',
+    token: '0xc6D4ec8CB889aFBa9f251606001457644E260f7D',
+    site: 'https://lucky777-mint.pages.dev',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First 777 shares free for Agent ID holders, 1 per wallet — 50,000,000 LUCKY777 per share',
+      mintPrice: '0 BNB — gas only, while the 777 free shares last; paid shares 0.002 BNB each after the free phase, 24h clock',
+      supply: '7,777 shares total (777 free / 7,000 paid); 211 minted, 566 free left',
+      extras: 'Slot machine opens at sellout; 3 free spins/day for holders; paid shares refunded in full via claimRefund() if the sale does not sell out',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site lucky777-mint.pages.dev publishes the sale contract, the free terms and the Agent ID gate up front, plus an agent skill.md with the exact mint call; Sourcify exact match' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint(1, 0x0) value 0 passes from revelle (Agent ID holder) and reverts 0xf947691f from a neutral wallet — real gate (verified 2026-11-10 ~14:45 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free shares mint LUCKY777 transfer-locked until the pool opens at sellout; if the sale misses sellout in 24h no pool is created and the token stays locked — disclosed on the official site' },
+      { type: 'warn', text: 'Sale funds sit in an operator-managed pot; paid buyers are refunded in full via claimRefund() if the sale fails — a contract promise, not yet exercised' },
+    ],
+  },
 ];
