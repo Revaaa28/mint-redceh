@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:12.829Z",
+      "checkedAt": "2026-11-10T00:39:21.233Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:14.903Z",
+      "checkedAt": "2026-11-10T00:39:23.298Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:15.697Z",
+      "checkedAt": "2026-11-10T00:39:23.916Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:17.020Z",
+      "checkedAt": "2026-11-10T00:39:24.591Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:17.020Z",
+      "checkedAt": "2026-11-10T00:39:24.591Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:17.020Z",
+      "checkedAt": "2026-11-10T00:39:24.591Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:17.559Z",
+      "checkedAt": "2026-11-10T00:39:25.211Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:19.015Z",
+      "checkedAt": "2026-11-10T00:39:25.825Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "126,536,533,359",
+      "tokenSupply": "126,715,747,852",
       "probes": {
-        "Refund obligations (refundOwed)": "64.878 BNB",
-        "Mint contract BNB balance": "64.878 BNB"
+        "Refund obligations (refundOwed)": "64.594 BNB",
+        "Mint contract BNB balance": "64.594 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:20.484Z",
+      "checkedAt": "2026-11-10T00:39:27.765Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:21.395Z",
+      "checkedAt": "2026-11-10T00:39:29.265Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:22.084Z",
+      "checkedAt": "2026-11-10T00:39:29.924Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:23.052Z",
+      "checkedAt": "2026-11-10T00:39:31.249Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:23.992Z",
+      "checkedAt": "2026-11-10T00:39:32.155Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:25.252Z",
+      "checkedAt": "2026-11-10T00:39:32.789Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -577,11 +577,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:25.928Z",
+      "checkedAt": "2026-11-10T00:39:33.407Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
-      "supplyNow": "851"
+      "supplyNow": "853"
     }
   },
   {
@@ -614,7 +614,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:26.739Z",
+      "checkedAt": "2026-11-10T00:39:34.353Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -654,7 +654,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:27.715Z",
+      "checkedAt": "2026-11-10T00:39:34.716Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -698,7 +698,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:28.258Z",
+      "checkedAt": "2026-11-10T00:39:35.326Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -747,7 +747,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:29.084Z",
+      "checkedAt": "2026-11-10T00:39:35.937Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
@@ -790,7 +790,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:29.922Z",
+      "checkedAt": "2026-11-10T00:39:36.419Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -834,12 +834,55 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T00:26:30.509Z",
+      "checkedAt": "2026-11-10T00:39:36.917Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
-      "supplyNow": "2478",
+      "supplyNow": "2479",
       "supplyMax": "5555",
+      "supplyMaxFn": "MAX_SUPPLY"
+    }
+  },
+  {
+    "id": "thyrk",
+    "name": "THYRK",
+    "kind": "NFT · knight",
+    "chainId": 56,
+    "contract": "0x4d90ffc3075fb8897edff6d7c6269c906664a20e",
+    "site": "https://thyrk.fun",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First mint free per wallet, 1 per wallet, no cap on the free count",
+      "mintPrice": "0 BNB for the first mint per wallet; paid mints after that, price read from the contract",
+      "supply": "7,777 total (4,000 Common / 2,500 Rare / 1,000 Epic / 277 Legendary + 77 Divine, not mintable)",
+      "extras": "Each mint pays 20 $THYRK; 5% creator royalty"
+    },
+    "bucket": "real",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site thyrk.fun publishes the contract, the free first-mint terms and the Agent ID gate up front; Sourcify exact match"
+      },
+      {
+        "type": "good",
+        "text": "Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) on 2 RPCs and reverts 0xf947691f from a neutral wallet — real gate (verified 2026-11-10 ~08:35 WITA)"
+      },
+      {
+        "type": "warn",
+        "text": "Each mint pays 20 $THYRK — the site names no trading venue for it, a bonus not a price"
+      },
+      {
+        "type": "warn",
+        "text": "Paid-mint price is not shown on the site; the agent reads it from the contract before signing"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-10T00:39:37.421Z",
+      "sourcify": "exact_match",
+      "onchainName": "THYRK",
+      "onchainSymbol": "THYRK",
+      "supplyNow": "1656",
+      "supplyMax": "7777",
       "supplyMaxFn": "MAX_SUPPLY"
     }
   }
