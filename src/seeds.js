@@ -312,7 +312,7 @@ export const SEEDS = [
     claim: {
       headline: 'Free mine by CPU proof-of-work for Agent ID wallets, 1 per wallet',
       mintPrice: '0 BNB — gas only, plus a PoW nonce (one free cartridge per 120 s globally; difficulty retargets toward 150–300 s per free mint)',
-      supply: '10,000 total; 431 minted',
+      supply: '10,000 total; 953 minted',
       extras: 'Each cartridge is 1 NFT + 1,000 $1UP; paid lane 0.001 BNB; no admin mint',
     },
     bucket: 'berpotensi',
@@ -443,14 +443,14 @@ export const SEEDS = [
     claim: {
       headline: 'First koi free for Agent ID holders, 1 per wallet — feed it daily and it grows',
       mintPrice: '0 BNB — gas only, while the 2,777 free pool lasts; paid mints 0.0004 BNB, max 5 per wallet',
-      supply: '5,555 total (2,777 free); 2,298 minted',
+      supply: '5,555 total (2,777 free); 2,523 minted',
       extras: 'Feed once per 20h to grow Fry → Koi → Dragon Koi; 5% creator royalty',
     },
     bucket: 'berpotensi',
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,499/2,777, only 278 free left (verified 2026-11-10 ~16:35 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,514/2,777, only 263 free left (verified 2026-11-10 ~20:40 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
