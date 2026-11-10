@@ -450,7 +450,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,545/2,777, only 232 free left (verified 2026-11-11 ~04:50 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,566/2,777, only 211 free left (verified 2026-11-11 ~06:50 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
@@ -488,7 +488,7 @@ export const SEEDS = [
     claim: {
       headline: 'First 777 shares free for Agent ID holders, 1 per wallet — 50,000,000 LUCKY777 per share',
       mintPrice: '0 BNB — gas only, while the 777 free shares last; paid shares 0.002 BNB each after the free phase, 24h clock',
-      supply: '7,777 shares total (777 free / 7,000 paid); 211 minted, 566 free left',
+      supply: '7,777 shares total (777 free / 7,000 paid); 410 minted, 367 free left',
       extras: 'Slot machine opens at sellout; 3 free spins/day for holders; paid shares refunded in full via claimRefund() if the sale does not sell out',
     },
     bucket: 'real',
@@ -497,7 +497,9 @@ export const SEEDS = [
       { type: 'good', text: 'Free lane sim-verified by the radar: mint(1, 0x0) value 0 passes from revelle (Agent ID holder) and reverts 0xf947691f from a neutral wallet — real gate (verified 2026-11-10 ~14:45 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'Free shares mint LUCKY777 transfer-locked until the pool opens at sellout; if the sale misses sellout in 24h no pool is created and the token stays locked — disclosed on the official site' },
       { type: 'warn', text: 'Sale funds sit in an operator-managed pot; paid buyers are refunded in full via claimRefund() if the sale fails — a contract promise, not yet exercised' },
+      { type: 'warn', text: 'Sale clock not started yet on-chain (saleClockStart reads 0; REFUND_PERIOD is 24h) — the 24h sellout/refund window only begins later, so the free shares stay locked with no deadline ticking yet (verified 2026-11-11 ~06:50 WITA, rpc-bsc.48.club)' },
     ],
+    supplyFn: 'totalShares',
   },
   {
     id: 'cosmic-sentinel',
