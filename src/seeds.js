@@ -545,4 +545,27 @@ export const SEEDS = [
       { type: 'warn', text: 'POCKET token has no market until all 5,555 NFTs mint out — burn rewards and paid-mint bonuses are bonuses, not prices' },
     ],
   },
+  {
+    id: 'agent-cosmos',
+    name: 'AGENT COSMOS',
+    kind: 'NFT · AI agent',
+    chainId: 56,
+    contract: '0x3Aeda314ec05BC22E3c26a543E16Df2B8cC8fe69',
+    site: 'https://agentcosmos.fun',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID wallets, 1 per wallet, up to 10 per wallet',
+      mintPrice: '0 BNB for the first mint; paid mints 0.25 / 0.25 / 0.25 / 0.50 / 0.50 / 0.50 / 0.75 / 0.75 / 1.00 USDT',
+      supply: '100,000 total; 4,820 minted',
+      extras: 'Mint revenue goes to a dividend vault shared by stakers; 5% claim fee; owner renounced',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site agentcosmos.fun publishes the free first-mint terms and the Agent ID gate up front; on-chain name Agent Cosmos matches the site; Sourcify exact match' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint() value 0 passes from revelle (Agent ID holder) and reverts NO_AGENT_ID from a neutral wallet — real gate (verified 2026-11-11 ~02:55 WITA, rpc-bsc.48.club)' },
+      { type: 'good', text: 'Ownership renounced on-chain — owner() reads the burn address 0x000000000000000000000000000000000000dEaD, matching the site claim' },
+      { type: 'warn', text: 'Dividends come only from future paid mints — no guaranteed return; paid mints need a USDT approval first' },
+      { type: 'warn', text: 'No free-remaining getter on the contract — the free lane is 1 per wallet and closes only at the 100,000 supply cap, which cannot be read as a free count' },
+    ],
+  },
 ];
