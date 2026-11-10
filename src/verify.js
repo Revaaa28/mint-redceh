@@ -55,10 +55,16 @@ async function checkSeed(seed) {
     facts.pending = 'contract address not yet confirmed from an official source';
     return { ...seed, facts };
   }
+  // Some listings count in units other than totalSupply() (e.g. VISION
+  // shares via totalShares()); a seed may name its supply getter.
+  const supplyItem = seed.supplyFn
+    ? parseAbiItem(`function ${seed.supplyFn}() view returns (uint256)`)
+    : READ_ABI[2];
+  if (seed.supplyFn) facts.supplyFn = seed.supplyFn;
   const [name, symbol, supply, match] = await Promise.all([
     tryRead(seed.contract, READ_ABI[0]),
     tryRead(seed.contract, READ_ABI[1]),
-    tryRead(seed.contract, READ_ABI[2]),
+    tryRead(seed.contract, supplyItem),
     sourcify(seed.contract),
   ]);
   facts.sourcify = match ?? 'not verified';
