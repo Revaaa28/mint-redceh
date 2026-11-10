@@ -454,4 +454,26 @@ export const SEEDS = [
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
+  {
+    id: 'thyrk',
+    name: 'THYRK',
+    kind: 'NFT · knight',
+    chainId: 56,
+    contract: '0x4d90ffc3075fb8897edff6d7c6269c906664a20e',
+    site: 'https://thyrk.fun',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free per wallet, 1 per wallet, no cap on the free count',
+      mintPrice: '0 BNB for the first mint per wallet; paid mints after that, price read from the contract',
+      supply: '7,777 total (4,000 Common / 2,500 Rare / 1,000 Epic / 277 Legendary + 77 Divine, not mintable)',
+      extras: 'Each mint pays 20 $THYRK; 5% creator royalty',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site thyrk.fun publishes the contract, the free first-mint terms and the Agent ID gate up front; Sourcify exact match' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) on 2 RPCs and reverts 0xf947691f from a neutral wallet — real gate (verified 2026-11-10 ~08:35 WITA)' },
+      { type: 'warn', text: 'Each mint pays 20 $THYRK — the site names no trading venue for it, a bonus not a price' },
+      { type: 'warn', text: 'Paid-mint price is not shown on the site; the agent reads it from the contract before signing' },
+    ],
+  },
 ];
