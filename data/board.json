@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:12.187Z",
+      "checkedAt": "2026-11-10T12:40:13.964Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:15.140Z",
+      "checkedAt": "2026-11-10T12:40:16.668Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:15.656Z",
+      "checkedAt": "2026-11-10T12:40:17.715Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:16.915Z",
+      "checkedAt": "2026-11-10T12:40:18.264Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:16.915Z",
+      "checkedAt": "2026-11-10T12:40:18.264Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:16.915Z",
+      "checkedAt": "2026-11-10T12:40:18.264Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:20.669Z",
+      "checkedAt": "2026-11-10T12:40:18.858Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:21.468Z",
+      "checkedAt": "2026-11-10T12:40:19.410Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "130,084,733,255",
+      "tokenSupply": "130,134,219,103",
       "probes": {
-        "Refund obligations (refundOwed)": "55.014 BNB",
-        "Mint contract BNB balance": "55.014 BNB"
+        "Refund obligations (refundOwed)": "55.064 BNB",
+        "Mint contract BNB balance": "55.064 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:22.310Z",
+      "checkedAt": "2026-11-10T12:40:20.435Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:23.824Z",
+      "checkedAt": "2026-11-10T12:40:21.145Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:24.740Z",
+      "checkedAt": "2026-11-10T12:40:21.678Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:25.771Z",
+      "checkedAt": "2026-11-10T12:40:23.439Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:26.578Z",
+      "checkedAt": "2026-11-10T12:40:24.628Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:27.367Z",
+      "checkedAt": "2026-11-10T12:40:25.168Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -558,7 +558,7 @@
     "claim": {
       "headline": "Free mine by CPU proof-of-work for Agent ID wallets, 1 per wallet",
       "mintPrice": "0 BNB — gas only, plus a PoW nonce (one free cartridge per 120 s globally; difficulty retargets toward 150–300 s per free mint)",
-      "supply": "10,000 total; 431 minted",
+      "supply": "10,000 total; 953 minted",
       "extras": "Each cartridge is 1 NFT + 1,000 $1UP; paid lane 0.001 BNB; no admin mint"
     },
     "bucket": "berpotensi",
@@ -577,11 +577,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:28.116Z",
+      "checkedAt": "2026-11-10T12:40:25.731Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
-      "supplyNow": "953"
+      "supplyNow": "957"
     }
   },
   {
@@ -614,7 +614,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:28.985Z",
+      "checkedAt": "2026-11-10T12:40:26.417Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -654,7 +654,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:30.138Z",
+      "checkedAt": "2026-11-10T12:40:26.808Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -698,7 +698,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:31.236Z",
+      "checkedAt": "2026-11-10T12:40:27.366Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -747,7 +747,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:32.612Z",
+      "checkedAt": "2026-11-10T12:40:27.977Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
@@ -790,7 +790,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:33.147Z",
+      "checkedAt": "2026-11-10T12:40:28.607Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -811,7 +811,7 @@
     "claim": {
       "headline": "First koi free for Agent ID holders, 1 per wallet — feed it daily and it grows",
       "mintPrice": "0 BNB — gas only, while the 2,777 free pool lasts; paid mints 0.0004 BNB, max 5 per wallet",
-      "supply": "5,555 total (2,777 free); 2,298 minted",
+      "supply": "5,555 total (2,777 free); 2,523 minted",
       "extras": "Feed once per 20h to grow Fry → Koi → Dragon Koi; 5% creator royalty"
     },
     "bucket": "berpotensi",
@@ -826,7 +826,7 @@
       },
       {
         "type": "warn",
-        "text": "Free pool nearly gone — freeMinted 2,499/2,777, only 278 free left (verified 2026-11-10 ~16:35 WITA, rpc-bsc.48.club)"
+        "text": "Free pool nearly gone — freeMinted 2,514/2,777, only 263 free left (verified 2026-11-10 ~20:40 WITA, rpc-bsc.48.club)"
       },
       {
         "type": "warn",
@@ -834,7 +834,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:33.665Z",
+      "checkedAt": "2026-11-10T12:40:29.099Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
@@ -877,11 +877,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:34.314Z",
+      "checkedAt": "2026-11-10T12:40:29.851Z",
       "sourcify": "exact_match",
       "onchainName": "THYRK",
       "onchainSymbol": "THYRK",
-      "supplyNow": "3927",
+      "supplyNow": "3934",
       "supplyMax": "7777",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -921,7 +921,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-10T12:26:34.813Z",
+      "checkedAt": "2026-11-10T12:40:31.010Z",
       "sourcify": "exact_match",
       "onchainName": null,
       "onchainSymbol": null,
