@@ -499,4 +499,26 @@ export const SEEDS = [
       { type: 'warn', text: 'Sale funds sit in an operator-managed pot; paid buyers are refunded in full via claimRefund() if the sale fails — a contract promise, not yet exercised' },
     ],
   },
+  {
+    id: 'cosmic-sentinel',
+    name: 'Cosmic Sentinel',
+    kind: 'NFT · mystery box',
+    chainId: 56,
+    contract: '0x88731d1eb41c36f3d705fdb58b658244c06afc36',
+    site: 'https://cosmic-sentinel.pages.dev/mint',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free per Agent ID wallet, 1 per wallet, while EPIC supply lasts',
+      mintPrice: '0 BNB — gas only for the first mint; paid mints 0.02 USDT first, 0.05 USDT after, via Chainlink oracle',
+      supply: '225,000 total; 324 minted, 321 free claimed',
+      extras: 'Mystery box; max 50 per tx; a referral link earns 1 free mint per first paid referral',
+    },
+    bucket: 'berpotensi',
+    signals: [
+      { type: 'good', text: 'Official site cosmic-sentinel.pages.dev/mint publishes the contract, the free first-mint terms and the Agent ID gate up front, with the exact agent mint call' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint(1, 0x0) value 0 passes from revelle (Agent ID holder) and reverts 0xcd1c8867 from a neutral wallet — real gate (verified 2026-11-10 ~22:40 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Contract not verified on Sourcify — no public source code' },
+      { type: 'warn', text: 'No free-remaining getter on the contract, so the EPIC free cap cannot be read on-chain — the free lane can close without a visible counter' },
+    ],
+  },
 ];
