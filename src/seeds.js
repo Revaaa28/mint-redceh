@@ -672,4 +672,27 @@ export const SEEDS = [
       { type: 'warn', text: 'Same template is reused across three collections — check the contract address before minting' },
     ],
   },
+  {
+    id: 'foundry-faces',
+    name: 'Foundry Faces (FACES)',
+    kind: 'NFT · pixel face',
+    chainId: 56,
+    contract: '0x8653B09bDaD22c99915910962167F132E514331F',
+    site: 'https://ovrekfoundry.com',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID holders, 1 per wallet — solve an on-chain anti-bot question',
+      mintPrice: '0 BNB for the first mint; paid mints 0.0002 / 0.0004 / 0.0008 BNB by tier',
+      supply: '11,111 total; 495 minted',
+      extras: '20 character types, instant reveal; holder token phase planned after sellout',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site ovrekfoundry.com publishes the contract, the free first-mint terms and the Agent ID gate up front, with the exact agent mint call' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives an on-chain arithmetic question; mintFree(answer) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-11 ~16:35 WITA, rpc-bsc.48.club + bsc-dataseed1)' },
+      { type: 'good', text: 'Sourcify exact match (creation + runtime); mintOpen true; MAX_SUPPLY 11,111' },
+      { type: 'warn', text: 'Owner can setBaseURI, setMintOpen and withdraw (datt yellow) — the rules can change; mint proceeds forward to the project wallet in the same tx, contract holds no balance' },
+      { type: 'warn', text: 'The free mint needs the on-chain quiz answer — call questionFor(your address) first, then mintFree(answer); a wrong answer reverts WrongAnswer' },
+    ],
+  },
 ];
