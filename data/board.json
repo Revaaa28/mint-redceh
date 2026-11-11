@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:12.357Z",
+      "checkedAt": "2026-11-11T00:47:46.410Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:15.029Z",
+      "checkedAt": "2026-11-11T00:47:48.688Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:15.708Z",
+      "checkedAt": "2026-11-11T00:47:49.245Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:17.288Z",
+      "checkedAt": "2026-11-11T00:47:50.044Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:17.288Z",
+      "checkedAt": "2026-11-11T00:47:50.044Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:17.288Z",
+      "checkedAt": "2026-11-11T00:47:50.044Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:17.943Z",
+      "checkedAt": "2026-11-11T00:47:51.435Z",
       "sourcify": "not verified",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:18.940Z",
+      "checkedAt": "2026-11-11T00:47:52.391Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "132,271,448,745",
+      "tokenSupply": "132,468,551,551",
       "probes": {
-        "Refund obligations (refundOwed)": "52.862 BNB",
-        "Mint contract BNB balance": "52.862 BNB"
+        "Refund obligations (refundOwed)": "52.51 BNB",
+        "Mint contract BNB balance": "52.51 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:20.397Z",
+      "checkedAt": "2026-11-11T00:47:53.733Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:21.308Z",
+      "checkedAt": "2026-11-11T00:47:54.575Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:22.069Z",
+      "checkedAt": "2026-11-11T00:47:55.224Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:23.093Z",
+      "checkedAt": "2026-11-11T00:47:56.024Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:24.046Z",
+      "checkedAt": "2026-11-11T00:47:56.819Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:24.760Z",
+      "checkedAt": "2026-11-11T00:47:57.579Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -577,11 +577,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:25.551Z",
+      "checkedAt": "2026-11-11T00:47:59.168Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
-      "supplyNow": "1016"
+      "supplyNow": "1017"
     }
   },
   {
@@ -614,7 +614,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:26.428Z",
+      "checkedAt": "2026-11-11T00:47:59.979Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -654,7 +654,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:27.033Z",
+      "checkedAt": "2026-11-11T00:48:00.736Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -698,7 +698,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:27.735Z",
+      "checkedAt": "2026-11-11T00:48:01.438Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -747,11 +747,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:28.592Z",
+      "checkedAt": "2026-11-11T00:48:02.486Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
-      "supplyNow": "656",
+      "supplyNow": "657",
       "supplyMax": "3333",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -790,7 +790,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:29.240Z",
+      "checkedAt": "2026-11-11T00:48:03.032Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -811,7 +811,7 @@
     "claim": {
       "headline": "First koi free for Agent ID holders, 1 per wallet — feed it daily and it grows",
       "mintPrice": "0 BNB — gas only, while the 2,777 free pool lasts; paid mints 0.0004 BNB, max 5 per wallet",
-      "supply": "5,555 total (2,777 free); 2,550 minted",
+      "supply": "5,555 total (2,777 free); 2,577 minted",
       "extras": "Feed once per 20h to grow Fry → Koi → Dragon Koi; 5% creator royalty"
     },
     "bucket": "berpotensi",
@@ -826,7 +826,7 @@
       },
       {
         "type": "warn",
-        "text": "Free pool nearly gone — freeMinted 2,566/2,777, only 211 free left (verified 2026-11-11 ~06:50 WITA, rpc-bsc.48.club)"
+        "text": "Free pool nearly gone — freeMinted 2,568/2,777, only 209 free left (verified 2026-11-11 ~08:45 WITA, rpc-bsc.48.club)"
       },
       {
         "type": "warn",
@@ -834,7 +834,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:30.008Z",
+      "checkedAt": "2026-11-11T00:48:03.609Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
@@ -877,11 +877,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:31.316Z",
+      "checkedAt": "2026-11-11T00:48:04.216Z",
       "sourcify": "exact_match",
       "onchainName": "THYRK",
       "onchainSymbol": "THYRK",
-      "supplyNow": "4123",
+      "supplyNow": "4125",
       "supplyMax": "7777",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -898,7 +898,7 @@
     "claim": {
       "headline": "First 777 shares free for Agent ID holders, 1 per wallet — 50,000,000 LUCKY777 per share",
       "mintPrice": "0 BNB — gas only, while the 777 free shares last; paid shares 0.002 BNB each after the free phase, 24h clock",
-      "supply": "7,777 shares total (777 free / 7,000 paid); 410 minted, 367 free left",
+      "supply": "7,777 shares total (777 free / 7,000 paid); 439 minted, 338 free left",
       "extras": "Slot machine opens at sellout; 3 free spins/day for holders; paid shares refunded in full via claimRefund() if the sale does not sell out"
     },
     "bucket": "real",
@@ -926,12 +926,12 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-11T00:26:32.163Z",
+      "checkedAt": "2026-11-11T00:48:05.058Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": null,
       "onchainSymbol": null,
-      "supplyNow": "438",
+      "supplyNow": "442",
       "tokenSupply": "700,060,000,000"
     }
   },
@@ -969,11 +969,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:33.099Z",
+      "checkedAt": "2026-11-11T00:48:06.276Z",
       "sourcify": "not verified",
       "onchainName": "Cosmic Sentinel",
       "onchainSymbol": "CSNT",
-      "supplyNow": "416",
+      "supplyNow": "419",
       "supplyMax": "225000",
       "supplyMaxFn": "maxSupply"
     }
@@ -1017,7 +1017,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:33.677Z",
+      "checkedAt": "2026-11-11T00:48:06.911Z",
       "sourcify": "match",
       "onchainName": "Pocket Ai",
       "onchainSymbol": "POCKET",
@@ -1066,11 +1066,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-11T00:26:34.694Z",
+      "checkedAt": "2026-11-11T00:48:07.549Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cosmos",
       "onchainSymbol": "ACOS",
-      "supplyNow": "4905",
+      "supplyNow": "4914",
       "supplyMax": "100000",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1114,12 +1114,183 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-11T00:26:35.366Z",
+      "checkedAt": "2026-11-11T00:48:08.082Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": "VISION",
       "onchainSymbol": "VSN",
-      "supplyNow": "1766"
+      "supplyNow": "1774"
+    }
+  },
+  {
+    "id": "abysscable",
+    "name": "ABYSSCABLE Diver",
+    "kind": "NFT · pixel diver",
+    "chainId": 56,
+    "contract": "0xd2e9242b0d7c0186cc181a5fc8534541dad278a2",
+    "token": "0x9c9981ff9ff0e5feae28909de1446d6c362b02e3",
+    "site": "https://abysscable.pages.dev",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First mint free for Agent ID holders, 1 per wallet",
+      "mintPrice": "0 BNB for the first mint; paid mints 0.0009 BNB each",
+      "supply": "5,555 total; ~686 minted",
+      "extras": "Each mint earns 10,000 $BRINE (no market yet); own market, 3% fee; an X-verified lane offers extra free mints"
+    },
+    "bucket": "real",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site abysscable.pages.dev publishes the mint terms up front — and its own config.js names this exact contract address"
+      },
+      {
+        "type": "good",
+        "text": "Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) and reverts 0xb23bee05 from a neutral wallet — real gate (verified 2026-11-11 ~08:45 WITA, rpc-bsc.48.club)"
+      },
+      {
+        "type": "good",
+        "text": "Sourcify exact match (creation + runtime); mintOpen true; MAX_SUPPLY 5,555"
+      },
+      {
+        "type": "warn",
+        "text": "Free cap is stated two ways — 3,000 free slots on the official site vs first 2,000 free per Alphapedia — and the contract has no freeMinted/freeLeft getter, so the free count left is inferred from totalSupply, not read directly"
+      },
+      {
+        "type": "warn",
+        "text": "Site counter shows 0 / 5,555 minted while the chain already reads 686 — site numbers lag the chain"
+      },
+      {
+        "type": "warn",
+        "text": "Each mint pays 10,000 $BRINE, which has no trading pair yet — a bonus, not a price"
+      },
+      {
+        "type": "warn",
+        "text": "Same template is reused across three collections — check the contract address before minting"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-11T00:48:08.777Z",
+      "sourcify": "exact_match",
+      "onchainName": "ABYSSCABLE",
+      "onchainSymbol": "DIVER",
+      "supplyNow": "686",
+      "supplyMax": "5555",
+      "supplyMaxFn": "MAX_SUPPLY",
+      "tokenSupply": "1,800,000,000"
+    }
+  },
+  {
+    "id": "bytebloom",
+    "name": "BYTEBLOOM",
+    "kind": "NFT · pixel gardener",
+    "chainId": 56,
+    "contract": "0x74bbdad7c027c56be30a7feac6f7371b95f1c32b",
+    "token": "0x58f3581849a59304b4bb3a1c8cc48635df7bb87f",
+    "site": "https://bytebloom.pages.dev",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First mint free for Agent ID holders, 1 per wallet",
+      "mintPrice": "0 BNB for the first mint; paid mints 0.0009 BNB each",
+      "supply": "5,555 total; ~674 minted",
+      "extras": "Each mint earns 10,000 $PETAL (no market yet); own market, 3% fee; an X-verified lane offers extra free mints"
+    },
+    "bucket": "real",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site bytebloom.pages.dev publishes the mint terms up front — and its own config.js names this exact contract address"
+      },
+      {
+        "type": "good",
+        "text": "Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) and reverts 0xb23bee05 from a neutral wallet — real gate (verified 2026-11-11 ~08:45 WITA, rpc-bsc.48.club)"
+      },
+      {
+        "type": "good",
+        "text": "Sourcify exact match (creation + runtime); mintOpen true; MAX_SUPPLY 5,555"
+      },
+      {
+        "type": "warn",
+        "text": "Free cap is stated two ways — 3,000 free slots on the official site vs first 2,000 free per Alphapedia — and the contract has no freeMinted/freeLeft getter, so the free count left is inferred from totalSupply, not read directly"
+      },
+      {
+        "type": "warn",
+        "text": "Site counter shows 0 / 5,555 minted while the chain already reads 674 — site numbers lag the chain"
+      },
+      {
+        "type": "warn",
+        "text": "Each mint pays 10,000 $PETAL, which has no trading pair yet — a bonus, not a price"
+      },
+      {
+        "type": "warn",
+        "text": "Same template is reused across three collections — check the contract address before minting"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-11T00:48:09.489Z",
+      "sourcify": "exact_match",
+      "onchainName": "BYTEBLOOM",
+      "onchainSymbol": "BLOOM",
+      "supplyNow": "674",
+      "supplyMax": "5555",
+      "supplyMaxFn": "MAX_SUPPLY",
+      "tokenSupply": "1,800,000,000"
+    }
+  },
+  {
+    "id": "pixelpharaoh",
+    "name": "PIXELPHARAOH",
+    "kind": "NFT · pixel tomb AI",
+    "chainId": 56,
+    "contract": "0xbb90cc15f7302bbb7e114a5329d41dbb104f5350",
+    "token": "0xe069d6ac5e4a8d6304cff0d9e23f423aab6e36cb",
+    "site": "https://pixelpharaoh.pages.dev",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First mint free for Agent ID holders, 1 per wallet",
+      "mintPrice": "0 BNB for the first mint; paid mints 0.0009 BNB each",
+      "supply": "5,555 total; ~634 minted",
+      "extras": "Each mint earns 10,000 $SCARAB (no market yet); own market, 3% fee; an X-verified lane offers extra free mints"
+    },
+    "bucket": "real",
+    "signals": [
+      {
+        "type": "good",
+        "text": "Official site pixelpharaoh.pages.dev publishes the mint terms up front — and its own config.js names this exact contract address"
+      },
+      {
+        "type": "good",
+        "text": "Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) and reverts 0xb23bee05 from a neutral wallet — real gate (verified 2026-11-11 ~08:45 WITA, rpc-bsc.48.club)"
+      },
+      {
+        "type": "good",
+        "text": "Sourcify exact match (creation + runtime); mintOpen true; MAX_SUPPLY 5,555"
+      },
+      {
+        "type": "warn",
+        "text": "Free cap is stated two ways — 3,000 free slots on the official site vs first 2,000 free per Alphapedia — and the contract has no freeMinted/freeLeft getter, so the free count left is inferred from totalSupply, not read directly"
+      },
+      {
+        "type": "warn",
+        "text": "Site counter shows 0 / 5,555 minted while the chain already reads 634 — site numbers lag the chain"
+      },
+      {
+        "type": "warn",
+        "text": "Each mint pays 10,000 $SCARAB, which has no trading pair yet — a bonus, not a price"
+      },
+      {
+        "type": "warn",
+        "text": "Same template is reused across three collections — check the contract address before minting"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-11T00:48:10.202Z",
+      "sourcify": "exact_match",
+      "onchainName": "PIXELPHARAOH",
+      "onchainSymbol": "KA",
+      "supplyNow": "634",
+      "supplyMax": "5555",
+      "supplyMaxFn": "MAX_SUPPLY",
+      "tokenSupply": "1,800,000,000"
     }
   }
 ]
