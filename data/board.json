@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:17.140Z",
+      "checkedAt": "2026-11-12T18:56:26.815Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:20.548Z",
+      "checkedAt": "2026-11-12T18:56:29.501Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:21.520Z",
+      "checkedAt": "2026-11-12T18:56:30.508Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:22.084Z",
+      "checkedAt": "2026-11-12T18:56:31.941Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:22.084Z",
+      "checkedAt": "2026-11-12T18:56:31.941Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:22.084Z",
+      "checkedAt": "2026-11-12T18:56:31.941Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:23.416Z",
+      "checkedAt": "2026-11-12T18:56:33.109Z",
       "sourcify": "match",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:24.135Z",
+      "checkedAt": "2026-11-12T18:56:33.946Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "141,855,275,021",
+      "tokenSupply": "141,896,748,089",
       "probes": {
-        "Refund obligations (refundOwed)": "43.326 BNB",
-        "Mint contract BNB balance": "43.326 BNB"
+        "Refund obligations (refundOwed)": "43.316 BNB",
+        "Mint contract BNB balance": "43.316 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:26.131Z",
+      "checkedAt": "2026-11-12T18:56:35.559Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:27.560Z",
+      "checkedAt": "2026-11-12T18:56:36.459Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:28.855Z",
+      "checkedAt": "2026-11-12T18:56:37.852Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:29.837Z",
+      "checkedAt": "2026-11-12T18:56:39.353Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:30.698Z",
+      "checkedAt": "2026-11-12T18:56:40.279Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:31.409Z",
+      "checkedAt": "2026-11-12T18:56:41.175Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -577,7 +577,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:33.142Z",
+      "checkedAt": "2026-11-12T18:56:41.893Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
@@ -618,7 +618,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:34.742Z",
+      "checkedAt": "2026-11-12T18:56:43.203Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -658,7 +658,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:35.381Z",
+      "checkedAt": "2026-11-12T18:56:44.528Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -702,7 +702,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:36.124Z",
+      "checkedAt": "2026-11-12T18:56:45.254Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -751,7 +751,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:37.034Z",
+      "checkedAt": "2026-11-12T18:56:46.110Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
@@ -794,7 +794,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:37.830Z",
+      "checkedAt": "2026-11-12T18:56:47.390Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -830,7 +830,7 @@
       },
       {
         "type": "warn",
-        "text": "Free pool nearly gone — freeMinted 2,606/2,777, only 171 free left (verified 2026-11-12 ~15:00 WITA, rpc-bsc.48.club)"
+        "text": "Free pool nearly gone — freeMinted 2,642/2,777, only 135 free left (verified 2026-11-13 ~02:50 WITA, rpc-bsc.48.club)"
       },
       {
         "type": "warn",
@@ -838,11 +838,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:38.719Z",
+      "checkedAt": "2026-11-12T18:56:48.079Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
-      "supplyNow": "2651",
+      "supplyNow": "2653",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -881,7 +881,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:39.885Z",
+      "checkedAt": "2026-11-12T18:56:48.753Z",
       "sourcify": "exact_match",
       "onchainName": "THYRK",
       "onchainSymbol": "THYRK",
@@ -930,12 +930,12 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-12T18:26:41.307Z",
+      "checkedAt": "2026-11-12T18:56:49.636Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": null,
       "onchainSymbol": null,
-      "supplyNow": "487",
+      "supplyNow": "488",
       "tokenSupply": "700,060,000,000"
     }
   },
@@ -973,7 +973,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:42.937Z",
+      "checkedAt": "2026-11-12T18:56:50.599Z",
       "sourcify": "not verified",
       "onchainName": "Cosmic Sentinel",
       "onchainSymbol": "CSNT",
@@ -1021,7 +1021,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:43.936Z",
+      "checkedAt": "2026-11-12T18:56:51.795Z",
       "sourcify": "match",
       "onchainName": "Pocket Ai",
       "onchainSymbol": "POCKET",
@@ -1029,7 +1029,7 @@
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY",
-      "tokenSupply": "1,500,000"
+      "tokenSupply": "1,600,000"
     }
   },
   {
@@ -1070,11 +1070,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:45.501Z",
+      "checkedAt": "2026-11-12T18:56:52.816Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cosmos",
       "onchainSymbol": "ACOS",
-      "supplyNow": "5290",
+      "supplyNow": "5291",
       "supplyMax": "100000",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1118,7 +1118,7 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-12T18:26:46.320Z",
+      "checkedAt": "2026-11-12T18:56:53.679Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": "VISION",
@@ -1173,7 +1173,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:47.206Z",
+      "checkedAt": "2026-11-12T18:56:54.662Z",
       "sourcify": "exact_match",
       "onchainName": "ABYSSCABLE",
       "onchainSymbol": "DIVER",
@@ -1230,11 +1230,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:48.002Z",
+      "checkedAt": "2026-11-12T18:56:55.362Z",
       "sourcify": "exact_match",
       "onchainName": "BYTEBLOOM",
       "onchainSymbol": "BLOOM",
-      "supplyNow": "1023",
+      "supplyNow": "1024",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY",
       "tokenSupply": "1,800,000,000"
@@ -1287,11 +1287,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:48.711Z",
+      "checkedAt": "2026-11-12T18:56:56.382Z",
       "sourcify": "exact_match",
       "onchainName": "PIXELPHARAOH",
       "onchainSymbol": "KA",
-      "supplyNow": "865",
+      "supplyNow": "866",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY",
       "tokenSupply": "1,800,000,000"
@@ -1335,7 +1335,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:49.501Z",
+      "checkedAt": "2026-11-12T18:56:57.765Z",
       "sourcify": "exact_match",
       "onchainName": "Foundry Faces",
       "onchainSymbol": "FACES",
@@ -1388,12 +1388,12 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-12T18:26:50.300Z",
+      "checkedAt": "2026-11-12T18:56:58.337Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "DacityCoin",
       "onchainSymbol": "DACITYNFT",
-      "supplyNow": "1751"
+      "supplyNow": "1752"
     }
   },
   {
@@ -1435,7 +1435,7 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-12T18:26:51.162Z",
+      "checkedAt": "2026-11-12T18:56:59.442Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "NAOMI GENESIS",
@@ -1491,7 +1491,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:51.685Z",
+      "checkedAt": "2026-11-12T18:56:59.936Z",
       "sourcify": "not verified",
       "onchainName": "Alchemister",
       "onchainSymbol": "ALCHEMISTER",
@@ -1542,11 +1542,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:52.510Z",
+      "checkedAt": "2026-11-12T18:57:00.838Z",
       "sourcify": "exact_match",
       "onchainName": "DREAMCOMPILE",
       "onchainSymbol": "NAPPER",
-      "supplyNow": "642",
+      "supplyNow": "645",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1590,7 +1590,7 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-12T18:26:53.248Z",
+      "checkedAt": "2026-11-12T18:57:01.538Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "Mizukairo",
@@ -1642,11 +1642,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:53.905Z",
+      "checkedAt": "2026-11-12T18:57:02.468Z",
       "sourcify": "exact_match",
       "onchainName": "ONLYAI Crystals",
       "onchainSymbol": "OCRY",
-      "supplyNow": "2608",
+      "supplyNow": "2612",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1689,12 +1689,64 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-12T18:26:54.696Z",
+      "checkedAt": "2026-11-12T18:57:03.317Z",
       "sourcify": "exact_match",
       "onchainName": "AgentLabs Specimen",
       "onchainSymbol": "SPEC",
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually"
+    }
+  },
+  {
+    "id": "shenlong",
+    "name": "Shenlong (SHENLONG)",
+    "kind": "NFT · blind-box star pearl",
+    "chainId": 56,
+    "contract": "0x34ec38a5eDaB4477b80A137169Ee46Ea56613E8c",
+    "site": "https://shenlong.fun",
+    "gated": "Binance Agent ID (.ai)",
+    "claim": {
+      "headline": "First 4 mints free for .ai Agent ID wallets, 1–7 star blind box — SOLD OUT",
+      "mintPrice": "Free lane CLOSED — totalMinted hit the 20,000 max on-chain; paid lane 0.002 BNB per NFT, max 50 per wallet",
+      "supply": "20,000 total — SOLD OUT (20,000/20,000 minted, verified on two RPCs 2026-11-13 ~02:50 WITA)",
+      "extras": "Stake for a 60% dividend share; collect 1–7 stars and burn the set to summon and share the 25% prize pool; no official Dragon Ball affiliation"
+    },
+    "bucket": "indikasi",
+    "signals": [
+      {
+        "type": "bad",
+        "text": "SOLD OUT — totalMinted reads 20,000/20,000 on two RPCs (rpc-bsc.48.club + bsc-dataseed1), and a value-0 mint(1) sim reverts from an Agent ID wallet despite freeMintsLeft reading 4 — no free mint remains (verified 2026-11-13 ~02:50 WITA)"
+      },
+      {
+        "type": "bad",
+        "text": "The official page still advertises the first 4 mints free and shows mint progress \"0 / 20,000\" while the chain is sold out (verified live 2026-11-13)"
+      },
+      {
+        "type": "good",
+        "text": "Official site shenlong.fun publishes this exact contract, the first-4-free terms and the Agent ID gate up front; Sourcify exact match"
+      },
+      {
+        "type": "warn",
+        "text": "A Binance Square post quotes a different contract (0xd823…) that is NOT the site-listed one — only 0x34ec…E8c is official; check the address before minting"
+      },
+      {
+        "type": "warn",
+        "text": "totalSupply()/mintOpen() do not answer — non-standard getters, supply read via totalMinted"
+      },
+      {
+        "type": "warn",
+        "text": "Not official Dragon Ball IP — the site itself says so (IP / takedown risk); paid lane 0.002 BNB after the free four; fee split 15% treasury / 60% staking / 25% prize pool"
+      }
+    ],
+    "facts": {
+      "checkedAt": "2026-11-12T18:57:04.769Z",
+      "sourcify": "exact_match",
+      "onchainName": "Shenlong",
+      "onchainSymbol": "SHENLONG",
+      "supplyNow": null,
+      "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
+      "supplyMax": "20000",
+      "supplyMaxFn": "MAX_SUPPLY"
     }
   }
 ]
