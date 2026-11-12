@@ -333,13 +333,14 @@ export const SEEDS = [
     claim: {
       headline: 'First 25 mints free for Agent ID holders, 1 per wallet — free pool exhausted',
       mintPrice: 'Free lane CLOSED (freeMinted 25/25, freeRemaining 0 on-chain); paid lane 0.0003 BNB per NFT',
-      supply: '7,777 total (25 free / rest paid); 27 minted, free pool 0 left',
+      supply: '7,777 total (25 free / rest paid); 48 minted, free pool 0 left',
       extras: 'Every mint pays 100,000,000 MOLTA; $MOLTA has no secondary market yet',
     },
-    bucket: 'berpotensi',
+    bucket: 'real',
     signals: [
-      { type: 'good', text: 'Official mint page publishes the contract, the 25-free terms and the Agent ID gate up front; Sourcify exact match; the page reads freeRemaining() live from the chain' },
-      { type: 'bad', text: 'Free pool exhausted — freeMinted 25/25, freeRemaining 0 on-chain (verified on two RPCs 2026-11-09 ~06:35 WITA)' },
+      { type: 'good', text: 'Official site moltagent.pages.dev publishes this exact contract, the 25-free terms and the Agent ID gate up front (verified live 2026-11-12 ~10:45 WITA)' },
+      { type: 'good', text: 'Free pool exhausted (25/25) and the page says so plainly — "The 25 free mints are gone", FAQ "Can I still mint for free? No" — no free mint remains, only the paid lane (0.0003 BNB) (verified 2026-11-12 ~10:45 WITA)' },
+      { type: 'good', text: 'Free lane ran and closed on-chain: freeMinted 25/25, freeRemaining 0, totalMinted 48 (verified 2026-11-12 ~10:50 WITA, rpc-bsc.48.club); contract verified on Sourcify (exact match); the page reads freeRemaining() live from the chain' },
       { type: 'warn', text: 'Every mint pays 100M MOLTA, which has no secondary market yet — a bonus, not a price' },
     ],
   },
@@ -450,7 +451,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,602/2,777, only 175 free left (verified 2026-11-12 ~09:00 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,603/2,777, only 174 free left (verified 2026-11-12 ~10:50 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
@@ -713,7 +714,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site dacity-preview.pages.dev lists this exact contract address in its own source and states the first-NFT-free terms up front (verified 2026-11-11 ~18:30 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: mint(1, 0x0) value 0 passes from revelle (Agent ID holder) and reverts 0xb23bee05 from a neutral wallet — real gate (verified 2026-11-11 ~18:30 WITA, rpc-bsc.48.club + bsc-dataseed)' },
-      { type: 'good', text: 'Sourcify exact match (creation + runtime); totalMinted 1,686/9,999, agentFreeUsed 1,659; mint window Nov 11 15:39 → Nov 16 15:39 WIB read on-chain (verified 2026-11-12 ~09:00 WITA, rpc-bsc.48.club)' },
+      { type: 'good', text: 'Sourcify exact match (creation + runtime); totalMinted 1,698/9,999, agentFreeUsed 1,671; mint window Nov 11 15:39 → Nov 16 15:39 WIB read on-chain (verified 2026-11-12 ~10:50 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'Fan project — the site itself says it is not affiliated with Rockstar Games or Take-Two Interactive (IP / takedown risk)' },
       { type: 'warn', text: 'Each mint pays 50,000 DACITY, which has no trading pair yet — a bonus, not a price' },
       { type: 'warn', text: 'No totalSupply()/MAX_SUPPLY getter on the contract — counts read via totalMinted; no free-remaining getter either' },
