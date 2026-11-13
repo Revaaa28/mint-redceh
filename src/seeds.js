@@ -451,7 +451,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,712/2,777, only 65 free left (verified 2026-11-13 ~14:50 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,724/2,777, only 53 free left (verified 2026-11-13 ~16:36 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
