@@ -714,7 +714,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site dacity-preview.pages.dev lists this exact contract address in its own source and states the first-NFT-free terms up front (verified 2026-11-11 ~18:30 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: mint(1, 0x0) value 0 passes from revelle (Agent ID holder) and reverts 0xb23bee05 from a neutral wallet — real gate (verified 2026-11-11 ~18:30 WITA, rpc-bsc.48.club + bsc-dataseed)' },
-      { type: 'good', text: 'Sourcify exact match (creation + runtime); totalMinted 2,192/9,999, agentFreeUsed 2,020; mint window Nov 11 15:39 → Nov 16 15:39 WIB read on-chain (verified 2026-11-13 ~20:40 WITA, rpc-bsc.48.club)' },
+      { type: 'good', text: 'Sourcify exact match (creation + runtime); totalMinted 2,235/9,999, agentFreeUsed 2,065; mint window Nov 11 15:39 → Nov 16 15:39 WIB read on-chain (verified 2026-11-13 ~22:50 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'Fan project — the site itself says it is not affiliated with Rockstar Games or Take-Two Interactive (IP / takedown risk)' },
       { type: 'warn', text: 'Each mint pays 50,000 DACITY, which has no trading pair yet — a bonus, not a price' },
       { type: 'warn', text: 'No totalSupply()/MAX_SUPPLY getter on the contract — counts read via totalMinted; no free-remaining getter either' },
@@ -907,7 +907,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site meow-cards.pages.dev publishes this exact contract and the first-free Agent ID terms up front, plus a full skill.md (verified live 2026-11-13 ~10:44 WITA)' },
       { type: 'good', text: 'Free lane proven by the contract itself: priceOf(revelle, 1, agentTokenId) reads 0, firstFreeUsed(revelle) false, isAgent(revelle) true — real Agent ID gate (verified 2026-11-13 ~10:44 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime)' },
-      { type: 'good', text: 'totalMinted 1,139 / 10,000, remaining 8,861 — free lane wide open; paid tiers are fixed constants (0.00035 / 0.00065 BNB) (verified 2026-11-13 ~20:40 WITA, rpc-bsc.48.club)' },
+      { type: 'good', text: 'totalMinted 1,152 / 10,000, remaining 8,848 — free lane wide open; paid tiers are fixed constants (0.00035 / 0.00065 BNB) (verified 2026-11-13 ~22:50 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'Owner is a live EOA with setAgentRegistry / setBaseURI / setRefPrice / withdraw — market ref prices and paid-mint BNB are owner-controlled; the free lane itself costs gas only' },
       { type: 'warn', text: 'No pause, no proxy, no rescue — but card draws use previous block hash + sender + tokenId (weak randomness, fine for a collectible)' },
     ],
@@ -931,8 +931,8 @@ export const SEEDS = [
       { type: 'good', text: 'Official site agentbubbles.pages.dev publishes the first-free terms and the Agent ID gate up front; the contract itself names the site and X @Agent_Bubblez in its on-chain contractURI (verified live 2026-11-13 ~20:35 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) and reverts "Agent ID required" from a neutral wallet — real gate (verified 2026-11-13 ~20:35 WITA, rpc-bsc.48.club)' },
       { type: 'good', text: 'Sourcify exact match (creation + runtime, verified 2026-11-13 09:47 UTC); mintOpen true; MAX_SUPPLY 2,222; ownership renounced (owner reads 0x0)' },
-      { type: 'warn', text: 'Site counter shows 0 / 2,222 minted while the chain already reads 757 (verified 2026-11-13 ~20:35 WITA) — site numbers lag the chain' },
-      { type: 'warn', text: 'The page shows a stale "Mint status: Not live yet" label while also saying "Mint is open" — the chain proves minting is live (757 minted, mintOpen true)' },
+      { type: 'warn', text: 'Site counter shows 0 / 2,222 minted while the chain already reads 1,172 (freeMinted 1,107) (verified 2026-11-13 ~22:50 WITA) — site numbers lag the chain' },
+      { type: 'warn', text: 'The page shows a stale "Mint status: Not live yet" label while also saying "Mint is open" — the chain proves minting is live (1,172 minted, mintOpen true)' },
     ],
   },
 ];
