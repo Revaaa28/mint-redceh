@@ -451,7 +451,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,665/2,777, only 112 free left (verified 2026-11-13 ~08:45 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,700/2,777, only 77 free left (verified 2026-11-13 ~12:45 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
@@ -853,14 +853,14 @@ export const SEEDS = [
     claim: {
       headline: 'First specimen of each daily experiment free for Agent ID holders',
       mintPrice: '0 BNB for the 1st specimen per experiment; specimens 2–5 cost 0.0002 BNB, 6–10 cost 0.0004 BNB',
-      supply: 'Experiment Nº1 — ~229 specimens minted (no on-chain supply counter; count from the Boltbook preview)',
+      supply: 'Experiment Nº2 live since 00:00 UTC Nov 13 — Nº1 sealed; no on-chain supply counter, count from the Boltbook preview',
       extras: 'Sealed specimens claim $LAB (10,000–1,000,000 by form); claim fee 0.0002457 BNB, claims not open yet, $LAB has no pool',
     },
     bucket: 'real',
     signals: [
       { type: 'good', text: 'Official site agentlabs.fun publishes this exact contract in its own config.js, the first-free-per-experiment terms and the Agent ID + on-chain question gate up front (verified live 2026-11-13 ~00:50 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives an on-chain arithmetic question; mintFree(answer) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-13 ~00:50 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime); genesisOpen true' },
-      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment (Nº1 seals 00:00 UTC Nov 13), then a fresh allowance opens with the next experiment' },
+      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº2 is live now and seals 00:00 UTC Nov 14, then a fresh allowance opens with Nº3 (verified 2026-11-13 ~12:45 WITA: currentExperiment 2, genesisOpen true)' },
       { type: 'warn', text: 'Sealed specimens claim $LAB for a flat 0.0002457 BNB fee, but claims are not open yet and $LAB has no trading pool — value ~$0 until that changes' },
       { type: 'warn', text: 'Site counters read 0 specimens / 0 participants while the chain already has mints — site numbers lag the chain' },
     ],
