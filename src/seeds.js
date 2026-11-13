@@ -889,4 +889,27 @@ export const SEEDS = [
       { type: 'warn', text: 'Not official Dragon Ball IP — the site itself says so (IP / takedown risk); paid lane 0.002 BNB after the free four; fee split 15% treasury / 60% staking / 25% prize pool' },
     ],
   },
+  {
+    id: 'meow-cards',
+    name: 'Meow Cards (MEOWC)',
+    kind: 'NFT · cat trading cards',
+    chainId: 56,
+    contract: '0xb8164afefc53910d7a74cece15a60a9e0c86089e',
+    site: 'https://meow-cards.pages.dev',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First card free for Agent ID wallets, gas only',
+      mintPrice: '0 BNB for the 1st card; cards #2–10 cost 0.00035 BNB, #11–20 cost 0.00065 BNB, max 20 per wallet',
+      supply: '10,000 total; 979 minted',
+      extras: '24 original cat cards in 5 tiers, drawn randomly at reveal; built-in escrow market (0.00025 BNB list/delist fee, sellers keep 95%, 5% treasury royalty, 80% ref-price floor)',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site meow-cards.pages.dev publishes this exact contract and the first-free Agent ID terms up front, plus a full skill.md (verified live 2026-11-13 ~10:44 WITA)' },
+      { type: 'good', text: 'Free lane proven by the contract itself: priceOf(revelle, 1, agentTokenId) reads 0, firstFreeUsed(revelle) false, isAgent(revelle) true — real Agent ID gate (verified 2026-11-13 ~10:44 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime)' },
+      { type: 'good', text: 'totalMinted 979 / 10,000, remaining 9,021 — free lane wide open; paid tiers are fixed constants (0.00035 / 0.00065 BNB)' },
+      { type: 'warn', text: 'Owner is a live EOA with setAgentRegistry / setBaseURI / setRefPrice / withdraw — market ref prices and paid-mint BNB are owner-controlled; the free lane itself costs gas only' },
+      { type: 'warn', text: 'No pause, no proxy, no rescue — but card draws use previous block hash + sender + tokenId (weak randomness, fine for a collectible)' },
+    ],
+  },
 ];
