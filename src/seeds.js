@@ -451,7 +451,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site inkkoi.ink publishes the contract, the freeMint() terms and the Agent ID gate up front (agent.md); Sourcify exact match' },
       { type: 'good', text: 'freeMint() value 0 passes from an Agent ID wallet, mint(1) reverts — real gate, 1 free per wallet' },
-      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,724/2,777, only 53 free left (verified 2026-11-13 ~16:36 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Free pool nearly gone — freeMinted 2,764/2,777, only 13 free left (verified 2026-11-13 ~18:35 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'A koi stays a Fry forever if never fed — growth needs a daily feed() call' },
     ],
   },
@@ -907,7 +907,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site meow-cards.pages.dev publishes this exact contract and the first-free Agent ID terms up front, plus a full skill.md (verified live 2026-11-13 ~10:44 WITA)' },
       { type: 'good', text: 'Free lane proven by the contract itself: priceOf(revelle, 1, agentTokenId) reads 0, firstFreeUsed(revelle) false, isAgent(revelle) true — real Agent ID gate (verified 2026-11-13 ~10:44 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime)' },
-      { type: 'good', text: 'totalMinted 979 / 10,000, remaining 9,021 — free lane wide open; paid tiers are fixed constants (0.00035 / 0.00065 BNB)' },
+      { type: 'good', text: 'totalMinted 1,114 / 10,000, remaining 8,886 — free lane wide open; paid tiers are fixed constants (0.00035 / 0.00065 BNB) (verified 2026-11-13 ~18:26 WITA, rpc-bsc.48.club)' },
       { type: 'warn', text: 'Owner is a live EOA with setAgentRegistry / setBaseURI / setRefPrice / withdraw — market ref prices and paid-mint BNB are owner-controlled; the free lane itself costs gas only' },
       { type: 'warn', text: 'No pause, no proxy, no rescue — but card draws use previous block hash + sender + tokenId (weak randomness, fine for a collectible)' },
     ],
