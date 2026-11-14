@@ -961,4 +961,26 @@ export const SEEDS = [
     ],
     supplyFn: 'freeClaimed',
   },
+  {
+    id: 'pod-squad',
+    name: 'Pod Squad',
+    kind: 'NFT · chibi whale',
+    chainId: 56,
+    contract: '0x5A5Eff4e9C5bad00e97Cc33d6e6D26983509Eeb8',
+    site: 'https://pod-squad.github.io/pod-squad/',
+    gated: 'Open — no Agent ID gate',
+    claim: {
+      headline: 'First mint per wallet free, then 0.001 BNB — 7 days only',
+      mintPrice: '0 BNB for the first mint per wallet; 0.001 BNB after',
+      supply: '7,000 total; mint window Nov 14 19:15 WITA – Nov 21 19:15 WITA, all reveal at once',
+      extras: 'Metadata hosted off-chain (pod-squad.github.io); no token, no market verified',
+    },
+    bucket: 'berpotensi',
+    signals: [
+      { type: 'good', text: 'Official site pod-squad.github.io publishes the exact contract in its own config and the first-free terms up front (verified live 2026-11-14 ~21:00 WITA)' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint(1) value 0 passes on rpc-bsc.48.club; totalSupply 407/7,000 and rising; Sourcify exact_match (verified 2026-11-14 ~20:55 WITA)' },
+      { type: 'warn', text: 'No Agent ID gate — the first mint is free for any wallet, broader than the Agentic ID theme' },
+      { type: 'warn', text: 'Metadata is hosted off-chain and can change; no token or secondary market verified' },
+    ],
+  },
 ];
