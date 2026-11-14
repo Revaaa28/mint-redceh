@@ -146,7 +146,7 @@ export async function handle(req, res) {
         return;
       }
       const store = await getStore();
-      sendJson(res, 200, await askRadar(store, q));
+      sendJson(res, 200, await askRadar(store, q, await getBoard()));
       return;
     }
     if (req.method === "POST" && url.pathname === "/api/remember") {

@@ -72,13 +72,48 @@ export async function writeBoardMemories(store, board) {
   return { checkpoint, written };
 }
 
+// Parse pool for a read: listAll() plus a targeted recall merge.
+// On the Walrus backend, listAll() joins texts from a few broad recalls
+// only, so most memories come back text-less and unparseable — the ask
+// box and the history panels would only ever "know" the handful of
+// listings those broad recalls happened to surface. A targeted recall
+// for the subject actually being asked about finds that listing's own
+// records reliably, so merge its texts in (by blob id) before parsing.
+// Read-path only; the stored memories are never touched.
+async function loadParsedWithRecall(store, queries) {
+  const all = await store.listAll();
+  const textByBlob = new Map();
+  const createdByBlob = new Map();
+  for (const e of all) {
+    if (e.createdAt) createdByBlob.set(e.blobId, e.createdAt);
+    if (e.text) textByBlob.set(e.blobId, e.text);
+  }
+  for (const q of queries) {
+    if (!q) continue;
+    try {
+      const hits = await store.recall(q, 100);
+      for (const h of hits) {
+        if (h.text && !textByBlob.has(h.blobId)) textByBlob.set(h.blobId, h.text);
+        if (h.createdAt && !createdByBlob.has(h.blobId)) createdByBlob.set(h.blobId, h.createdAt);
+      }
+    } catch {
+      /* targeted recall is best-effort; the broad pool still applies */
+    }
+  }
+  const parsed = [];
+  for (const [blobId, text] of textByBlob) {
+    const p = parseListingMemory(text, blobId, createdByBlob.get(blobId) ?? null);
+    if (p) parsed.push(p);
+  }
+  return parsed;
+}
+
 // Full check history for ONE listing, by exact seed id — backs the
 // per-card "check history" panel on the site.
 export async function historyForListing(store, id) {
-  const all = await store.listAll();
-  const checks = all
-    .map((e) => parseListingMemory(e.text, e.blobId, e.createdAt))
-    .filter((p) => p && p.id === id)
+  const parsed = await loadParsedWithRecall(store, [id, String(id).replace(/[-_]+/g, " ")]);
+  const checks = parsed
+    .filter((p) => p.id === id)
     .sort((a, b) => (a.checkedAt < b.checkedAt ? -1 : 1));
   if (!checks.length) return { found: false, id };
   const first = checks[0];
@@ -103,23 +138,38 @@ export async function historyForListing(store, id) {
 
 // Answer a question from memory only. Matches by listing name, id, or
 // contract address fragment; returns the full check history per listing.
-export async function askRadar(store, q) {
+// boardHints (the current board's id/name/contract triples) are used for
+// ONE thing: a raw contract fragment cannot be found by semantic recall,
+// so the board's verified contracts identify which listing to recall by
+// name. The answer itself still comes only from memory records.
+export async function askRadar(store, q, boardHints = []) {
   const query = String(q || "").trim().toLowerCase();
   if (!query) return { found: false, error: "empty query" };
-  const all = await store.listAll();
-  const parsed = all
-    .map((e) => parseListingMemory(e.text, e.blobId, e.createdAt))
-    .filter(Boolean);
+  const recallQueries = [String(q).trim()];
+  if (/0x[0-9a-f]{6,}/.test(query) || /^[0-9a-f]{10,}$/.test(query)) {
+    for (const h of boardHints) {
+      if (h?.contract && h.contract.toLowerCase().includes(query)) {
+        recallQueries.push(h.name, h.id);
+      }
+    }
+  }
+  const parsed = await loadParsedWithRecall(store, recallQueries);
   const byId = new Map();
   for (const p of parsed) {
     if (!byId.has(p.id)) byId.set(p.id, []);
     byId.get(p.id).push(p);
   }
+  const queryTokens = query.split(/[^a-z0-9]+/).filter((t) => t.length > 1);
   const results = [];
   for (const [id, checks] of byId) {
     const first = checks[0];
     const hay = `${first.name} ${id} ${first.contract || ""}`.toLowerCase();
-    if (!hay.includes(query)) continue;
+    // Exact substring, or every query token present (so "Agentic Coin
+    // AGC" still matches the board name "Agentic Coin (AGC)").
+    const hit =
+      hay.includes(query) ||
+      (queryTokens.length > 1 && queryTokens.every((t) => hay.includes(t)));
+    if (!hit) continue;
     checks.sort((a, b) => (a.checkedAt < b.checkedAt ? -1 : 1));
     const buckets = [...new Set(checks.map((c) => c.bucket))];
     results.push({
