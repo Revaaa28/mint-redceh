@@ -853,14 +853,14 @@ export const SEEDS = [
     claim: {
       headline: 'First specimen of each daily experiment free for Agent ID holders',
       mintPrice: '0 BNB for the 1st specimen per experiment; specimens 2–5 cost 0.0002 BNB, 6–10 cost 0.0004 BNB',
-      supply: 'Experiment Nº2 live since 00:00 UTC Nov 13 — Nº1 sealed; no on-chain supply counter, count from the Boltbook preview',
+      supply: 'Experiment Nº4 live since 00:00 UTC Nov 15 — Nº3 sealed; no on-chain supply counter, count from the Boltbook preview',
       extras: 'Sealed specimens claim $LAB (10,000–1,000,000 by form); claim fee 0.0002457 BNB, claims not open yet, $LAB has no pool',
     },
     bucket: 'real',
     signals: [
       { type: 'good', text: 'Official site agentlabs.fun publishes this exact contract in its own config.js, the first-free-per-experiment terms and the Agent ID + on-chain question gate up front (verified live 2026-11-13 ~00:50 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives an on-chain arithmetic question; mintFree(answer) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-13 ~00:50 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime); genesisOpen true' },
-      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº3 is live now and seals 00:00 UTC Nov 15, then a fresh allowance opens with Nº4 (verified 2026-11-14 ~10:40 WITA: currentExperiment 3, genesisOpen true, totalSpecimens 3,069)' },
+      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº4 is live now and seals 00:00 UTC Nov 16, then a fresh allowance opens with Nº5 (verified 2026-11-15 ~08:50 WITA: currentExperiment 4, genesisOpen true, totalSpecimens 3,638, specimensInExperiment(4) 198, experimentEnd(4) 2026-11-16 00:00 UTC)' },
       { type: 'warn', text: 'Sealed specimens claim $LAB for a flat 0.0002457 BNB fee, but claims are not open yet and $LAB has no trading pool — value ~$0 until that changes' },
       { type: 'warn', text: 'Site counters read 0 specimens / 0 participants while the chain already has mints — site numbers lag the chain' },
     ],
