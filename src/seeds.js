@@ -1057,4 +1057,28 @@ export const SEEDS = [
       { type: 'warn', text: 'Tier drawn by weighted lottery over remaining quotas; no token, no pool, no marketplace — a plain collectible' },
     ],
   },
+  {
+    id: 'woof-agent',
+    name: 'Woof Agent (WOOF)',
+    kind: 'NFT · dog cards',
+    chainId: 56,
+    contract: '0xBb9bA68C8E99651450F099C431eb530a71C712bE',
+    token: '0x7Df4B409D87129B2689A2Fb285e871a127519958',
+    site: 'https://woof-agent.vercel.app',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID wallets, 1 per wallet — first 1,000 free claims overall',
+      mintPrice: '0 BNB for the first mint; paid mints #2–10 @ 0.00035 BNB, #11–20 @ 0.00065 BNB, max 20 per wallet',
+      supply: '1,111 total (24 dog cards, 5 tiers); 126 minted, 126 free claimed',
+      extras: 'Each paid mint earns 1,200 $WOOF (no market yet); own escrow market, seller keeps 95%, 5% royalty, list/delist fee 0.00025 BNB',
+    },
+    bucket: 'berpotensi',
+    signals: [
+      { type: 'good', text: 'Official site woof-agent.vercel.app publishes this exact contract, the first-free terms and the Agent ID gate up front, with the exact agent mint call (verified live 2026-11-17 ~01:05 WITA)' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mintFree() value 0 passes from revelle (Agent ID holder) and reverts 0x0d9ab13f from a neutral wallet — real gate; totalSupply 126/1,111, freeMinted 126, mintOpen true (verified 2026-11-17 ~01:05 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Contract not verified on Sourcify — no public source code' },
+      { type: 'warn', text: 'Site counter shows 0 / 1,111 minted and 0 / 1,000 free claimed while the chain already reads 126 (verified 2026-11-17 ~01:05 WITA) — site numbers lag the chain' },
+      { type: 'warn', text: '$WOOF has no trading venue named — a bonus on paid mints only (free mints earn 0), not a price' },
+    ],
+  },
 ];
