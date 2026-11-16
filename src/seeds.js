@@ -1032,4 +1032,28 @@ export const SEEDS = [
       { type: 'warn', text: 'Paid mint value stays in the contract until the owner withdraws it (disclosed on the official page); owner is a live EOA' },
     ],
   },
+  {
+    id: 'golden-miner',
+    name: 'Golden Miner (GMC)',
+    kind: 'NFT · pixel miner card',
+    chainId: 56,
+    contract: '0x088708f79A71b82C14e1864FB0c63E53Cbf94243',
+    site: 'https://goldenminer.surge.sh/',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: '“First 5 mints free per Agent ID” — 2,000 free pool of 5,555',
+      mintPrice: 'NOT 0: every mint — including the “free” five — pays a management fee of 0.000207 BNB (≈ $0.13) straight to the treasury; paid mints after the free five cost 0.001 BNB and up the tiered ladder (max 0.004 BNB)',
+      supply: '5,555 total (2,000 free pool); 87 minted, 1,913 free left',
+      extras: 'Forge: burn 5 same-tier cards for 1 higher tier; invite adds +1 free allowance per first-mint referral (max +10); royalty 0%; sale window 7 days from deploy (ends 2026-11-20 08:04 WITA)',
+    },
+    bucket: 'indikasi',
+    signals: [
+      { type: 'bad', text: 'The “free” claim hides a per-mint management fee — quote() charges 0.000207 BNB (≈ $0.13) for each of the first 5 “free” mints, paid straight to the treasury in the same tx (verified in the Sourcify exact-match source and by a live quote() read; a value-0 mint(1) sim reverts, value=quote passes)' },
+      { type: 'bad', text: 'The official page advertises “前 5 张免费” with no management-fee disclosure anywhere on the page (verified 2026-11-16 ~10:40 WITA)' },
+      { type: 'good', text: 'Official site goldenminer.surge.sh publishes this exact contract, the 2,000-free-pool terms and the Agent ID gate up front, with the exact agent mint call; Sourcify exact match' },
+      { type: 'good', text: 'Free allowance is real in code: freeAllowanceOf(revelle) reads 5, freeRemaining 1,913/2,000, and mint() enforces the Agent ID registry gate — the caller must own the agentId (verified 2026-11-16 ~10:40 WITA, rpc-bsc.48.club + bsc-dataseed)' },
+      { type: 'warn', text: 'Sale window is 7 days from deployment (mintEnd 2026-11-20 08:04 WITA); owner can only extend it, never shorten, max mintStart + 21 days' },
+      { type: 'warn', text: 'Tier drawn by weighted lottery over remaining quotas; no token, no pool, no marketplace — a plain collectible' },
+    ],
+  },
 ];
