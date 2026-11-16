@@ -29,7 +29,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:12.932Z",
+      "checkedAt": "2026-11-16T00:45:24.086Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cards",
       "onchainSymbol": "ACARD",
@@ -62,7 +62,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:16.158Z",
+      "checkedAt": "2026-11-16T00:45:26.636Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Zet",
       "onchainSymbol": "AZET",
@@ -101,7 +101,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:17.220Z",
+      "checkedAt": "2026-11-16T00:45:27.677Z",
       "sourcify": "exact_match",
       "onchainName": "PIXEL BOYZ",
       "onchainSymbol": "PBOYZ",
@@ -137,7 +137,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:18.777Z",
+      "checkedAt": "2026-11-16T00:45:28.804Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -171,7 +171,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:18.777Z",
+      "checkedAt": "2026-11-16T00:45:28.804Z",
       "pending": "contract address not yet confirmed from an official source"
     }
   },
@@ -201,7 +201,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:18.777Z",
+      "checkedAt": "2026-11-16T00:45:28.804Z",
       "sourcify": "exact_match",
       "onchainName": "CodexNFT",
       "onchainSymbol": "CODEX",
@@ -236,7 +236,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:20.398Z",
+      "checkedAt": "2026-11-16T00:45:29.930Z",
       "sourcify": "match",
       "onchainName": "Andvari's Gold",
       "onchainSymbol": "GULL",
@@ -286,16 +286,16 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:21.328Z",
+      "checkedAt": "2026-11-16T00:45:30.981Z",
       "sourcify": "match",
       "onchainName": null,
       "onchainSymbol": null,
       "supplyNow": null,
       "supplyNote": "totalSupply() did not answer — non-standard getter, verified manually",
-      "tokenSupply": "157,865,669,843",
+      "tokenSupply": "157,964,670,681",
       "probes": {
-        "Refund obligations (refundOwed)": "44.084 BNB",
-        "Mint contract BNB balance": "44.084 BNB"
+        "Refund obligations (refundOwed)": "44.192 BNB",
+        "Mint contract BNB balance": "44.192 BNB"
       }
     }
   },
@@ -329,7 +329,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:22.694Z",
+      "checkedAt": "2026-11-16T00:45:32.016Z",
       "sourcify": "exact_match",
       "onchainName": "Paw Gang",
       "onchainSymbol": "PAWG",
@@ -367,7 +367,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:23.668Z",
+      "checkedAt": "2026-11-16T00:45:33.032Z",
       "sourcify": "exact_match",
       "onchainName": "Floppy Agents",
       "onchainSymbol": "FLOPPY",
@@ -406,7 +406,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:24.526Z",
+      "checkedAt": "2026-11-16T00:45:34.101Z",
       "sourcify": "exact_match",
       "onchainName": "Jinchan",
       "onchainSymbol": "JINCHAN",
@@ -448,7 +448,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:25.616Z",
+      "checkedAt": "2026-11-16T00:45:35.730Z",
       "sourcify": "exact_match",
       "onchainName": "Gloop",
       "onchainSymbol": "GLOOP",
@@ -498,7 +498,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:27.517Z",
+      "checkedAt": "2026-11-16T00:45:37.768Z",
       "sourcify": "not verified",
       "onchainName": "Pokechain",
       "onchainSymbol": "POKECHAIN",
@@ -538,7 +538,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:29.888Z",
+      "checkedAt": "2026-11-16T00:45:38.630Z",
       "sourcify": "not verified",
       "onchainName": "AETHER",
       "onchainSymbol": "AETHER",
@@ -577,7 +577,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:31.583Z",
+      "checkedAt": "2026-11-16T00:45:39.574Z",
       "sourcify": "exact_match",
       "onchainName": "HI-SCORE",
       "onchainSymbol": "HISCORE",
@@ -618,7 +618,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:32.897Z",
+      "checkedAt": "2026-11-16T00:45:40.533Z",
       "sourcify": "exact_match",
       "onchainName": "MOLT AGENT",
       "onchainSymbol": "MOLTAGENT",
@@ -658,7 +658,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:33.719Z",
+      "checkedAt": "2026-11-16T00:45:42.389Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Arena",
       "onchainSymbol": "SEAT",
@@ -702,7 +702,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:34.669Z",
+      "checkedAt": "2026-11-16T00:45:43.818Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Grove",
       "onchainSymbol": "AGROVE",
@@ -751,7 +751,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:36.091Z",
+      "checkedAt": "2026-11-16T00:45:44.909Z",
       "sourcify": "exact_match",
       "onchainName": "SPACE ROT",
       "onchainSymbol": "SROT",
@@ -794,7 +794,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:37.963Z",
+      "checkedAt": "2026-11-16T00:45:45.920Z",
       "sourcify": "exact_match",
       "onchainName": "KIJIN",
       "onchainSymbol": "KIJIN",
@@ -838,7 +838,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:39.563Z",
+      "checkedAt": "2026-11-16T00:45:46.631Z",
       "sourcify": "exact_match",
       "onchainName": "Ink Koi",
       "onchainSymbol": "INKOI",
@@ -881,7 +881,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:40.916Z",
+      "checkedAt": "2026-11-16T00:45:47.754Z",
       "sourcify": "exact_match",
       "onchainName": "THYRK",
       "onchainSymbol": "THYRK",
@@ -930,7 +930,7 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-16T00:26:41.803Z",
+      "checkedAt": "2026-11-16T00:45:48.892Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": null,
@@ -973,7 +973,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:43.007Z",
+      "checkedAt": "2026-11-16T00:45:50.335Z",
       "sourcify": "not verified",
       "onchainName": "Cosmic Sentinel",
       "onchainSymbol": "CSNT",
@@ -1021,7 +1021,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:44.089Z",
+      "checkedAt": "2026-11-16T00:45:51.037Z",
       "sourcify": "match",
       "onchainName": "Pocket Ai",
       "onchainSymbol": "POCKET",
@@ -1070,11 +1070,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:44.832Z",
+      "checkedAt": "2026-11-16T00:45:51.897Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Cosmos",
       "onchainSymbol": "ACOS",
-      "supplyNow": "5593",
+      "supplyNow": "5595",
       "supplyMax": "100000",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1118,12 +1118,12 @@
     ],
     "supplyFn": "totalShares",
     "facts": {
-      "checkedAt": "2026-11-16T00:26:46.193Z",
+      "checkedAt": "2026-11-16T00:45:52.734Z",
       "supplyFn": "totalShares",
       "sourcify": "exact_match",
       "onchainName": "VISION",
       "onchainSymbol": "VSN",
-      "supplyNow": "2232"
+      "supplyNow": "2233"
     }
   },
   {
@@ -1173,7 +1173,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:47.312Z",
+      "checkedAt": "2026-11-16T00:45:53.492Z",
       "sourcify": "exact_match",
       "onchainName": "ABYSSCABLE",
       "onchainSymbol": "DIVER",
@@ -1230,7 +1230,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:48.340Z",
+      "checkedAt": "2026-11-16T00:45:55.427Z",
       "sourcify": "exact_match",
       "onchainName": "BYTEBLOOM",
       "onchainSymbol": "BLOOM",
@@ -1287,11 +1287,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:49.248Z",
+      "checkedAt": "2026-11-16T00:45:56.406Z",
       "sourcify": "exact_match",
       "onchainName": "PIXELPHARAOH",
       "onchainSymbol": "KA",
-      "supplyNow": "949",
+      "supplyNow": "950",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY",
       "tokenSupply": "1,800,000,000"
@@ -1335,7 +1335,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:50.424Z",
+      "checkedAt": "2026-11-16T00:45:57.360Z",
       "sourcify": "exact_match",
       "onchainName": "Foundry Faces",
       "onchainSymbol": "FACES",
@@ -1388,7 +1388,7 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-16T00:26:51.551Z",
+      "checkedAt": "2026-11-16T00:45:58.315Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "DacityCoin",
@@ -1435,7 +1435,7 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-16T00:26:52.613Z",
+      "checkedAt": "2026-11-16T00:45:59.447Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "NAOMI GENESIS",
@@ -1491,7 +1491,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:53.933Z",
+      "checkedAt": "2026-11-16T00:46:00.213Z",
       "sourcify": "not verified",
       "onchainName": "Alchemister",
       "onchainSymbol": "ALCHEMISTER",
@@ -1542,7 +1542,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:54.733Z",
+      "checkedAt": "2026-11-16T00:46:01.742Z",
       "sourcify": "exact_match",
       "onchainName": "DREAMCOMPILE",
       "onchainSymbol": "NAPPER",
@@ -1590,7 +1590,7 @@
     ],
     "supplyFn": "totalMinted",
     "facts": {
-      "checkedAt": "2026-11-16T00:26:55.413Z",
+      "checkedAt": "2026-11-16T00:46:02.622Z",
       "supplyFn": "totalMinted",
       "sourcify": "exact_match",
       "onchainName": "Mizukairo",
@@ -1642,11 +1642,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:56.085Z",
+      "checkedAt": "2026-11-16T00:46:03.228Z",
       "sourcify": "exact_match",
       "onchainName": "ONLYAI Crystals",
       "onchainSymbol": "OCRY",
-      "supplyNow": "3162",
+      "supplyNow": "3164",
       "supplyMax": "5555",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1662,7 +1662,7 @@
     "claim": {
       "headline": "First specimen of each daily experiment free for Agent ID holders",
       "mintPrice": "0 BNB for the 1st specimen per experiment; specimens 2–5 cost 0.0002 BNB, 6–10 cost 0.0004 BNB",
-      "supply": "Experiment Nº4 live since 00:00 UTC Nov 15 — Nº3 sealed; no on-chain supply counter, count from the Boltbook preview",
+      "supply": "Experiment Nº5 live since 00:00 UTC Nov 16 — Nº4 sealed at 641; no on-chain supply counter, count from the Boltbook preview",
       "extras": "Sealed specimens claim $LAB (10,000–1,000,000 by form); claim fee 0.0002457 BNB, claims not open yet, $LAB has no pool"
     },
     "bucket": "real",
@@ -1677,7 +1677,7 @@
       },
       {
         "type": "warn",
-        "text": "Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº4 is live now and seals 00:00 UTC Nov 16, then a fresh allowance opens with Nº5 (verified 2026-11-15 ~08:50 WITA: currentExperiment 4, genesisOpen true, totalSpecimens 3,638, specimensInExperiment(4) 198, experimentEnd(4) 2026-11-16 00:00 UTC)"
+        "text": "Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº5 is live now (205 specimens) and seals 00:00 UTC Nov 17, then a fresh allowance opens with Nº6 (verified 2026-11-16 ~08:55 WITA: currentExperiment 5, genesisOpen true, totalSpecimens 4,292, specimensInExperiment(5) 205, experimentEnd(5) 2026-11-17 00:00 UTC; Nº4 sealed at 641)"
       },
       {
         "type": "warn",
@@ -1689,7 +1689,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:57.183Z",
+      "checkedAt": "2026-11-16T00:46:03.843Z",
       "sourcify": "exact_match",
       "onchainName": "AgentLabs Specimen",
       "onchainSymbol": "SPEC",
@@ -1739,7 +1739,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:58.230Z",
+      "checkedAt": "2026-11-16T00:46:04.657Z",
       "sourcify": "exact_match",
       "onchainName": "Shenlong",
       "onchainSymbol": "SHENLONG",
@@ -1787,7 +1787,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:59.212Z",
+      "checkedAt": "2026-11-16T00:46:05.507Z",
       "sourcify": "exact_match",
       "onchainName": "Meow Cards",
       "onchainSymbol": "MEOWC",
@@ -1834,11 +1834,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:26:59.885Z",
+      "checkedAt": "2026-11-16T00:46:07.064Z",
       "sourcify": "exact_match",
       "onchainName": "Agent Bubble",
       "onchainSymbol": "BUBB",
-      "supplyNow": "1692",
+      "supplyNow": "1710",
       "supplyMax": "2222",
       "supplyMaxFn": "MAX_SUPPLY"
     }
@@ -1891,7 +1891,7 @@
     ],
     "supplyFn": "freeClaimed",
     "facts": {
-      "checkedAt": "2026-11-16T00:27:00.684Z",
+      "checkedAt": "2026-11-16T00:46:07.950Z",
       "supplyFn": "freeClaimed",
       "sourcify": "exact_match",
       "onchainName": null,
@@ -1934,7 +1934,7 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:27:01.792Z",
+      "checkedAt": "2026-11-16T00:46:08.768Z",
       "sourcify": "exact_match",
       "onchainName": "Pod Squad",
       "onchainSymbol": "PODS",
@@ -1983,7 +1983,7 @@
     ],
     "supplyFn": "freeMinted",
     "facts": {
-      "checkedAt": "2026-11-16T00:27:02.523Z",
+      "checkedAt": "2026-11-16T00:46:09.544Z",
       "supplyFn": "freeMinted",
       "sourcify": "exact_match",
       "onchainName": "Obrigado Capitao",
@@ -2030,11 +2030,11 @@
       }
     ],
     "facts": {
-      "checkedAt": "2026-11-16T00:27:03.456Z",
+      "checkedAt": "2026-11-16T00:46:10.952Z",
       "sourcify": "exact_match",
       "onchainName": "Legacy Code Bees",
       "onchainSymbol": "LEGBEE",
-      "supplyNow": "283",
+      "supplyNow": "287",
       "supplyMax": "7777",
       "supplyMaxFn": "MAX_SUPPLY"
     }
