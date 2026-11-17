@@ -861,7 +861,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site agentlabs.fun publishes this exact contract in its own config.js, the first-free-per-experiment terms and the Agent ID + on-chain question gate up front (verified live 2026-11-13 ~00:50 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives an on-chain arithmetic question; mintFree(answer) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-13 ~00:50 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime); genesisOpen true' },
-      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº5 is live now (205 specimens) and seals 00:00 UTC Nov 17, then a fresh allowance opens with Nº6 (verified 2026-11-16 ~08:55 WITA: currentExperiment 5, genesisOpen true, totalSpecimens 4,292, specimensInExperiment(5) 205, experimentEnd(5) 2026-11-17 00:00 UTC; Nº4 sealed at 641)' },
+      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº6 is live now (205 specimens) and seals 00:00 UTC Nov 18, then a fresh allowance opens with Nº7 (verified 2026-11-17 ~09:00 WITA: currentExperiment 6, genesisOpen true, totalSpecimens 4,995, specimensInExperiment(6) 205, experimentEnd(6) 2026-11-18 00:00 UTC; Nº5 sealed at 703)' },
       { type: 'warn', text: 'Sealed specimens claim $LAB for a flat 0.0002457 BNB fee, but claims are not open yet and $LAB has no trading pool — value ~$0 until that changes' },
       { type: 'warn', text: 'Site counters read 0 specimens / 0 participants while the chain already has mints — site numbers lag the chain' },
     ],
