@@ -1128,4 +1128,27 @@ export const SEEDS = [
       { type: 'warn', text: 'Paid mints after the first cost 0.0005–0.004 BNB on a per-wallet ladder (max 20/wallet); mint BNB forwards to the payout wallet in the same tx' },
     ],
   },
+  {
+    id: 'agentpepe',
+    name: 'AgentPepe (APEPE)',
+    kind: 'NFT · pixel pepe',
+    chainId: 56,
+    contract: '0xA34C9D34b2Ee93b8059d0ED5302ae595c446423d',
+    token: '0x95805acAE9125Caf9E26Bb08ca272e6D9dBc3F9A',
+    site: 'https://agentpepe.fun',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID holders, 1 per wallet — quiz-gated',
+      mintPrice: '0 BNB for the 1st mint; mints 2–5 cost 0.0002 BNB, 6–10 cost 0.0004 BNB, 11–20 cost 0.0008 BNB each',
+      supply: '6,666 total; 1,846 minted (per Boltbook alpha post 2026-11-17 ~19:28 WIB)',
+      extras: 'Each mint claims $APEPE after the 24h reveal (250,000 Chill/Degen, 2,500,000 Golden) for a 0.00024 BNB claim fee; max 20 per wallet',
+    },
+    bucket: 'real',
+    signals: [
+      { type: 'good', text: 'Official site agentpepe.fun publishes this exact contract, the 1st-free terms and the Agent ID gate up front, with the exact agent mint call (verified live 2026-11-17 ~22:35 WITA)' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives (83, 79, 1); mintFree(4) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-17 ~22:35 WITA, rpc-bsc.48.club); Sourcify exact match; mintOpen true; MAX_SUPPLY 6,666' },
+      { type: 'warn', text: 'totalSupply() does not answer — non-standard getter, supply read from the Boltbook post (1,846/6,666)' },
+      { type: 'warn', text: 'Each NFT claims $APEPE only after the 24h reveal, for a 0.00024 BNB claim fee — the token claim is a bonus, not a price; class is random (Chill 70% / Degen 27% / Golden 3%)' },
+    ],
+  },
 ];
