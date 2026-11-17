@@ -164,7 +164,7 @@ export const SEEDS = [
     bucket: 'indikasi',
     signals: [
       { type: 'bad', text: 'The “free” label hides capital locked in the contract for 24 hours — the refund depends on the contract staying solvent' },
-      { type: 'warn', text: 'Radar solvency probe 2026-11-17 ~14:26 WITA: refund obligations 42.482 BNB and the contract BNB balance 42.482 BNB — exactly equal, fully covered at this check (see facts)' },
+      { type: 'warn', text: 'Radar solvency probe 2026-11-17 ~16:50 WITA: refund obligations 41.926 BNB and the contract BNB balance 41.926 BNB — exactly equal, fully covered at this check (see facts)' },
     ],
     probes: [
       { label: 'Refund obligations (refundOwed)', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: 'refundOwed', format: 'bnb' },
@@ -489,7 +489,7 @@ export const SEEDS = [
     claim: {
       headline: 'First 777 shares free for Agent ID holders, 1 per wallet — 50,000,000 LUCKY777 per share',
       mintPrice: '0 BNB — gas only, while the 777 free shares last; paid shares 0.002 BNB each after the free phase, 24h clock',
-      supply: '7,777 shares total (777 free / 7,000 paid); 459 minted, 318 free left',
+      supply: '7,777 shares total (777 free / 7,000 paid); 535 minted, ≤242 free left (777 cap minus 535 issued; no free/paid split getter on-chain)',
       extras: 'Slot machine opens at sellout; 3 free spins/day for holders; paid shares refunded in full via claimRefund() if the sale does not sell out',
     },
     bucket: 'real',
@@ -782,7 +782,7 @@ export const SEEDS = [
     claim: {
       headline: 'First mint free per wallet, gas only — 2,000 free slots',
       mintPrice: '0 BNB for the first mint; later mints 0.00005 BNB each, max 20 per tx',
-      supply: '5,555 total; 501 minted, 1,499 free left',
+      supply: '5,555 total; 813 minted, 1,191 free left',
       extras: 'Each mint earns 10,000 $DREAM (claimable, no pool yet); X lane: verified X 2 free, regular X 1 free — one free lane per wallet (first mint OR X); 7-day mint window',
     },
     bucket: 'berpotensi',
@@ -861,7 +861,7 @@ export const SEEDS = [
     signals: [
       { type: 'good', text: 'Official site agentlabs.fun publishes this exact contract in its own config.js, the first-free-per-experiment terms and the Agent ID + on-chain question gate up front (verified live 2026-11-13 ~00:50 WITA)' },
       { type: 'good', text: 'Free lane sim-verified by the radar: questionFor(revelle) gives an on-chain arithmetic question; mintFree(answer) value 0 passes from revelle (Agent ID holder) and reverts 0xf8eb54de from a neutral wallet — real gate (verified 2026-11-13 ~00:50 WITA, rpc-bsc.48.club); Sourcify exact match (creation + runtime); genesisOpen true' },
-      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº6 is live now (205 specimens) and seals 00:00 UTC Nov 18, then a fresh allowance opens with Nº7 (verified 2026-11-17 ~09:00 WITA: currentExperiment 6, genesisOpen true, totalSpecimens 4,995, specimensInExperiment(6) 205, experimentEnd(6) 2026-11-18 00:00 UTC; Nº5 sealed at 703)' },
+      { type: 'warn', text: 'Each experiment seals at 00:00 UTC — the free window is one UTC day per experiment; Nº6 is live now (426 specimens) and seals 00:00 UTC Nov 18, then a fresh allowance opens with Nº7 (verified 2026-11-17 ~16:55 WITA: currentExperiment 6, genesisOpen true, totalSpecimens 5,216, specimensInExperiment(6) 426, experimentEnd(6) 2026-11-18 00:00 UTC; Nº5 sealed at 703)' },
       { type: 'warn', text: 'Sealed specimens claim $LAB for a flat 0.0002457 BNB fee, but claims are not open yet and $LAB has no trading pool — value ~$0 until that changes' },
       { type: 'warn', text: 'Site counters read 0 specimens / 0 participants while the chain already has mints — site numbers lag the chain' },
     ],
@@ -997,13 +997,13 @@ export const SEEDS = [
     claim: {
       headline: 'First 640 shares free for Agent ID holders — 50,000,000 CAP7 per share',
       mintPrice: '0 BNB — gas only for shares #1–640; paid shares #641–6,640 cost 0.002 BNB',
-      supply: '6,640 shares total (640 free / 6,000 paid); 497 minted (492 free + 5 paid), 148 free left',
+      supply: '6,640 shares total (640 free / 6,000 paid); 622 minted (617 free + 5 paid), 23 free left',
       extras: 'Pool opens at sellout: 8.4 BNB + 168,000,000,000 CAP7 to PancakeSwap V2, LP burned; refund 70% manual if not sold out by Nov 25 11:24 WIB',
     },
     bucket: 'real',
     signals: [
       { type: 'good', text: 'Official site cap7.fcfs.workers.dev publishes the free terms up front and names this exact contract in its own config.js (verified live 2026-11-15 ~20:35 WITA)' },
-      { type: 'good', text: 'Free lane sim-verified by the radar: claimFree() value 0 passes from revelle (Agent ID holder) and reverts 0x2611416a from a neutral wallet — real gate; freeMinted 492/640, paidMinted 5, potBnb 0.007 BNB (verified 2026-11-15 ~20:35 WITA, rpc-bsc.48.club); Sourcify exact match' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: claimFree() value 0 passes from revelle (Agent ID holder) and reverts 0x2611416a from a neutral wallet — real gate; freeMinted 617/640 (23 free left), paidMinted 5, potBnb 0.007 BNB (verified 2026-11-17 ~16:55 WITA, rpc-bsc.48.club); Sourcify exact match' },
       { type: 'warn', text: 'A free share books 50,000,000 CAP7 locked until the pool opens at sellout; if the sale misses sellout by Nov 25 11:24 WIB no pool is created and the token stays locked' },
       { type: 'warn', text: 'Refund is MANUAL 70% by the operator if the sale does not sell out; 30% of every paid share goes straight to the ops wallet and never refunds — paid buyers rely on the operator' },
       { type: 'warn', text: 'CAP7 has no trading pool yet — a free share has no measurable value today' },
