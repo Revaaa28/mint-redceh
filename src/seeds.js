@@ -164,7 +164,7 @@ export const SEEDS = [
     bucket: 'indikasi',
     signals: [
       { type: 'bad', text: 'The “free” label hides capital locked in the contract for 24 hours — the refund depends on the contract staying solvent' },
-      { type: 'warn', text: 'Radar solvency probe 2026-11-18 ~02:26 WITA: refund obligations 40.866 BNB and the contract BNB balance 40.866 BNB — exactly equal, fully covered at this check (see facts)' },
+      { type: 'warn', text: 'Radar solvency probe 2026-11-18 ~04:26 WITA: refund obligations 40.816 BNB and the contract BNB balance 40.816 BNB — exactly equal, fully covered at this check (see facts)' },
     ],
     probes: [
       { label: 'Refund obligations (refundOwed)', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: 'refundOwed', format: 'bnb' },
