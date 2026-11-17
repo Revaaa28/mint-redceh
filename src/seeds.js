@@ -164,7 +164,7 @@ export const SEEDS = [
     bucket: 'indikasi',
     signals: [
       { type: 'bad', text: 'The “free” label hides capital locked in the contract for 24 hours — the refund depends on the contract staying solvent' },
-      { type: 'warn', text: 'Radar solvency probe: refund obligations and the contract BNB balance are read live at every check (see facts) — fully covered only if the two are equal' },
+      { type: 'warn', text: 'Radar solvency probe 2026-11-17 ~14:26 WITA: refund obligations 42.482 BNB and the contract BNB balance 42.482 BNB — exactly equal, fully covered at this check (see facts)' },
     ],
     probes: [
       { label: 'Refund obligations (refundOwed)', address: '0x6288DFe86f22B53eEB6886aE2D78941de7483743', fn: 'refundOwed', format: 'bnb' },
@@ -1079,6 +1079,28 @@ export const SEEDS = [
       { type: 'warn', text: 'Contract not verified on Sourcify — no public source code' },
       { type: 'warn', text: 'Site counter shows 0 / 1,111 minted and 0 / 1,000 free claimed while the chain already reads 126 (verified 2026-11-17 ~01:05 WITA) — site numbers lag the chain' },
       { type: 'warn', text: '$WOOF has no trading venue named — a bonus on paid mints only (free mints earn 0), not a price' },
+    ],
+  },
+  {
+    id: 'snake-agent',
+    name: 'SnakeAgentNFT',
+    kind: 'NFT · beach snake',
+    chainId: 56,
+    contract: '0xf7c1ba2286cee6eef10cc264664168fd015127b1',
+    site: 'https://www.snakegameio.online/',
+    gated: 'Binance Agent ID (.ai)',
+    claim: {
+      headline: 'First mint free for Agent ID wallets, 1 per wallet',
+      mintPrice: '0 BNB for the first mint; then 0.0002 / 0.0004 / 0.0008 BNB per mint by step, max 30 per wallet',
+      supply: '4,444 total; 1,243 minted',
+      extras: 'Each snake unlocks a one-time $SNAKE token claim by rarity; own marketplace, 5% royalty',
+    },
+    bucket: 'berpotensi',
+    signals: [
+      { type: 'good', text: 'Official site snakegameio.online publishes this exact contract, the first-free terms and the Agent ID gate up front (verified live 2026-11-17 ~14:40 WITA)' },
+      { type: 'good', text: 'Free lane sim-verified by the radar: mint(1) value 0 passes from revelle (Agent ID holder) and reverts 0xf947691f from a neutral wallet — real gate; totalSupply 1,243/4,444, freeMinted 1,224, mintActive 1 (verified 2026-11-17 ~14:40 WITA, rpc-bsc.48.club)' },
+      { type: 'warn', text: 'Contract not verified on Sourcify — no public source code (the site claims verification; the v2 API returns match null)' },
+      { type: 'warn', text: 'Each snake unlocks a one-time $SNAKE claim — the site names no trading venue for it, a bonus not a price' },
     ],
   },
 ];
