@@ -200,6 +200,17 @@
   .hrow .hb.real{color:var(--ink)} .hrow .hb.berpotensi{color:var(--amber)} .hrow .hb.indikasi{color:var(--red)}
   .hrow .hf{color:var(--dim)}
   .hrow .hf .blob{display:block;font:400 10.5px var(--mono);color:var(--faint);margin-top:2px}
+
+  /* ---------- radar memory ---------- */
+  .memory .sec-head{margin-top:26px}
+  .memfeed{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:4px 16px}
+  .mrow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(148,178,199,.08);font-size:13.5px}
+  .mrow:last-child{border-bottom:none}
+  .mrow .mt{flex:none;width:118px;font:600 11px var(--mono);color:var(--faint)}
+  .mrow .mn{font-weight:600;color:var(--ink)}
+  .mrow .mlab{font:700 10px var(--mono);letter-spacing:.08em}
+  .mrow .mlab.real{color:var(--ink)} .mrow .mlab.berpotensi{color:var(--amber)} .mrow .mlab.indikasi{color:var(--red)}
+  .mrow .mlinks{margin-left:auto;font:400 11.5px var(--mono);color:var(--faint);white-space:nowrap}
   .method{margin-top:44px}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:16px}
   .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
@@ -294,6 +305,11 @@
 
   <div id="view-board" hidden>
     <div class="scope-strip" id="scopeStrip"></div>
+    <section class="memory" id="memorySection">
+      <div class="sec-head"><h2>Radar Memory</h2><div class="rule"></div><div class="n" id="memMode">WALRUS MEMORY</div></div>
+      <div class="stats" id="memStats"><span class="chip">READING MEMORY…</span></div>
+      <div class="memfeed" id="memFeed"></div>
+    </section>
     <div class="sec-head"><h2 id="boardTitle">Contacts on scope</h2><div class="rule"></div><div class="n" id="secCount"></div></div>
     <main class="grid" id="grid"><p class="empty">Sweeping the scope…</p></main>
   </div>
@@ -329,6 +345,7 @@ const boardEl = document.getElementById('view-board');
 const stripEl = document.getElementById('scopeStrip');
 const heroScopeWrap = document.querySelector('.hero .scope-wrap');
 let listings = [];
+let loaded = false;
 let filter = 'semua';
 let view = 'home';
 
@@ -442,6 +459,7 @@ function toggleHist(btn, id) {
     .catch(() => { pane.innerHTML = '<div class="hsum">History failed to load — try again.</div>'; });
 }
 function render() {
+  if (!loaded) { grid.innerHTML = '<p class="empty">Sweeping the scope…</p>'; return; }
   const shown = listings.filter(e => filter === 'semua' || e.bucket === filter);
   grid.innerHTML = shown.length ? shown.map((e, i) => card(e, listings.indexOf(e))).join('') : '<p class="empty">No contacts in this bucket.</p>';
   document.getElementById('secCount').textContent = shown.length + ' / ' + listings.length + ' CONTACTS';
@@ -489,8 +507,38 @@ function renderBlips() {
     scopeEl.appendChild(b);
   }
 }
-fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; render(); renderChips(); renderBlips(); })
-  .catch(() => { grid.innerHTML = '<p class="empty">The board failed to load.</p>'; });
+// The board is the landing view: all contacts on scope, no click needed.
+// Sidebar filters re-render it exactly as before.
+go('board', 'semua');
+fetch('/api/board').then(r => r.json()).then(d => { listings = d.listings || []; loaded = true; render(); renderChips(); renderBlips(); })
+  .catch(() => { loaded = true; grid.innerHTML = '<p class="empty">The board failed to load.</p>'; });
+
+// --- Radar Memory (totals + latest checks, read from Walrus Memory) ---
+const memStats = document.getElementById('memStats');
+const memFeed = document.getElementById('memFeed');
+function renderMemory() {
+  fetch('/api/memories').then(r => r.json()).then(d => {
+    const mem = d.memories || [];
+    const walrus = d.mode === 'walrus';
+    const total = (d.total === null || d.total === undefined) ? d.count : d.total;
+    const remembered = new Set(mem.map(m => m.id)).size;
+    document.getElementById('memMode').textContent = walrus ? 'WALRUS MAINNET' : 'LOCAL MEMORY';
+    memStats.innerHTML =
+      '<span class="chip"><b>' + total + '</b>&nbsp;MEMORY RECORDS</span>'
+      + '<span class="chip"><b>' + d.count + '</b>&nbsp;CHECKS ON RECORD</span>'
+      + '<span class="chip"><b>' + remembered + '</b>&nbsp;LISTINGS REMEMBERED</span>';
+    memFeed.innerHTML = mem.length ? mem.slice(0, 10).map(m =>
+      '<div class="mrow"><span class="mt">' + fmtTime(m.checkedAt) + '</span>'
+      + '<span class="mn">' + m.name + '</span>'
+      + (m.bucket ? '<span class="mlab ' + m.bucket + '">' + (BUCKET_LABEL[m.bucket] || m.bucket).toUpperCase() + '</span>' : '')
+      + '<span class="mlinks">'
+      + (walrus && m.blobId ? '<a href="https://walruscan.com/mainnet/blob/' + m.blobId + '" target="_blank" rel="noopener">walrus blob ↗</a>' : '')
+      + (m.checkpoint ? ' · sui checkpoint ' + m.checkpoint : '')
+      + '</span></div>'
+    ).join('') : '<div class="mrow">No checks recorded yet.</div>';
+  }).catch(() => { memStats.innerHTML = '<span class="chip">MEMORY FEED UNAVAILABLE</span>'; });
+}
+renderMemory();
 
 // --- Ask the Radar (answers from Walrus Memory only) ---
 const askOut = document.getElementById('askOut');

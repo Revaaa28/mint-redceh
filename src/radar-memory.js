@@ -136,16 +136,63 @@ export async function historyForListing(store, id) {
   };
 }
 
+// Free-text questions name a listing without BEING its name ("What do
+// you know about AgentPepe?"). Find a known listing mentioned anywhere
+// in the text — by board name, seed id (dashes read as spaces), or
+// on-chain symbol — so the ask can run the same exact-name lookup a
+// chip click runs. Candidates are tried longest-first, and a mention
+// must sit on word boundaries. Names and ids match case-insensitively;
+// symbols match case-SENSITIVELY, the way tickers are typed, so the
+// symbol MINE does not fire on the ordinary word "mine".
+function extractMentionedListing(rawQuery, boardHints) {
+  const query = rawQuery.toLowerCase();
+  const candidates = [];
+  for (const h of boardHints) {
+    if (!h) continue;
+    const variants = [];
+    if (h.name) variants.push({ v: h.name, cs: false });
+    if (h.id) {
+      variants.push({ v: String(h.id), cs: false });
+      variants.push({ v: String(h.id).replace(/[-_]+/g, " "), cs: false });
+    }
+    const sym = h.facts?.onchainSymbol;
+    if (sym) variants.push({ v: sym, cs: true });
+    for (const { v, cs } of variants) {
+      const needle = String(v).trim();
+      if (needle.length >= 3) candidates.push({ needle, cs, hint: h });
+    }
+  }
+  candidates.sort((a, b) => b.needle.length - a.needle.length);
+  for (const { needle, cs, hint } of candidates) {
+    const n = cs ? needle : needle.toLowerCase();
+    const esc = n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const re = new RegExp(`(^|[^a-zA-Z0-9])${esc}([^a-zA-Z0-9]|$)`);
+    if (re.test(cs ? rawQuery : query)) return hint;
+  }
+  return null;
+}
+
 // Answer a question from memory only. Matches by listing name, id, or
 // contract address fragment; returns the full check history per listing.
-// boardHints (the current board's id/name/contract triples) are used for
-// ONE thing: a raw contract fragment cannot be found by semantic recall,
-// so the board's verified contracts identify which listing to recall by
-// name. The answer itself still comes only from memory records.
+// boardHints (the current board) serve two read-only purposes: a raw
+// contract fragment cannot be found by semantic recall, so the board's
+// verified contracts identify which listing to recall by name; and a
+// listing mentioned inside a free-text question is extracted from the
+// board's names/ids/symbols (see extractMentionedListing). The answer
+// itself still comes only from memory records.
 export async function askRadar(store, q, boardHints = []) {
-  const query = String(q || "").trim().toLowerCase();
+  const raw = String(q || "").trim();
+  const query = raw.toLowerCase();
   if (!query) return { found: false, error: "empty query" };
-  const recallQueries = [String(q).trim()];
+  const recallQueries = [raw];
+  let matchQuery = query;
+  const mentioned = extractMentionedListing(raw, boardHints);
+  if (mentioned) {
+    // Run the chip path: recall by the listing's name/id and match on
+    // the name, exactly as if the visitor had clicked its chip.
+    matchQuery = String(mentioned.name).toLowerCase();
+    recallQueries.push(mentioned.name, mentioned.id, String(mentioned.id).replace(/[-_]+/g, " "));
+  }
   if (/0x[0-9a-f]{6,}/.test(query) || /^[0-9a-f]{10,}$/.test(query)) {
     for (const h of boardHints) {
       if (h?.contract && h.contract.toLowerCase().includes(query)) {
@@ -159,7 +206,7 @@ export async function askRadar(store, q, boardHints = []) {
     if (!byId.has(p.id)) byId.set(p.id, []);
     byId.get(p.id).push(p);
   }
-  const queryTokens = query.split(/[^a-z0-9]+/).filter((t) => t.length > 1);
+  const queryTokens = matchQuery.split(/[^a-z0-9]+/).filter((t) => t.length > 1);
   const results = [];
   for (const [id, checks] of byId) {
     const first = checks[0];
@@ -167,7 +214,7 @@ export async function askRadar(store, q, boardHints = []) {
     // Exact substring, or every query token present (so "Agentic Coin
     // AGC" still matches the board name "Agentic Coin (AGC)").
     const hit =
-      hay.includes(query) ||
+      hay.includes(matchQuery) ||
       (queryTokens.length > 1 && queryTokens.every((t) => hay.includes(t)));
     if (!hit) continue;
     checks.sort((a, b) => (a.checkedAt < b.checkedAt ? -1 : 1));

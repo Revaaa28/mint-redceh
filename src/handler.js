@@ -126,7 +126,17 @@ export async function handle(req, res) {
         .map((e) => parseListingMemory(e.text, e.blobId, e.createdAt))
         .filter(Boolean)
         .reverse(); // newest first
-      sendJson(res, 200, { mode: store.mode, namespace: store.namespace, count: memories.length, memories });
+      // total = every record in the namespace (store inventory);
+      // count = the listing-check records among them that parse.
+      // The inventory read is best-effort: if it fails, total is null
+      // and the parsed count still stands on its own.
+      let total = null;
+      try {
+        total = await store.count();
+      } catch {
+        /* total stays null */
+      }
+      sendJson(res, 200, { mode: store.mode, namespace: store.namespace, total, count: memories.length, memories });
       return;
     }
     if (req.method === "GET" && url.pathname === "/api/history") {
